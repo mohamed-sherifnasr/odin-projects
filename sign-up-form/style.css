@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Actor&display=swap');
+@font-face {
+  font-family: "Norse Bold";
+  src:
+    local("Norse Bold"),
+    url("./Norsebold.otf") format("opentype") tech(color-COLRv1),
+    url("trickster-outline.otf") format("opentype"),
+}
+
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+html, body{
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body{
+  background: #f9fafb;
+}
+
+.main-container{
+  height: 100%;
+  display:flex;
+}
+
+
+.img{
+  background: url("./mickael-ben-david-w_5Lpy7wiAc-unsplash.jpg") no-repeat center/cover;
+  justify-content: start;
+  text-align: center;
+  flex: 2;
+}
+
+.logo{
+  font-family: "Norse Bold";
+  font-weight: bolder;
+  font-size: 7rem;
+  vertical-align: bottom;
+  color: white;
+}
+
+section{
+  display: flex;
+  flex-flow: column;
+}
+
+.banner{
+  position: relative;
+  z-index: 0;
+  padding: 10px 0;
+  margin-top: 200px;
+  vertical-align: bottom;
+}
+
+.banner::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: black;
+  opacity: 0.45;
+}
+
+.content{
+    display: flex;
+    flex-flow: column;
+    font-family: Actor, sans-serif;
+    justify-content: space-evenly;
+    flex: 3;
+    gap: 50px;
+}
+
+
+
+.header{
+    color: #2f2f2f;
+    font-size: 1.35rem;
+    font-weight: 900;
+    max-width: 45ch;
+}
+
+.header{
+  transform: translateY(60px);
+} 
+
+.line-break{
+    display: block;
+    margin-top: 32px;
+}
+
+form{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  background: #ffffff;
+  padding: 70px 0 40px 0;
+  box-shadow: 0 5px 10px 0 rgba(202, 202, 202, 0.747);
+}
+
+form > * {
+  flex: 0 0 27%;
+}
+
+.input{
+  display: flex;
+  flex-flow: column; 
+}
+
+input{
+  min-height: 2.1rem;
+  outline: none;
+  border-width: 1px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  padding: 0 10px;
+  font-family: "Actor", sans-serif;
+}
+
+label{
+  color: #4d5460;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 2px;;
+}
+
+#form-label{
+  /* transform: translateY(4rem); */
+  position: absolute;
+  font-size: 1.3rem;
+  font-weight: 600;
+  top: 20px;
+  left: 60px;
+  color: #2f2f2f;
+}
+
+.header, form > div, .create {
+  padding-left: 4rem;
+}
+
+input:focus, input:active{
+  border: none;
+  border: 3px solid #3762dc;
+}
+
+input:invalid{
+  border: 3px solid #cb5656;
+}
+
+button[type="submit"]{
+  padding: 15px 55px;
+  color: white;
+  font-family: "Actor", sans-serif;
+  font-weight: bold;
+  background-color: #3f8275;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.login{
+  margin-top: 0px;
+}
+
+.login-anchor{
+  color: #3f8275;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.credit, a{
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+
+a:visited{
+  color: rgba(255, 255, 255, 0.9);
+}
