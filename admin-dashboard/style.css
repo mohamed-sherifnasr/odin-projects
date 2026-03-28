@@ -1,0 +1,62 @@
+/*Reset*/
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: Robot, Arial;
+}
+/* Color, Areas, Alignments, Style, and Fonts */
+aside{
+  background: steelblue;
+  grid-area: a;
+  color: white;
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-align: center;
+}
+header{
+  background: white;
+  grid-area: h;
+}
+main{
+  background: lightgray;
+  grid-area: m;
+}
+input[type="text"]{
+  border-radius: 25px;
+}
+/*Layout*/
+body{
+  height: 100vh;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-areas: 
+  "a h h h h h h"
+  "a m m m m m m"
+  "a m m m m m m"
+  "a m m m m m m"
+  "a m m m m m m";
+}
+ul{
+  display: grid;
+  grid-template-rows: repeat(autofit, 1fr);
+  gap: 20px;
+}
+.main-nav{
+  margin-top: 50px;
+}
+header{
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(11, 1fr);
+  margin: 20px;
+}
+.search-button{
+  grid-area: 1 / 1 / 2 / 2;
+}
+input[type="text"]{
+  grid-area: 1 / 2 / 2 / 7
+}
+/********/

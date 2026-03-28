@@ -1,0 +1,115 @@
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body{
+  position: relative;
+  background: #e2e8f0;
+  font-family: sans-serif;
+  height: 100%;
+}
+
+.card{
+  background: white;
+  border: 1px solid black;
+  
+}
+
+#library > ul{
+  margin: 20px 10px;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul > li{
+  flex: 1 1 90%;
+}
+
+dialog{
+  position: absolute;
+  top: 50%;
+  Left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  width: 40%;
+  height: 67%;
+  padding: 10px;
+}
+
+
+dialog > h4 {
+  margin-bottom: 5px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  justify-content: center;
+}
+
+p{
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+p > label{
+  width: 110px;
+}
+
+p > input{
+  flex: 1;
+  padding: 3px 6px;
+}
+
+.rcontainer{
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.btncontainer{
+  display: flex;
+}
+
+#close-form{
+  padding: 10px;
+  font-size: 1.1rem;
+  background: #FF2E2E;
+}
+
+#close-form:hover{
+  background: #D10000;
+  scale: 1.1;
+}
+
+#add{
+  flex: 1;
+  padding: 10px;
+  font-size: 1.1rem;  
+}
+
+#button-container{
+  display: flex;
+  gap: 7px;
+}
+
+#toggle-button, #remove-button{
+  padding: 2px 5px;
+}
+
+#remove-button{
+  background: #FF2E2E;
+  opacity: 0.9;
+}
+
+#remove-button:hover{
+  background: #D10000;
+  scale: 1.1;
+}
