@@ -1,24 +1,36 @@
-<button command="show-modal" commandfor="my-dialog">Add Book</button>
-<dialog id="my-dialog">
-  <h4>Enter New Book Details:</h4>
-  <form id="form">
-    <p>
-      <label for="title">Title:</label>
-      <input id="title" type="text" name="title">
-    </p>
-    <p>
-      <label for="author">Author:</label>
-      <input id="author" type="text" name="author">
-    </p>
-    <p>
-      <label for="pages">Pages:</label>
-      <input id="pages" type="number" min="1" name="pages">      
-    </p>
-    <p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library</title>
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./script.js"></script>
+</head>
+
+<body>
+  <button command="show-modal" commandfor="my-dialog">Add Book</button>
+  <dialog id="my-dialog">
+    <h4>Enter New Book Details:</h4>
+    <form id="form">
+      <p>
+        <label for="title">Title:</label>
+        <input id="title" type="text" name="title">
+      </p>
+      <p>
+        <label for="author">Author:</label>
+        <input id="author" type="text" name="author">
+      </p>
+      <p>
+        <label for="pages">Pages:</label>
+        <input id="pages" type="number" min="1" name="pages">
+      </p>
+      <p>
       <fieldset>
         <legend>Has been read:</legend>
         <div class="rcontainer">
-          <div class="radio-option"> 
+          <div class="radio-option">
             <input name="read" id="read" type="radio" value="true">
             <label for="read">Yes</label>
           </div>
@@ -28,11 +40,14 @@
           </div>
         </div>
       </fieldset>
-    </p>
-  </form>
-  <div class="btncontainer">
-    <button id="close-form" commandfor="my-dialog" command="close">Close</button>
-    <button id="add" form="form">Add</button>
-  </div>
-</dialog>
-<div id="library"></div>
+      </p>
+    </form>
+    <div class="btncontainer">
+      <button id="close-form" commandfor="my-dialog" command="close">Close</button>
+      <button id="add" form="form">Add</button>
+    </div>
+  </dialog>
+  <div id="library"></div>
+</body>
+
+</html>
