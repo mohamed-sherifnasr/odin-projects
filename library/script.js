@@ -13,6 +13,10 @@ Book.prototype.info = function(){
   console.log(`${this.title} by ${this.author}, ${this.pages} pages, ${this.read? "read.": "not read yet."}`)
 }
 
+Book.prototype.toggleRead = function(){
+  this.read ? this.read = false : this.read = true;
+}
+
 //Script Functions
 //Creates Instance + UUID + Store in Array
 function addBookToLibrary(title, author, pages, read){
@@ -57,6 +61,10 @@ function showBook(book){
   const toggleRead = document.createElement("button");
   toggleRead.setAttribute("id", "toggle-button");
   toggleRead.textContent = "Read";
+  toggleRead.addEventListener("click", ()=>{
+    book.toggleRead();
+    showLibrary(myLibrary);
+  })
   bcontainer.appendChild(toggleRead);
   
   //remove button
@@ -67,7 +75,6 @@ function showBook(book){
     myLibrary = myLibrary.filter(obj => obj.id != book.id);
     showLibrary(myLibrary);
   });
-  
   bcontainer.appendChild(remove);
   
   //Adds UUID as Data Attribute + Append container to card
