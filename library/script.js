@@ -108,15 +108,10 @@ form.addEventListener("submit", (event)=>{
 
 
 
-
-// const Hobbits = new Book("Hobbits", "Mohamed Ramadan", 500, true);
-
-// Hobbits.info();
-
-addBookToLibrary("HP", "JKR", "555", true);
-addBookToLibrary("Marlin", "Karlin", "464", true);
-addBookToLibrary("Axe", "Starlin", "3456", false);
-
+addBookToLibrary("1984", "George Orwell", "328", false);
+addBookToLibrary("To Kill a Mockingbird", "Harper Lee", "281", false);
+addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "310", false);
 
 
 showLibrary(myLibrary);
+

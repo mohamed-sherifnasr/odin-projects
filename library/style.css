@@ -10,6 +10,7 @@ body{
   background: #e2e8f0;
   font-family: sans-serif;
   height: 100%;
+  padding: 10px;
 }
 
 .card{
@@ -112,4 +113,19 @@ p > input{
 #remove-button:hover{
   background: #D10000;
   scale: 1.1;
+}
+
+#add-book{
+  padding: 1px 3px;
+  font-size: 1.1rem;
+  position: relative;
+  left: 100%;
+  transform: translateX(-100%);
+}
+
+#add-book::after{
+  content: "  +";
+  font-size: 1.4rem;
+  vertical-align: middle;
+  
 }
