@@ -10,159 +10,374 @@
 
 <body>
     <aside>
-        <h3>Dashboard</h3>
+        <div id="dashboard">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40">
+                <title>view-dashboard</title>
+                <path d="M13,3V9H21V3M13,21H21V11H13M3,21H11V15H3M3,13H11V3H3V13Z" fill="White" />
+            </svg>
+            <p>Dashboard</p>
+        </div>
         <ul class="main-nav">
             <li>
-                <img>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="27">
+                    <title>home</title>
+                    <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" fill="white" />
+                </svg>
                 <a>Home</a>
             </li>
             <li>
-                <img>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25">
+                    <title>card-account-details</title>
+                    <path
+                        d="M2,3H22C23.05,3 24,3.95 24,5V19C24,20.05 23.05,21 22,21H2C0.95,21 0,20.05 0,19V5C0,3.95 0.95,3 2,3M14,6V7H22V6H14M14,8V9H21.5L22,9V8H14M14,10V11H21V10H14M8,13.91C6,13.91 2,15 2,17V18H14V17C14,15 10,13.91 8,13.91M8,6A3,3 0 0,0 5,9A3,3 0 0,0 8,12A3,3 0 0,0 11,9A3,3 0 0,0 8,6Z"
+                        fill="white" />
+                </svg>
                 <a>Profile</a>
             </li>
             <li>
-                <img>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25">
+                    <title>message-reply</title>
+                    <path d="M22,4C22,2.89 21.1,2 20,2H4A2,2 0 0,0 2,4V16A2,2 0 0,0 4,18H18L22,22V4Z" fill="white" />
+                </svg>
                 <a>Messages</a>
             </li>
             <li>
-                <img>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25">
+                    <title>history</title>
+                    <path
+                        d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3"
+                        fill="white" />
+                </svg>
                 <a>History</a>
             </li>
             <li>
-                <img>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25">
+                    <title>file-multiple</title>
+                    <path
+                        d="M15,7H20.5L15,1.5V7M8,0H16L22,6V18A2,2 0 0,1 20,20H8C6.89,20 6,19.1 6,18V2A2,2 0 0,1 8,0M4,4V22H20V24H4A2,2 0 0,1 2,22V4H4Z"
+                        fill="white" />
+                </svg>
                 <a>Tasks</a>
             </li>
             <li>
-                <img>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25">
+                    <title>account-group</title>
+                    <path
+                        d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z"
+                        fill="White" />
+                </svg>
                 <a>Communities</a>
             </li>
         </ul>
         <ul class="secondary-nav">
             <li>
-                <img>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25">
+                    <title>cog</title>
+                    <path
+                        d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"
+                        fill="white" />
+                </svg>
                 <a>Settings</a>
             </li>
             <li>
-                <img>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25">
+                    <title>help</title>
+                    <path
+                        d="M10,19H13V22H10V19M12,2C17.35,2.22 19.68,7.62 16.5,11.67C15.67,12.67 14.33,13.33 13.67,14.17C13,15 13,16 13,17H10C10,15.33 10,13.92 10.67,12.92C11.33,11.92 12.67,11.33 13.5,10.67C15.92,8.43 15.32,5.26 12,5A3,3 0 0,0 9,8H6A6,6 0 0,1 12,2Z"
+                        fill="white" />
+                </svg>
                 <a>Support</a>
             </li>
             <li>
-                <img>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25">
+                    <title>shield-refresh</title>
+                    <path
+                        d="M18 12C19 12 20 12.2 20.9 12.7C21 12.1 21 11.6 21 11V5L12 1L3 5V11C3 16.5 6.8 21.7 12 23C12.4 22.9 12.7 22.8 13 22.7C12 21.5 11.5 20 11.5 18.5C11.5 14.9 14.4 12 18 12M18 14.5C19.1 14.5 20.1 14.9 20.8 15.7L22 14.5V18.5H18L19.8 16.7C19.3 16.3 18.7 16 18 16C16.6 16 15.5 17.1 15.5 18.5S16.6 21 18 21C18.8 21 19.5 20.6 20 20H21.7C21.1 21.5 19.7 22.5 18 22.5C15.8 22.5 14 20.7 14 18.5S15.8 14.5 18 14.5Z"
+                        fill="white" />
+                </svg>
                 <a>Privacy</a>
             </li>
         </ul>
     </aside>
     <header>
-        <button class="search-button">
-            SRCH</button>
-        <input type='text'>
-        <button class="notification">NOTI</button>
-        <button class="pfp">PFP</button>
-        <h3 class="profile-name">
-            Morgan Oakley</h3>
-        <img class="current-pfp">
-        <h5 class="greeting">Hi there,
-            <h4>Morgan Oakly (@morgan)</h4>
-        </h5>
-        <button class="new-button">New</button>
-        <button class="upload-button">
-            Upload</button>
-        <button class="share-button">
-            Share</button>
+        <div id="search">
+            <button class="search-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25">
+                    <title>magnify</title>
+                    <path
+                        d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"
+                        fill="black" />
+                </svg>
+            </button>
+            <input type='text'>
+        </div>
+        <!--  -->
+        <div id="top-right-controls">
+            <button class="notification">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" width="23">
+                    <title>notification</title>
+                    <path
+                        d="M12 20V21H10V20H8V18H14V20H12M2 15H3V14H4V6H5V4H6V3H8V2H10V1H12V2H14V3H16V4H17V6H18V14H19V15H20V17H2V15M6 15H16V7H15V5H13V4H9V5H7V7H6V15Z" />
+                </svg>
+            </button>
+            <button class="pfp">
+                <svg width="60" height="60" viewBox="-4 -4 308 308" version="1.1" xmlns="http://w3.org"
+                    xmlns:xlink="http://w3.org" xml:space="preserve"
+                    style="fill-rule:evenodd; clip-rule:evenodd; stroke-linejoin:round; stroke-miterlimit:10;">
+                    <g id="catcircle">
+                        <circle cx="154" cy="154" r="120" fill="#FFDD95" stroke="#000000" stroke-width="8"
+                            stroke-linecap="round" />
+                        <path
+                            d="M164.457,176.857C181.468,173.175,194,160.774,194,146c0-5.227-1.598-10.146-4.376-14.503C191.706,113.183,183.712,94,183.712,94 c-7.518,4.856-14.388,17.114-16.795,21.738C162.86,114.63,158.526,114,154,114s-8.86,0.63-12.917,1.738 c-2.407-4.624-9.276-16.882-16.794-21.738c0,0-7.995,19.183-5.913,37.497C115.598,135.854,114,140.773,114,146 c0,14.774,12.532,27.175,29.543,30.857C126.532,186.064,114,217.065,114,254c0,4.554,0.19,9.02,0.556,13.367 C126.91,271.664,140.182,274,154,274s27.09-2.336,39.444-6.633C193.81,263.02,194,258.554,194,254 C194,217.065,181.468,186.064,164.457,176.857z"
+                            fill="#997843" stroke="#000000" stroke-width="8" stroke-linecap="round" />
+                    </g>
+                </svg>
+            </button>
+            <p>Morgan Oakley</p>
+        </div>
+        <!--  -->
+        <div id="greeting">
+            <svg id="main-pfp" width="60" height="60" viewBox="30 30 248 248" xmlns="http://w3.org">
+                <circle cx="154" cy="154" r="120" fill="#FFDD95" stroke="#000000" stroke-width="8"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                    d="M164.457,176.857C181.468,173.175,194,160.774,194,146c0-5.227-1.598-10.146-4.376-14.503C191.706,113.183,183.712,94,183.712,94c-7.518,4.856-14.388,17.114-16.795,21.738C162.86,114.63,158.526,114,154,114s-8.86,0.63-12.917,1.738c-2.407-4.624-9.276-16.882-16.794-21.738c0,0-7.995,19.183-5.913,37.497C115.598,135.854,114,140.773,114,146c0,14.774,12.532,27.175,29.543,30.857C126.532,186.064,114,217.065,114,254c0,4.554,0.19,9.02,0.556,13.367C126.91,271.664,140.182,274,154,274s27.09-2.336,39.444-6.633C193.81,263.02,194,258.554,194,254C194,217.065,181.468,186.064,164.457,176.857z"
+                    fill="#997843" stroke="#000000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p>Hi there,</p>
+            <p id="user">Morgan Oakly (@morgan)</p>
+        </div>
+        <!--  -->
+        <div id="bottom-right-controls">
+            <button class="new-button">New</button>
+            <button class="upload-button">Upload</button>
+            <button class="share-button">Share</button>
+        </div>
     </header>
     <main>
         <div class="projects">
-            <p>Your Projects</p>
+            <p id="projects-title">Your Projects</p>
             <section>
-                <h3>Super Cool Project</h3>
-                <p>Our upcoming initiative is steadily moving from concept to reality. There has been a continuous progress for a long time.</p>
+                <p class="project-title">Super Cool Project</p>
+                <p>Our upcoming initiative is steadily moving from concept to reality. There has been a continuous
+                    progress for a long time.</p>
                 <div class="btn-control">
-                    <button>Favorite</button>
-                    <button>Watchlist</button>
-                    <button>Share</button>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height'="25"><title>star-plus-outline</title><path d="M5.8 21L7.4 14L2 9.2L9.2 8.6L12 2L14.8 8.6L22 9.2L18.8 12H18C17.3 12 16.6 12.1 15.9 12.4L18.1 10.5L13.7 10.1L12 6.1L10.3 10.1L5.9 10.5L9.2 13.4L8.2 17.7L12 15.4L12.5 15.7C12.3 16.2 12.1 16.8 12.1 17.3L5.8 21M17 14V17H14V19H17V22H19V19H22V17H19V14H17Z" /></svg></button>
+                    <button><svg xmlns="http://w3.org" viewBox="0 0 24 24" width="25" height'="25"><title>eye-plus-outline</title><path d="M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C12.36,19.5 12.72,19.5 13.08,19.45C13.03,19.13 13,18.82 13,18.5C13,18.14 13.04,17.78 13.1,17.42C12.74,17.46 12.37,17.5 12,17.5C8.24,17.5 4.83,15.36 3.18,12C4.83,8.64 8.24,6.5 12,6.5C15.76,6.5 19.17,8.64 20.82,12C20.7,12.24 20.56,12.45 20.43,12.68C21.09,12.84 21.72,13.11 22.29,13.5C22.56,13 22.8,12.5 23,12C21.27,7.61 17,4.5 12,4.5M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M18,14.5V17.5H15V19.5H18V22.5H20V19.5H23V17.5H20V14.5H18Z" /></svg></button>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height'="25"><title>share-variant-outline</title><path d="M18 16.08C17.24 16.08 16.56 16.38 16.04 16.85L8.91 12.7C8.96 12.47 9 12.24 9 12S8.96 11.53 8.91 11.3L15.96 7.19C16.5 7.69 17.21 8 18 8C19.66 8 21 6.66 21 5S19.66 2 18 2 15 3.34 15 5C15 5.24 15.04 5.47 15.09 5.7L8.04 9.81C7.5 9.31 6.79 9 6 9C4.34 9 3 10.34 3 12S4.34 15 6 15C6.79 15 7.5 14.69 8.04 14.19L15.16 18.34C15.11 18.55 15.08 18.77 15.08 19C15.08 20.61 16.39 21.91 18 21.91S20.92 20.61 20.92 19C20.92 17.39 19.61 16.08 18 16.08M18 4C18.55 4 19 4.45 19 5S18.55 6 18 6 17 5.55 17 5 17.45 4 18 4M6 13C5.45 13 5 12.55 5 12S5.45 11 6 11 7 11.45 7 12 6.55 13 6 13M18 20C17.45 20 17 19.55 17 19S17.45 18 18 18 19 18.45 19 19 18.55 20 18 20Z" /></svg></button>
                 </div>
             </section>
             <section>
-                <h3>Less Cool Project</h3>
-                <p>The future of this project is still being written, and each day adds a new chapter. Chapter 9991 today. When is this ending?</p>
+                <p class="project-title">Less Cool Project</p>
+                <p>The future of this project is still being written, and each day adds a new chapter. Chapter 9991
+                    today. When is this ending?</p>
                 <div class="btn-control">
-                    <button>Favorite</button>
-                    <button>Watchlist</button>
-                    <button>Share</button>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height'="25"><title>star-plus-outline</title><path d="M5.8 21L7.4 14L2 9.2L9.2 8.6L12 2L14.8 8.6L22 9.2L18.8 12H18C17.3 12 16.6 12.1 15.9 12.4L18.1 10.5L13.7 10.1L12 6.1L10.3 10.1L5.9 10.5L9.2 13.4L8.2 17.7L12 15.4L12.5 15.7C12.3 16.2 12.1 16.8 12.1 17.3L5.8 21M17 14V17H14V19H17V22H19V19H22V17H19V14H17Z" /></svg></button>
+                    <button><svg xmlns="http://w3.org" viewBox="0 0 24 24" width="25" height'="25"><title>eye-plus-outline</title><path d="M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C12.36,19.5 12.72,19.5 13.08,19.45C13.03,19.13 13,18.82 13,18.5C13,18.14 13.04,17.78 13.1,17.42C12.74,17.46 12.37,17.5 12,17.5C8.24,17.5 4.83,15.36 3.18,12C4.83,8.64 8.24,6.5 12,6.5C15.76,6.5 19.17,8.64 20.82,12C20.7,12.24 20.56,12.45 20.43,12.68C21.09,12.84 21.72,13.11 22.29,13.5C22.56,13 22.8,12.5 23,12C21.27,7.61 17,4.5 12,4.5M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M18,14.5V17.5H15V19.5H18V22.5H20V19.5H23V17.5H20V14.5H18Z" /></svg></button>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height'="25"><title>share-variant-outline</title><path d="M18 16.08C17.24 16.08 16.56 16.38 16.04 16.85L8.91 12.7C8.96 12.47 9 12.24 9 12S8.96 11.53 8.91 11.3L15.96 7.19C16.5 7.69 17.21 8 18 8C19.66 8 21 6.66 21 5S19.66 2 18 2 15 3.34 15 5C15 5.24 15.04 5.47 15.09 5.7L8.04 9.81C7.5 9.31 6.79 9 6 9C4.34 9 3 10.34 3 12S4.34 15 6 15C6.79 15 7.5 14.69 8.04 14.19L15.16 18.34C15.11 18.55 15.08 18.77 15.08 19C15.08 20.61 16.39 21.91 18 21.91S20.92 20.61 20.92 19C20.92 17.39 19.61 16.08 18 16.08M18 4C18.55 4 19 4.45 19 5S18.55 6 18 6 17 5.55 17 5 17.45 4 18 4M6 13C5.45 13 5 12.55 5 12S5.45 11 6 11 7 11.45 7 12 6.55 13 6 13M18 20C17.45 20 17 19.55 17 19S17.45 18 18 18 19 18.45 19 19 18.55 20 18 20Z" /></svg></button>
                 </div>
             </section>
             <section>
-                <h3>Impossible App</h3>
-                <p>Looking ahead, the roadmap outlines ambitious goals that will unfold over the coming months. Overly optimistic statements that strike inspiration.</p>
+                <p class="project-title">Impossible App</p>
+                <p>Looking ahead, the roadmap outlines ambitious goals that will unfold over the coming months. Overly
+                    optimistic statements that strike inspiration.</p>
                 <div class="btn-control">
-                    <button>Favorite</button>
-                    <button>Watchlist</button>
-                    <button>Share</button>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height'="25"><title>star-plus-outline</title><path d="M5.8 21L7.4 14L2 9.2L9.2 8.6L12 2L14.8 8.6L22 9.2L18.8 12H18C17.3 12 16.6 12.1 15.9 12.4L18.1 10.5L13.7 10.1L12 6.1L10.3 10.1L5.9 10.5L9.2 13.4L8.2 17.7L12 15.4L12.5 15.7C12.3 16.2 12.1 16.8 12.1 17.3L5.8 21M17 14V17H14V19H17V22H19V19H22V17H19V14H17Z" /></svg></button>
+                    <button><svg xmlns="http://w3.org" viewBox="0 0 24 24" width="25" height'="25"><title>eye-plus-outline</title><path d="M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C12.36,19.5 12.72,19.5 13.08,19.45C13.03,19.13 13,18.82 13,18.5C13,18.14 13.04,17.78 13.1,17.42C12.74,17.46 12.37,17.5 12,17.5C8.24,17.5 4.83,15.36 3.18,12C4.83,8.64 8.24,6.5 12,6.5C15.76,6.5 19.17,8.64 20.82,12C20.7,12.24 20.56,12.45 20.43,12.68C21.09,12.84 21.72,13.11 22.29,13.5C22.56,13 22.8,12.5 23,12C21.27,7.61 17,4.5 12,4.5M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M18,14.5V17.5H15V19.5H18V22.5H20V19.5H23V17.5H20V14.5H18Z" /></svg></button>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height'="25"><title>share-variant-outline</title><path d="M18 16.08C17.24 16.08 16.56 16.38 16.04 16.85L8.91 12.7C8.96 12.47 9 12.24 9 12S8.96 11.53 8.91 11.3L15.96 7.19C16.5 7.69 17.21 8 18 8C19.66 8 21 6.66 21 5S19.66 2 18 2 15 3.34 15 5C15 5.24 15.04 5.47 15.09 5.7L8.04 9.81C7.5 9.31 6.79 9 6 9C4.34 9 3 10.34 3 12S4.34 15 6 15C6.79 15 7.5 14.69 8.04 14.19L15.16 18.34C15.11 18.55 15.08 18.77 15.08 19C15.08 20.61 16.39 21.91 18 21.91S20.92 20.61 20.92 19C20.92 17.39 19.61 16.08 18 16.08M18 4C18.55 4 19 4.45 19 5S18.55 6 18 6 17 5.55 17 5 17.45 4 18 4M6 13C5.45 13 5 12.55 5 12S5.45 11 6 11 7 11.45 7 12 6.55 13 6 13M18 20C17.45 20 17 19.55 17 19S17.45 18 18 18 19 18.45 19 19 18.55 20 18 20Z" /></svg></button>
                 </div>
             </section>
             <section>
-                <h3>Easy Peasy App</h3>
-                <p>Collaboration lies at the heart of this ongoing effort. Bla bla bla, we all know there are more 2-3 years of development.</p>
+                <p class="project-title">Easy Peasy App</p>
+                <p>Collaboration lies at the heart of this ongoing effort. Bla bla bla, we all know there are more 2-3
+                    years of development.</p>
                 <div class="btn-control">
-                    <button>Favorite</button>
-                    <button>Watchlist</button>
-                    <button>Share</button>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height'="25"><title>star-plus-outline</title><path d="M5.8 21L7.4 14L2 9.2L9.2 8.6L12 2L14.8 8.6L22 9.2L18.8 12H18C17.3 12 16.6 12.1 15.9 12.4L18.1 10.5L13.7 10.1L12 6.1L10.3 10.1L5.9 10.5L9.2 13.4L8.2 17.7L12 15.4L12.5 15.7C12.3 16.2 12.1 16.8 12.1 17.3L5.8 21M17 14V17H14V19H17V22H19V19H22V17H19V14H17Z" /></svg></button>
+                    <button><svg xmlns="http://w3.org" viewBox="0 0 24 24" width="25" height'="25"><title>eye-plus-outline</title><path d="M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C12.36,19.5 12.72,19.5 13.08,19.45C13.03,19.13 13,18.82 13,18.5C13,18.14 13.04,17.78 13.1,17.42C12.74,17.46 12.37,17.5 12,17.5C8.24,17.5 4.83,15.36 3.18,12C4.83,8.64 8.24,6.5 12,6.5C15.76,6.5 19.17,8.64 20.82,12C20.7,12.24 20.56,12.45 20.43,12.68C21.09,12.84 21.72,13.11 22.29,13.5C22.56,13 22.8,12.5 23,12C21.27,7.61 17,4.5 12,4.5M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M18,14.5V17.5H15V19.5H18V22.5H20V19.5H23V17.5H20V14.5H18Z" /></svg></button>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height'="25"><title>share-variant-outline</title><path d="M18 16.08C17.24 16.08 16.56 16.38 16.04 16.85L8.91 12.7C8.96 12.47 9 12.24 9 12S8.96 11.53 8.91 11.3L15.96 7.19C16.5 7.69 17.21 8 18 8C19.66 8 21 6.66 21 5S19.66 2 18 2 15 3.34 15 5C15 5.24 15.04 5.47 15.09 5.7L8.04 9.81C7.5 9.31 6.79 9 6 9C4.34 9 3 10.34 3 12S4.34 15 6 15C6.79 15 7.5 14.69 8.04 14.19L15.16 18.34C15.11 18.55 15.08 18.77 15.08 19C15.08 20.61 16.39 21.91 18 21.91S20.92 20.61 20.92 19C20.92 17.39 19.61 16.08 18 16.08M18 4C18.55 4 19 4.45 19 5S18.55 6 18 6 17 5.55 17 5 17.45 4 18 4M6 13C5.45 13 5 12.55 5 12S5.45 11 6 11 7 11.45 7 12 6.55 13 6 13M18 20C17.45 20 17 19.55 17 19S17.45 18 18 18 19 18.45 19 19 18.55 20 18 20Z" /></svg></button>
                 </div>
             </section>
             <section>
-                <h3>Ad Blocker</h3>
-                <p>Momentum is building as milestones are reached one after another. I regret asking AI for writting those messages. I realize using the alphabets at least being more sincere.</p>
+                <p class="project-title">Ad Blocker</p>
+                <p>Momentum is building as milestones are reached one after another. I regret asking AI for writting
+                    those messages. I realize using the alphabets at least being more sincere.</p>
                 <div class="btn-control">
-                    <button>Favorite</button>
-                    <button>Watchlist</button>
-                    <button>Share</button>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height'="25"><title>star-plus-outline</title><path d="M5.8 21L7.4 14L2 9.2L9.2 8.6L12 2L14.8 8.6L22 9.2L18.8 12H18C17.3 12 16.6 12.1 15.9 12.4L18.1 10.5L13.7 10.1L12 6.1L10.3 10.1L5.9 10.5L9.2 13.4L8.2 17.7L12 15.4L12.5 15.7C12.3 16.2 12.1 16.8 12.1 17.3L5.8 21M17 14V17H14V19H17V22H19V19H22V17H19V14H17Z" /></svg></button>
+                    <button><svg xmlns="http://w3.org" viewBox="0 0 24 24" width="25" height'="25"><title>eye-plus-outline</title><path d="M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C12.36,19.5 12.72,19.5 13.08,19.45C13.03,19.13 13,18.82 13,18.5C13,18.14 13.04,17.78 13.1,17.42C12.74,17.46 12.37,17.5 12,17.5C8.24,17.5 4.83,15.36 3.18,12C4.83,8.64 8.24,6.5 12,6.5C15.76,6.5 19.17,8.64 20.82,12C20.7,12.24 20.56,12.45 20.43,12.68C21.09,12.84 21.72,13.11 22.29,13.5C22.56,13 22.8,12.5 23,12C21.27,7.61 17,4.5 12,4.5M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M18,14.5V17.5H15V19.5H18V22.5H20V19.5H23V17.5H20V14.5H18Z" /></svg></button>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25"><title>share-variant-outline</title><path d="M18 16.08C17.24 16.08 16.56 16.38 16.04 16.85L8.91 12.7C8.96 12.47 9 12.24 9 12S8.96 11.53 8.91 11.3L15.96 7.19C16.5 7.69 17.21 8 18 8C19.66 8 21 6.66 21 5S19.66 2 18 2 15 3.34 15 5C15 5.24 15.04 5.47 15.09 5.7L8.04 9.81C7.5 9.31 6.79 9 6 9C4.34 9 3 10.34 3 12S4.34 15 6 15C6.79 15 7.5 14.69 8.04 14.19L15.16 18.34C15.11 18.55 15.08 18.77 15.08 19C15.08 20.61 16.39 21.91 18 21.91S20.92 20.61 20.92 19C20.92 17.39 19.61 16.08 18 16.08M18 4C18.55 4 19 4.45 19 5S18.55 6 18 6 17 5.55 17 5 17.45 4 18 4M6 13C5.45 13 5 12.55 5 12S5.45 11 6 11 7 11.45 7 12 6.55 13 6 13M18 20C17.45 20 17 19.55 17 19S17.45 18 18 18 19 18.45 19 19 18.55 20 18 20Z" /></svg></button>
                 </div>
             </section>
             <section>
-                <h3>Money Maker</h3>
-                <p>The team is currently exploring new directions that will define the future of this project. And by Exploring New Directions, of course we mean endless meetings with less to no value.</p>
+                <p class="project-title">Money Maker</p>
+                <p>The team is currently exploring new directions that will define the future of this project. And by
+                    Exploring New Directions, of course we mean endless meetings with less to no value.</p>
                 <div class="btn-control">
-                    <button>Favorite</button>
-                    <button>Watchlist</button>
-                    <button>Share</button>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25"><title>star-plus-outline</title><path d="M5.8 21L7.4 14L2 9.2L9.2 8.6L12 2L14.8 8.6L22 9.2L18.8 12H18C17.3 12 16.6 12.1 15.9 12.4L18.1 10.5L13.7 10.1L12 6.1L10.3 10.1L5.9 10.5L9.2 13.4L8.2 17.7L12 15.4L12.5 15.7C12.3 16.2 12.1 16.8 12.1 17.3L5.8 21M17 14V17H14V19H17V22H19V19H22V17H19V14H17Z" /></svg></button>
+                    <button><svg xmlns="http://w3.org" viewBox="0 0 24 24" width="25" height'="25"><title>eye-plus-outline</title><path d="M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C12.36,19.5 12.72,19.5 13.08,19.45C13.03,19.13 13,18.82 13,18.5C13,18.14 13.04,17.78 13.1,17.42C12.74,17.46 12.37,17.5 12,17.5C8.24,17.5 4.83,15.36 3.18,12C4.83,8.64 8.24,6.5 12,6.5C15.76,6.5 19.17,8.64 20.82,12C20.7,12.24 20.56,12.45 20.43,12.68C21.09,12.84 21.72,13.11 22.29,13.5C22.56,13 22.8,12.5 23,12C21.27,7.61 17,4.5 12,4.5M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M18,14.5V17.5H15V19.5H18V22.5H20V19.5H23V17.5H20V14.5H18Z" /></svg></button>
+                    <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height'="25"><title>share-variant-outline</title><path d="M18 16.08C17.24 16.08 16.56 16.38 16.04 16.85L8.91 12.7C8.96 12.47 9 12.24 9 12S8.96 11.53 8.91 11.3L15.96 7.19C16.5 7.69 17.21 8 18 8C19.66 8 21 6.66 21 5S19.66 2 18 2 15 3.34 15 5C15 5.24 15.04 5.47 15.09 5.7L8.04 9.81C7.5 9.31 6.79 9 6 9C4.34 9 3 10.34 3 12S4.34 15 6 15C6.79 15 7.5 14.69 8.04 14.19L15.16 18.34C15.11 18.55 15.08 18.77 15.08 19C15.08 20.61 16.39 21.91 18 21.91S20.92 20.61 20.92 19C20.92 17.39 19.61 16.08 18 16.08M18 4C18.55 4 19 4.45 19 5S18.55 6 18 6 17 5.55 17 5 17.45 4 18 4M6 13C5.45 13 5 12.55 5 12S5.45 11 6 11 7 11.45 7 12 6.55 13 6 13M18 20C17.45 20 17 19.55 17 19S17.45 18 18 18 19 18.45 19 19 18.55 20 18 20Z" /></svg></button>
                 </div>
             </section>
         </div>
         <div class="announcements">
-            <h3>Announcements</h3>
+            <span id="anouncements-title">Announcements</span>
             <div>
                 <h3>Site Maintenance</h3>
-                <p>We’re currently performing scheduled maintenance to ensure the platform runs smoothly.</p>
+                <p>We’re currently performing scheduled maintenance...</p>
             </div>
             <div>
                 <h3>Community Share Day</h3>
-                <p>Community Share Day is an opportunity for members to showcase ideas, projects, and experiences.</p>
+                <p>Community Share Day is an opportunity for members...</p>
             </div>
             <div>
                 <h3>Updated Privacy Policy</h3>
-                <p>Our privacy policy has been refreshed to reflect new standards and practices.</p>
+                <p>Our privacy policy has been refreshed to reflect...</p>
             </div>
         </div>
         <div class="trending">
+            <span id="trending-title">Trending</span>
             <div>
-                <img>
-                <h4>@tegan</h4>
-                <p>World Piece Builder</p>
+                <svg width="50px" height="50px" viewBox="0 0 300 300" id="fishcircle" version="1.1" xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <g>
+                            <circle cx="154" cy="154" r="120"
+                                style="fill-rule:evenodd;clip-rule:evenodd;fill:#2A8EE6;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
+                            </circle>
+                            <path
+                                d="M254,130 l-35.928,20.958C203.988,129.14,173.462,114,138,114c-39.176,0-72.399,18.448-84,44c11.601,25.552,44.824,44,84,44 c35.462,0,65.988-15.14,80.072-36.958L254,186V130z"
+                                style="fill-rule:evenodd;clip-rule:evenodd;fill:#9DFB46;stroke:#000000;stroke-width:8;stroke-miterlimit:10;">
+                            </path>
+                        </g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                    </g>
+                </svg>
+                <div class="pf-container">
+                    <p>@tegan</p>
+                    <p>World Piece Builder</p>
+                </div>
             </div>
             <div>
-                <img>
-                <h4>@morgan</h4>
-                <p>Super Cool Project</p>
+                <svg width="50" height="50" viewBox="-4 -4 308 308" version="1.1" xmlns="http://w3.org"
+                    xmlns:xlink="http://w3.org" xml:space="preserve"
+                    style="fill-rule:evenodd; clip-rule:evenodd; stroke-linejoin:round; stroke-miterlimit:10;">
+                    <g id="catcircle">
+                        <circle cx="154" cy="154" r="120" fill="#FFDD95" stroke="#000000" stroke-width="8"
+                            stroke-linecap="round" />
+                        <path
+                            d="M164.457,176.857C181.468,173.175,194,160.774,194,146c0-5.227-1.598-10.146-4.376-14.503C191.706,113.183,183.712,94,183.712,94 c-7.518,4.856-14.388,17.114-16.795,21.738C162.86,114.63,158.526,114,154,114s-8.86,0.63-12.917,1.738 c-2.407-4.624-9.276-16.882-16.794-21.738c0,0-7.995,19.183-5.913,37.497C115.598,135.854,114,140.773,114,146 c0,14.774,12.532,27.175,29.543,30.857C126.532,186.064,114,217.065,114,254c0,4.554,0.19,9.02,0.556,13.367 C126.91,271.664,140.182,274,154,274s27.09-2.336,39.444-6.633C193.81,263.02,194,258.554,194,254 C194,217.065,181.468,186.064,164.457,176.857z"
+                            fill="#997843" stroke="#000000" stroke-width="8" stroke-linecap="round" />
+                    </g>
+                </svg>
+                <div class="pf-container">
+                    <p>@morgan</p>
+                    <p>Super Cool Project</p>
+                </div>
             </div>
             <div>
-                <img>
-                <h4>@Kendall</h4>
-                <p>Life Changing App</p>
+                <svg height="50px" width="50px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 508 508" xml:space="preserve"
+                    fill="#000000">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <circle style="fill:#84DBFF;" cx="254" cy="254" r="254"></circle>
+                        <g>
+                            <path style="fill:#2B3B4E;"
+                                d="M356.4,248.8c4.8,0,10-0.4,15.2-0.8c5.2-0.4,10-1.2,15.2-2c4.8-1.2,10-2.4,14.8-4 c1.2-0.4,2.4-0.8,3.6-1.6c1.2-0.4,2.4-1.2,3.6-1.6c1.2-0.8,2.4-1.2,3.2-2l3.2-2l1.2-0.8l0.4,1.2c0.4,0.8,0.8,1.6,1.2,2.4 c0.4,0.8,0.8,1.2,1.6,2c1.2,1.2,2.4,2.4,4,2.8c2.8,1.6,6.8,1.6,10,0.4c-3.2,1.6-6.8,2-10.4,0.8c-1.6-0.8-3.2-1.6-4.8-2.8 c-0.8-0.8-1.2-1.2-2-2c-0.4-0.8-1.2-1.6-1.6-2l2,0.4l-3.2,2.8c-0.8,0.8-2,1.6-3.2,2.4c-1.2,0.8-2.4,1.6-3.2,2 c-1.2,0.8-2.4,1.6-3.6,2c-4.8,2.4-9.6,4.4-14.8,6c-5.2,1.6-10.4,3.2-15.6,4c-5.2,1.2-10.4,2-16,2.8L356.4,248.8z">
+                            </path>
+                            <path style="fill:#2B3B4E;"
+                                d="M352,307.6c4.4,2,9.2,3.6,14,5.2s9.6,2.8,14.8,4c2.4,0.4,4.8,0.8,7.6,1.2c2.4,0.4,4.8,0.4,7.6,0.8 c1.2,0,2.4,0,3.6,0s2.4,0,3.6-0.4c1.2,0,2.4,0,3.6-0.4l3.6-0.8l1.6-0.4v1.2c0,0.8,0.4,1.6,0.4,2.4s0.4,1.6,0.8,2.4 c0.8,1.6,1.6,3.2,2.8,4.4c2.4,2.4,5.6,4.4,9.2,4.4c-3.6,0.4-7.2-0.8-10-3.2c-1.2-1.2-2.4-2.8-3.6-4.4c-0.4-0.8-0.8-1.6-1.2-2.8 c-0.4-0.8-0.4-1.6-0.8-2.8l1.6,0.8l-3.6,1.2c-1.2,0.4-2.4,0.8-4,0.8c-1.2,0.4-2.8,0.4-4,0.8c-1.2,0-2.8,0.4-4,0.4 c-2.8,0.4-5.2,0.4-8,0.4s-5.2,0-8-0.4c-5.2-0.4-10.4-1.2-15.6-2.4c-5.2-1.2-10.4-2-15.6-3.6L352,307.6z">
+                            </path>
+                            <path style="fill:#2B3B4E;"
+                                d="M339.6,374c3.6,3.6,7.6,6.8,11.6,10s8.4,6.4,12.8,9.2c4.4,2.8,8.8,5.2,13.6,7.6 c2.4,1.2,4.8,2,7.2,2.8c1.2,0.4,2.4,0.8,3.6,0.8l3.6,0.8l1.6,0.4v1.2c-0.4,2-0.4,3.6-0.4,5.2s0.8,3.6,1.2,5.2c1.6,3.2,4,6,7.6,7.6 c-3.6-0.8-6.8-3.6-8.4-6.8c-0.8-1.6-1.6-3.6-2-5.2c-0.4-0.8-0.4-2-0.4-2.8s0-2,0-2.8l1.2,1.2h-4c-1.2,0-2.8-0.4-4-0.4 c-2.8-0.4-5.2-1.2-8-2c-5.2-1.6-10.4-3.6-15.2-6c-4.8-2.4-9.6-5.2-14-8c-4.8-2.8-9.2-6-13.6-9.2L339.6,374z">
+                            </path>
+                            <path style="fill:#2B3B4E;"
+                                d="M151.2,258.4c-5.6-0.4-10.8-1.6-16-2.8c-5.2-1.2-10.4-2.4-15.6-4s-10-3.6-14.8-6 c-1.2-0.4-2.4-1.2-3.6-2s-2.4-1.2-3.2-2c-1.2-0.8-2.4-1.6-3.2-2.4l-3.2-2.8l2-0.4c-0.4,0.8-1.2,1.6-1.6,2c-0.8,0.8-1.2,1.6-2,2 c-1.2,1.2-2.8,2-4.8,2.8c-3.6,1.2-7.2,0.8-10.4-0.8c3.2,1.2,6.8,1.2,10-0.4c1.6-0.8,2.8-1.6,4-2.8c0.4-0.8,1.2-1.2,1.6-2 s0.8-1.6,1.2-2.4l0.4-1.2l1.2,0.8l3.2,2c1.2,0.8,2.4,1.2,3.2,2c1.2,0.8,2.4,1.2,3.6,1.6c1.2,0.4,2.4,1.2,3.6,1.6 c4.8,2,9.6,3.2,14.8,4c4.8,1.2,10,1.6,15.2,2s10.4,0.8,15.2,0.8L151.2,258.4z">
+                            </path>
+                            <path style="fill:#2B3B4E;"
+                                d="M159.2,316.8c-5.2,1.6-10.4,2.8-15.6,3.6c-5.2,0.8-10.4,2-15.6,2.4c-2.8,0.4-5.2,0.4-8,0.4 s-5.2,0-8-0.4c-1.2,0-2.8-0.4-4-0.4s-2.8-0.4-4-0.8s-2.8-0.4-4-0.8l-3.6-1.2l1.6-0.8c-0.4,0.8-0.4,1.6-0.8,2.8 c-0.4,0.8-0.8,1.6-1.2,2.8c-0.8,1.6-2,3.2-3.6,4.4c-2.8,2.4-6.4,4-10,3.2c3.6,0,6.8-1.6,9.2-4.4c1.2-1.2,2-2.8,2.8-4.4 c0.4-0.8,0.4-1.6,0.8-2.4c0-0.8,0.4-1.6,0.4-2.4v-1.2l1.6,0.4l3.6,0.8c1.2,0.4,2.4,0.4,3.6,0.4s2.4,0.4,3.6,0.4s2.4,0,3.6,0 c2.4,0,5.2-0.4,7.6-0.8s4.8-0.8,7.6-1.2c4.8-0.8,10-2.4,14.8-4s9.6-3.2,14-5.2L159.2,316.8z">
+                            </path>
+                            <path style="fill:#2B3B4E;"
+                                d="M174.8,381.6c-4.4,3.2-8.8,6.4-13.6,9.2c-4.8,2.8-9.2,5.6-14,8s-10,4.4-15.2,6c-2.4,0.8-5.2,1.6-8,2 c-1.2,0-2.8,0.4-4,0.4h-4l1.2-1.2c0,0.8,0,2,0,2.8c0,1.2-0.4,2-0.4,2.8c-0.4,2-1.2,3.6-2,5.2c-2,3.2-5.2,6-8.4,6.8 c3.6-1.2,6-4.4,7.6-7.6c0.8-1.6,1.2-3.2,1.2-5.2c0-1.6,0-3.6-0.4-5.2v-1.2l1.6-0.4l3.6-0.8c1.2-0.4,2.4-0.8,3.6-0.8 c2.4-0.8,4.8-1.6,7.2-2.8c4.8-2,9.2-4.8,13.6-7.6c4.4-2.8,8.4-6,12.8-9.2c4-3.2,8-6.8,11.6-10L174.8,381.6z">
+                            </path>
+                            <ellipse style="fill:#2B3B4E;" cx="254" cy="158" rx="69.2" ry="43.6"></ellipse>
+                        </g>
+                        <g>
+                            <ellipse style="fill:#E6E9EE;" cx="288.8" cy="129.6" rx="10.4" ry="11.2"></ellipse>
+                            <ellipse style="fill:#E6E9EE;" cx="219.2" cy="129.6" rx="10.4" ry="11.2"></ellipse>
+                        </g>
+                        <path style="fill:#F1543F;"
+                            d="M375.2,298.4c0,76-54.4,138-121.2,138s-121.2-61.6-121.2-138c0-29.6,8-57.2,22-79.6 c22-35.2,58-58.4,99.2-58.4s77.2,23.2,99.2,58.4C367.2,241.6,375.2,268.8,375.2,298.4z">
+                        </path>
+                        <path style="fill:#FF7058;"
+                            d="M375.2,298.4c0,74.8-52.4,136-118,138V222.8h-6.8V436c-65.2-2-117.6-62.8-117.6-137.6 c0-29.6,8-57.2,22-79.6c22-35.2,58-58.4,99.2-58.4s77.2,23.2,99.2,58.4C367.2,241.2,375.2,268.4,375.2,298.4z">
+                        </path>
+                        <path style="fill:#324A5E;"
+                            d="M353.2,219.2c-21.2,15.6-57.6,26-99.2,26s-78-10.4-99.2-25.6c22-35.2,58-58.4,99.2-58.4 S331.2,183.6,353.2,219.2z">
+                        </path>
+                        <g>
+                            <circle style="fill:#FFFFFF;" cx="334" cy="270" r="15.6"></circle>
+                            <circle style="fill:#FFFFFF;" cx="334" cy="343.2" r="15.6"></circle>
+                            <circle style="fill:#FFFFFF;" cx="288.8" cy="314" r="15.6"></circle>
+                            <circle style="fill:#FFFFFF;" cx="288.8" cy="387.2" r="15.6"></circle>
+                            <circle style="fill:#FFFFFF;" cx="174" cy="270" r="15.6"></circle>
+                            <circle style="fill:#FFFFFF;" cx="174" cy="343.2" r="15.6"></circle>
+                            <circle style="fill:#FFFFFF;" cx="219.2" cy="314" r="15.6"></circle>
+                            <circle style="fill:#FFFFFF;" cx="219.2" cy="387.2" r="15.6"></circle>
+                        </g>
+                        <g>
+                            <path style="fill:#2B3B4E;"
+                                d="M300.4,71.6c0,0,0,1.2,0,3.2c-0.4,2-0.4,5.2-1.2,8.4c-0.4,1.6-1.2,3.6-1.6,5.6c-0.8,2-1.6,4-2.4,6 c-2,4-4.8,8-7.6,12c-1.6,2-3.2,3.6-4.8,5.2c-1.6,1.6-3.2,3.2-5.2,4.8c-3.6,2.8-6.8,5.2-10,7.2c-2.8,2-5.6,3.2-7.6,4 s-2.8,1.2-2.8,1.2s0.8-0.8,2.4-2s4-2.8,6.8-5.2c1.2-1.2,2.8-2.4,4.4-3.6s2.8-2.8,4.4-4.4s3.2-3.2,4.4-4.8c1.6-1.6,2.8-3.6,4.4-5.2 c1.2-2,2.8-3.6,4-5.6s2.4-3.6,3.6-5.6c2-3.6,4-7.2,5.2-10.4c1.2-3.2,2.4-6,2.8-8C300.4,72.8,300.4,71.6,300.4,71.6z">
+                            </path>
+                            <path style="fill:#2B3B4E;"
+                                d="M207.6,71.6c0,0,0.4,1.2,0.8,3.2c0.4,2,1.6,4.8,2.8,8s3.2,6.8,5.2,10.4c0.8,2,2.4,3.6,3.6,5.6 c1.2,2,2.8,3.6,4,5.6c1.6,1.6,2.8,3.6,4.4,5.2c1.6,1.6,3.2,3.2,4.4,4.8c1.6,1.6,3.2,2.8,4.4,4.4c1.6,1.2,2.8,2.4,4.4,3.6 c2.8,2.4,5.2,4,6.8,5.2s2.4,2,2.4,2s-1.2-0.4-2.8-1.2c-1.6-1.2-4.8-2-7.6-4c-3.2-2-6.4-4.4-10-7.2c-1.6-1.6-3.2-3.2-5.2-4.8 c-1.6-1.6-3.2-3.6-4.8-5.2c-2.8-4-5.6-8-7.6-12c-1.2-2-2-4-2.4-6c-0.8-2-1.2-4-1.6-5.6c-0.8-3.6-1.2-6.4-1.2-8.4 C207.2,72.8,207.6,71.6,207.6,71.6z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+                <div class="pf-container">
+                    <p>@kendall</p>
+                    <p>Life Changing App</p>
+                </div>
             </div>
             <div>
-                <img>
-                <h4>@alex</h4>
-                <p>No Traffice Maker</p>
+                <svg height="50px" width="50px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 508 508" xml:space="preserve"
+                    fill="#000000">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <circle style="fill:#84DBFF;" cx="254" cy="254" r="254"></circle>
+                        <polygon style="fill:#FFFFFF;" points="416.8,246.8 375.2,434.8 133.2,434.8 91.6,246.8 254,114 ">
+                        </polygon>
+                        <path style="fill:#FF7058;"
+                            d="M454,231.6L265.6,77.2c-3.2-2.4-7.2-4-11.2-4l0,0l0,0c-4,0-8,1.6-11.2,4L54,231.6 c-8,6.4-8.8,18.8-1.2,26c6.4,6.4,16,6.8,23.2,1.6l0.4-0.4L254,114l0,0l0,0l177.2,144.8l0.4,0.4c6.8,5.2,16.8,4.8,23.2-1.6 C462.8,250.4,462,238.4,454,231.6z">
+                        </path>
+                        <path style="fill:#324A5E;"
+                            d="M313.6,434.8H194.4v-108c0-32.8,26.8-59.6,59.6-59.6l0,0c32.8,0,59.6,26.8,59.6,59.6V434.8z">
+                        </path>
+                    </g>
+                </svg>
+                <div class="pf-container">
+                    <p>@alex</p>
+                    <p>No Traffic Maker</p>
+                </div>
             </div>
         </div>
     </main>

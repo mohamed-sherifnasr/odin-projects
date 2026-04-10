@@ -105,9 +105,6 @@ form.addEventListener("submit", (event)=>{
   form.reset();
 })
 
-
-
-
 addBookToLibrary("1984", "George Orwell", "328", false);
 addBookToLibrary("To Kill a Mockingbird", "Harper Lee", "281", false);
 addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "310", false);
