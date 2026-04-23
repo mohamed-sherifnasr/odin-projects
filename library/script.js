@@ -77,7 +77,7 @@ function showBook(book){
   });
   bcontainer.appendChild(remove);
   
-  //Adds UUID as Data Attribute + Append container to card
+  //Adds UUID as Data Attribute + Appends container to card
   card.setAttribute("data-id", book.id);
   card.appendChild(bcontainer);
   //
