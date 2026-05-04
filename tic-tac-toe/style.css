@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #1a1a2e;
+    display: flex;
+    flex-direction: column;
+}
+
+#title {
+    color: #e94560;
+}
+#restart{
+    appearance: none;
+    color: #ff007f;
+    background: none;
+    border: none;
+}
+#score, #display{
+    color: #ffffff;
+}
+
+.top{
+    flex: 1;
+}
+
+.container{
+    flex: 2;
+    display: grid;
+    /* margin: 100px 150px; */
+    grid-template: repeat(3, minmax(100px, 1fr)) / repeat(3, minmax(100px, 1fr)); 
+    gap: 5px;
+    border: 1px solid black;
+    background: #16213e;
+    border-radius: 10px;
+}
+
+.container > *{
+    border: 1px solid black;
+}
