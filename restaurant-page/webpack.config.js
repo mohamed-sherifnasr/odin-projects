@@ -1,6 +1,7 @@
 // webpack.config.js
 import path from "node:path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import Module from "node:module";
 
 export default {
   mode: "development",
@@ -14,5 +15,12 @@ export default {
     new HtmlWebpackPlugin({
       template: "./src/template.html",
     }),
-  ],
+  ],  module: {
+        rules: [
+          {
+            test: /\.css$/i,
+            use: ["style-loader", "css-loader"],
+          }
+      ]
+  }
 };
