@@ -11,7 +11,7 @@ export default {
   output: {
   filename: "main.js",
   path: path.resolve(import.meta.dirname, "dist"),
-  publicPath: "/",
+  publicPath: "/odin-projects/restaurant-page/",
   clean: true,
 },
   devServer: {
