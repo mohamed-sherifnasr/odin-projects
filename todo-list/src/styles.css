@@ -1,0 +1,70 @@
+@import "normalize.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#add-button{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    padding: 30px 30px 0 30px;
+    background: #6C596E;
+}
+
+#app{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 6fr;
+    min-height: 90%;
+    height: auto;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #32021F;
+}
+
+#app > *{
+    background: #6F7D8C;
+    margin: 10px;
+}
+
+#form{
+    grid-column: 1 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+#form >*{
+    padding: 10px;
+    font-size: 1.3rem;
+    border-radius: 9px;
+}
+
+#form > input{
+    padding: 11px;
+    font-size: 1.4rem;
+}
+
+#form > label{
+    font-size: 2rem;
+}
+
+#projects-container{
+    grid-column: 1 / 2
+}
+
+#tasks-container{
+    grid-column: 2 / 4;
+}
