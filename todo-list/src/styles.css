@@ -24,7 +24,7 @@ body{
 
 #app{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr 6fr;
     min-height: 90%;
     height: auto;
@@ -67,4 +67,17 @@ body{
 
 #tasks-container{
     grid-column: 2 / 4;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+}
+
+#task-header{
+    /* display: contents */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+#task-header, .task{
+    display: contents;
 }

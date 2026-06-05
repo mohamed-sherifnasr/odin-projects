@@ -57,18 +57,20 @@ class render{
     }
     showTasks(project){
         const taskHeader = document.createElement('div');
-        taskHeader.classList.add('taskHeader');
+        taskHeader.setAttribute('id', 'task-header');
         for (const key of Object.keys(project.tasks[0])){
+                if(key == 'id') continue;
                 const subject = document.createElement('span');
                 subject.classList.add('subject');
-                subject.textContent = key + " ";
+                subject.textContent = key.charAt(0).toUpperCase() + key.slice(1);
                 taskHeader.append(subject);
         }
         this.tasksContainer.append(taskHeader);
         project.tasks.forEach((task)=>{
             const taskContainer = document.createElement('div');
             taskContainer.classList.add('task');
-            for (const value of Object.values(task)){
+            for (const [key, value]  of Object.entries(task)){
+                if (key == 'id') continue;
                 const val = document.createElement('span');
                 val.classList.add('val');
                 val.textContent = value + " ";
