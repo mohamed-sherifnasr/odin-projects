@@ -26,8 +26,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: 1fr 6fr;
-    min-height: 90%;
-    height: auto;
+    height: 90%;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #32021F;
 }
@@ -70,6 +69,8 @@ body{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     justify-items: center;
+    overflow-y: auto;
+    row-gap: 15px;
 }
 
 #task-header{
