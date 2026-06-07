@@ -169,7 +169,7 @@ c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it
 c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
 c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
 c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
-c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
+c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch') 
 c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
 c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
 c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')

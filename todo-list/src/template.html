@@ -12,10 +12,42 @@
         <form id="form">
             <label for="add-task">Enter a Task:</label>
             <input id="add-task" name="task">
-            <button id="add-button">Add Task</button>
+            <button id="add-button" type="button" commandfor="task-dialog" command="show-modal">Add Task</button>
         </form>
         <div id="projects-container"></div>
         <div id="tasks-container"></div>
     </div>
+    <dialog id="task-dialog">
+        <div class="dialog-container">
+            <h2>Enter Task Details:</h2>
+            <div class="input-container">
+                <label for="dialog-title">Title: </label>
+                <input id="dialog-title" type="text">
+            </div>
+            <div class="input-container">
+                <label for="dialog-description">Description: </label>
+                <input id="dialog-description" type="text">
+            </div>
+            <div class="input-container">
+                <label for="dialog-date">Due Date: </label>
+                <input id="dialog-date" type="date">
+            </div>
+            <fieldset class="input-container">
+                <legend>Priority: </legend>
+                <div id="radio-container">
+                    <input id="dialog-priority-low" type="radio" name="priority" value="low">
+                    <label for="dialog-priority-low">Low</label>
+                    <input id="dialog-priority-medium" type="radio" name="priority" value="medium">
+                    <label for="dialog-priority-medium">Medium</label>
+                    <input id="dialog-priority-high" type="radio" name="priority" value="high">
+                    <label for="dialog-priority-high">High</label>                    
+                </div>
+            </fieldset>
+            <div class="input-container">
+                <label for="dialog-notes">Notes: </label>
+                <textarea id="dialog-notes"></textarea>
+            </div>
+        </div>
+    </dialog>
 </body>
 </html>
