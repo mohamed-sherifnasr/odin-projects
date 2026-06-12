@@ -68,7 +68,7 @@ body{
 #tasks-container{
     grid-column: 2 / 4;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     justify-items: center;
     overflow-y: auto;
     row-gap: 15px;
@@ -89,6 +89,8 @@ dialog{
     padding: 20px;
     /* min-width: 25%;
     min-height: 45%; */
+    border: 6px solid #32021F;
+    background: whitesmoke;
 }
 
 .dialog-container{
@@ -111,6 +113,52 @@ dialog{
 input[type = "radio"], input[type = "date"]{
     text-align: center;
 }
+
+textarea{
+    resize: none;
+}
+
 #radio-container{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.radio-option > label, .input-container > label, legend{
+    font-size: 1.2rem;
+}
+
+#dialog-buttons{
+    display: flex;
+}
+
+#dialog-buttons > *{
+    flex: 1;
+    font-size: 1.3rem;
+}
+
+#close-task{
+    background: rgb(227, 0, 0);
+}
+
+#close-task:hover{
+    background: rgb(200, 1, 1);
+}
+
+.task-buttons{
+    display: flex;
+    gap: 2px;
+}
+
+.task-buttons > * {
+    padding: 5px 3px;
+    font-size: 1rem;
+}
+
+.delete-task{
+    background: rgb(227, 0, 0);
+}
+
+.delete-task:hover{
+    background: rgb(200, 1, 1);
 }

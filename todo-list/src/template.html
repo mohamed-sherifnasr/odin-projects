@@ -18,36 +18,46 @@
         <div id="tasks-container"></div>
     </div>
     <dialog id="task-dialog">
-        <div class="dialog-container">
+        <form class="dialog-container">
             <h2>Enter Task Details:</h2>
             <div class="input-container">
                 <label for="dialog-title">Title: </label>
-                <input id="dialog-title" type="text">
+                <input id="dialog-title" type="text" name="title">
             </div>
             <div class="input-container">
                 <label for="dialog-description">Description: </label>
-                <input id="dialog-description" type="text">
+                <input id="dialog-description" type="text" name="description">
             </div>
             <div class="input-container">
                 <label for="dialog-date">Due Date: </label>
-                <input id="dialog-date" type="date">
+                <input id="dialog-date" type="date" name="dueDate">
             </div>
             <fieldset class="input-container">
                 <legend>Priority: </legend>
                 <div id="radio-container">
-                    <input id="dialog-priority-low" type="radio" name="priority" value="low">
-                    <label for="dialog-priority-low">Low</label>
-                    <input id="dialog-priority-medium" type="radio" name="priority" value="medium">
-                    <label for="dialog-priority-medium">Medium</label>
-                    <input id="dialog-priority-high" type="radio" name="priority" value="high">
-                    <label for="dialog-priority-high">High</label>                    
+                    <div class="radio-option">
+                        <input id="dialog-priority-low" type="radio" name="priority" value="low">
+                        <label for="dialog-priority-low">Low</label>
+                    </div>
+                    <div class="radio-option">
+                        <input id="dialog-priority-medium" type="radio" name="priority" value="medium">
+                        <label for="dialog-priority-medium">Medium</label>    
+                    </div>
+                    <div class="radio-option">
+                        <input id="dialog-priority-high" type="radio" name="priority" value="high">
+                        <label for="dialog-priority-high">High</label>                    
+                    </div>
                 </div>
             </fieldset>
             <div class="input-container">
                 <label for="dialog-notes">Notes: </label>
-                <textarea id="dialog-notes"></textarea>
+                <textarea id="dialog-notes" name="notes"></textarea>
             </div>
-        </div>
+            <div id="dialog-buttons">
+                <button id="close-task">Close</button>
+                <button id="submit-task" type="submit">Submit</button>
+            </div>
+        </form>
     </dialog>
 </body>
 </html>
