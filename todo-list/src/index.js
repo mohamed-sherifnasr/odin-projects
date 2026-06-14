@@ -1,22 +1,22 @@
 //'HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch'
 
 class project {
-    constructor(name){
+    constructor(name) {
         this.id = crypto.randomUUID();
         this.name = name;
         this.tasks = [];
     }
-    createTask(title, description, dueDate, priority, notes){
+    createTask(title, description, dueDate, priority, notes) {
         const t = new task(title, description, dueDate, priority, notes);
         this.tasks.push(t);
     }
-    removeTask(taskId){
-        this.tasks = this.tasks.filter((t, ind) => t.id !== taskId);
+    removeTask(task) {
+        this.tasks = this.tasks.filter((t, ind) => t.id !== task.id);
     }
 }
 
 class task {
-    constructor(title, description, dueDate, priority, notes){
+    constructor(title, description, dueDate, priority, notes) {
         this.id = crypto.randomUUID();
         this.title = title;
         this.description = description;
@@ -25,18 +25,18 @@ class task {
         this.notes = notes;
         this.completed = false;
     }
-    toggle(){
+    toggle() {
         this.completed = !this.completed;
     }
-    editTitle(newTitle){this.title = newTitle}
-    editDescription(newDescription){this.description = newDescription}
-    editDueDate(newDate){this.newDate = newDate}
-    editPriority(newPriority){this.priority = newPriority}
-    editNotes(newNotes){this.notes = newNotes}
+    editTitle(newTitle) { this.title = newTitle }
+    editDescription(newDescription) { this.description = newDescription }
+    editDueDate(newDate) { this.newDate = newDate }
+    editPriority(newPriority) { this.priority = newPriority }
+    editNotes(newNotes) { this.notes = newNotes }
 }
 
-class render{
-    constructor(){
+class render {
+    constructor() {
         this.root = document.querySelector('#app');
         this.taskForm = document.querySelector('#form');
         this.addButton = document.querySelector('#add-button')
@@ -47,12 +47,13 @@ class render{
         this.closeDialog = document.querySelector('#close-task');
         this.submitDialog = document.querySelector('#submit-task');
     }
-    bindAddTask(addTaskHandler){this.addButton.addEventListener('click', addTaskHandler)}
-    bindCloseDialog(closeDialogHandler){this.closeDialog.addEventListener('click', closeDialogHandler)}
-    bindsubmitDialog(submitDialogHandler){
-        this.dialogForm.addEventListener('submit', (e)=> {submitDialogHandler(e)})}
-    showProjects(projects){
-        projects.forEach((prj)=>{
+    bindAddTask(addTaskHandler) { this.addButton.addEventListener('click', addTaskHandler) }
+    bindCloseDialog(closeDialogHandler) { this.closeDialog.addEventListener('click', closeDialogHandler) }
+    bindsubmitDialog(submitDialogHandler) {
+        this.dialogForm.addEventListener('submit', (e) => { submitDialogHandler(e) })
+    }
+    showProjects(projects) {
+        projects.forEach((prj) => {
             const frag = new DocumentFragment();
             const pj = document.createElement('p');
             pj.textContent = prj.name;
@@ -61,26 +62,26 @@ class render{
             this.projectContainer.append(frag);
         })
     }
-    showTasks(project, handleToggle, handleEdit, handleDelete){
+    showTasks(project, handleToggle, handleEdit, handleDelete) {
         this.tasksContainer.replaceChildren();
         const taskHeader = document.createElement('div');
         taskHeader.setAttribute('id', 'task-header');
-        for (const key of Object.keys(project.tasks[0])){
-                if(key == 'id') continue;
-                const subject = document.createElement('span');
-                subject.classList.add('subject');
-                subject.textContent = key.charAt(0).toUpperCase() + key.slice(1);
-                taskHeader.append(subject);
+        for (const key of Object.keys(project.tasks[0])) {
+            if (key == 'id') continue;
+            const subject = document.createElement('span');
+            subject.classList.add('subject');
+            subject.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+            taskHeader.append(subject);
         }
         const controlSubject = document.createElement('span');
         controlSubject.textContent = 'Control';
         controlSubject.classList.add('subject');
         taskHeader.append(controlSubject);
         this.tasksContainer.append(taskHeader);
-        project.tasks.forEach((task)=>{
+        project.tasks.forEach((task) => {
             const taskContainer = document.createElement('div');
             taskContainer.classList.add('task');
-            for (const [key, value]  of Object.entries(task)){
+            for (const [key, value] of Object.entries(task)) {
                 if (key == 'id') continue;
                 const val = document.createElement('span');
                 val.classList.add('val');
@@ -94,8 +95,8 @@ class render{
             const toggleBtn = document.createElement('button');
             toggleBtn.classList.add('toggle-task');
             toggleBtn.textContent = 'Toggle';
-            toggleBtn.addEventListener("click", handleToggle);
-            btnContainer.append(toggleBtn);
+            toggleBtn.addEventListener("click", (e) => handleToggle(e, task))
+            btnContainer.append(toggleBtn)
             //Edit
             const editBtn = document.createElement('button');
             editBtn.classList.add('edit-task');
@@ -110,13 +111,15 @@ class render{
             btnContainer.append(deleteBtn);
             //Append
             taskContainer.append(btnContainer);
+            taskContainer.setAttribute('data-id', task.id);
             this.tasksContainer.append(taskContainer);
         })
     }
 }
 
-class controller{
-    constructor(){
+
+class controller {
+    constructor() {
         this.projects = [new project('default')];
         this.render = new render();
         this.activeProject = this.projects[0];
@@ -125,26 +128,37 @@ class controller{
         this.render.bindCloseDialog(this.closeHandle.bind(this))
         this.render.bindsubmitDialog(this.submitHandle.bind(this))
     }
-    createProject(name){
+    createProject(name) {
         const prj = new project(name);
         this.projects.push(prj);
     }
-    addTaskHandle(){
+    addTaskHandle() {
         const taskInput = document.querySelector('#add-task');
         const dialogTitle = document.querySelector('#dialog-title');
         dialogTitle.value = taskInput.value;
     }
-    closeHandle(){
+    closeHandle() {
         this.render.dialog.close();
     }
-    submitHandle(e){
+    submitHandle(e) {
+        console.log("submitting!!!")
         e.preventDefault();
-        const values = new FormData(e.target);
+        const values = new FormData(this.render.dialogForm);
         console.log(Object.fromEntries(values));
         this.activeProject.createTask(values.get('title'), values.get('description'), values.get('dueDate'), values.get('priority'), values.get('notes'));
         this.render.showTasks(c.activeProject);
-        // this.render.dialog.close();
+        this.render.dialog.close();
     }
+    handleToggle(e, task) {
+        console.dir(this);
+        let index = this.activeProject.tasks.indexOf(task);
+        if (index !== -1) {
+            this.activeProject.tasks[index].toggle()
+            this.render.showTasks(this.projects[this.projects.indexOf(this.activeProject)], c.handleToggle.bind(this))
+        }
+    }
+    handleDelete() { }
+    handleEdit() { }
 }
 
 const c = new controller();
@@ -158,4 +172,4 @@ c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it
 c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
 c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
 c.render.showProjects(c.projects);
-c.render.showTasks(c.projects[0]);
+c.render.showTasks(c.projects[0], c.handleToggle.bind(c));
