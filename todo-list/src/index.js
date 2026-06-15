@@ -101,13 +101,16 @@ class render {
             const editBtn = document.createElement('button');
             editBtn.classList.add('edit-task');
             editBtn.textContent = 'Edit';
-            editBtn.addEventListener("click", handleEdit);
+            editBtn.addEventListener("click", (e)=> handleEdit(e, task));
+            editBtn.setAttribute("commandfor","task-dialog");
+            editBtn.setAttribute("command","show-modal");
+            editBtn.setAttribute("type","button");
             btnContainer.append(editBtn);
             //Delete
             const deleteBtn = document.createElement('button');
             deleteBtn.classList.add('delete-task');
             deleteBtn.textContent = 'Delete';
-            deleteBtn.addEventListener("click", handleDelete);
+            deleteBtn.addEventListener("click", (e)=> handleDelete(e, task));
             btnContainer.append(deleteBtn);
             //Append
             taskContainer.append(btnContainer);
@@ -128,6 +131,9 @@ class controller {
         this.render.bindCloseDialog(this.closeHandle.bind(this))
         this.render.bindsubmitDialog(this.submitHandle.bind(this))
     }
+    reRender(){
+        this.render.showTasks(this.activeProject, this.handleToggle.bind(this), this.handleEdit.bind(this), this.handleDelete.bind(this));
+    }
     createProject(name) {
         const prj = new project(name);
         this.projects.push(prj);
@@ -141,24 +147,38 @@ class controller {
         this.render.dialog.close();
     }
     submitHandle(e) {
-        console.log("submitting!!!")
         e.preventDefault();
         const values = new FormData(this.render.dialogForm);
-        console.log(Object.fromEntries(values));
         this.activeProject.createTask(values.get('title'), values.get('description'), values.get('dueDate'), values.get('priority'), values.get('notes'));
         this.render.showTasks(c.activeProject);
         this.render.dialog.close();
     }
     handleToggle(e, task) {
-        console.dir(this);
         let index = this.activeProject.tasks.indexOf(task);
         if (index !== -1) {
             this.activeProject.tasks[index].toggle()
-            this.render.showTasks(this.projects[this.projects.indexOf(this.activeProject)], c.handleToggle.bind(this))
+            this.reRender();
         }
     }
-    handleDelete() { }
-    handleEdit() { }
+    handleDelete(e, task) {
+        let index = this.activeProject.tasks.indexOf(task);
+        if (index !== -1){
+            this.activeProject.removeTask(task);
+            this.reRender();
+        }
+    }
+    handleEdit(e, task) {
+        let index = this.activeProject.tasks.indexOf(task);
+        if (index !== -1){
+            // this.activeProject.tasks[index]
+            const form = this.render.dialogForm;
+            form.elements.title.value = task.title;
+            form.elements.description.value = task.description;
+            form.elements.dueDate.value = task.dueDate;
+            document.querySelector(`[value=${task.priority}]`).checked = true;
+            form.elements.notes.value = task.notes;
+        }
+    }
 }
 
 const c = new controller();
@@ -172,4 +192,5 @@ c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it
 c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
 c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
 c.render.showProjects(c.projects);
-c.render.showTasks(c.projects[0], c.handleToggle.bind(c));
+c.reRender();
+// c.render.showTasks(c.projects[0], c.handleToggle.bind(c));
