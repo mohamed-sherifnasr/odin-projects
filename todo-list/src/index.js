@@ -50,7 +50,7 @@ class render {
     bindAddTask(addTaskHandler) { this.addButton.addEventListener('click', addTaskHandler) }
     bindCloseDialog(closeDialogHandler) { this.closeDialog.addEventListener('click', closeDialogHandler) }
     bindsubmitDialog(submitDialogHandler) {
-        this.dialogForm.addEventListener('submit', (e) => { submitDialogHandler(e) })
+        this.dialogForm.addEventListener('submit', submitDialogHandler)
     }
     showProjects(projects) {
         projects.forEach((prj) => {
@@ -101,16 +101,16 @@ class render {
             const editBtn = document.createElement('button');
             editBtn.classList.add('edit-task');
             editBtn.textContent = 'Edit';
-            editBtn.addEventListener("click", (e)=> handleEdit(e, task));
-            editBtn.setAttribute("commandfor","task-dialog");
-            editBtn.setAttribute("command","show-modal");
-            editBtn.setAttribute("type","button");
+            editBtn.addEventListener("click", (e) => handleEdit(e, task));
+            editBtn.setAttribute("commandfor", "task-dialog");
+            editBtn.setAttribute("command", "show-modal");
+            editBtn.setAttribute("type", "button");
             btnContainer.append(editBtn);
             //Delete
             const deleteBtn = document.createElement('button');
             deleteBtn.classList.add('delete-task');
             deleteBtn.textContent = 'Delete';
-            deleteBtn.addEventListener("click", (e)=> handleDelete(e, task));
+            deleteBtn.addEventListener("click", (e) => handleDelete(e, task));
             btnContainer.append(deleteBtn);
             //Append
             taskContainer.append(btnContainer);
@@ -127,11 +127,11 @@ class controller {
         this.render = new render();
         this.activeProject = this.projects[0];
 
+        this.s = this.submitHandle.bind(this);
         this.render.bindAddTask(this.addTaskHandle.bind(this))
         this.render.bindCloseDialog(this.closeHandle.bind(this))
-        this.render.bindsubmitDialog(this.submitHandle.bind(this))
     }
-    reRender(){
+    reRender() {
         this.render.showTasks(this.activeProject, this.handleToggle.bind(this), this.handleEdit.bind(this), this.handleDelete.bind(this));
     }
     createProject(name) {
@@ -142,8 +142,11 @@ class controller {
         const taskInput = document.querySelector('#add-task');
         const dialogTitle = document.querySelector('#dialog-title');
         dialogTitle.value = taskInput.value;
+        // Add Event Listener to Submit Button in the Dialog when pressing add Task
+        this.render.bindsubmitDialog(this.s)
     }
     closeHandle() {
+        this.render.dialogForm.removeEventListener("submit", this.s);
         this.render.dialog.close();
     }
     submitHandle(e) {
@@ -151,6 +154,7 @@ class controller {
         const values = new FormData(this.render.dialogForm);
         this.activeProject.createTask(values.get('title'), values.get('description'), values.get('dueDate'), values.get('priority'), values.get('notes'));
         this.render.showTasks(c.activeProject);
+        this.render.dialogForm.removeEventListener("submit", this.s);
         this.render.dialog.close();
     }
     handleToggle(e, task) {
@@ -162,22 +166,40 @@ class controller {
     }
     handleDelete(e, task) {
         let index = this.activeProject.tasks.indexOf(task);
-        if (index !== -1){
+        if (index !== -1) {
             this.activeProject.removeTask(task);
             this.reRender();
         }
     }
     handleEdit(e, task) {
         let index = this.activeProject.tasks.indexOf(task);
-        if (index !== -1){
-            // this.activeProject.tasks[index]
-            const form = this.render.dialogForm;
+        const form = this.render.dialogForm;
+        if (index !== -1) {
+            // Equate the values in the model to the view
             form.elements.title.value = task.title;
             form.elements.description.value = task.description;
             form.elements.dueDate.value = task.dueDate;
             document.querySelector(`[value=${task.priority}]`).checked = true;
             form.elements.notes.value = task.notes;
         }
+        // Add Event Listener to Edit the value upon pressing submit
+        let editTask = function(e){
+            e.preventDefault();
+            task.title = form.elements.title.value;
+            task.description = form.elements.description.value;
+            task.dueDate = form.elements.dueDate.value;
+            task.priority = form.elements.priority.value;
+            task.notes = form.elements.notes.value;
+            console.log(`Value of title now is ${task.title}`);
+            //Re-Render
+            this.reRender();
+            //Remove Event Listener
+            this.render.dialogForm.removeEventListener("submit", bindedEditTask);
+            //Close Dialog
+            this.render.dialog.close();
+        }
+        let bindedEditTask = editTask.bind(this);
+        this.render.dialogForm.addEventListener("submit", bindedEditTask, {once: true});
     }
 }
 
@@ -193,4 +215,3 @@ c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it
 c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
 c.render.showProjects(c.projects);
 c.reRender();
-// c.render.showTasks(c.projects[0], c.handleToggle.bind(c));
