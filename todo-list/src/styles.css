@@ -8,8 +8,12 @@
   padding: 0;
 }
 
-#add-button{
+*{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#add-button:hover{
+    background: rgb(213, 213, 213);
 }
 
 html{
@@ -161,4 +165,66 @@ textarea{
 
 .delete-task:hover{
     background: rgb(200, 1, 1);
+}
+
+#projects-container{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+}
+
+#projects-header{
+    display: flex;
+    margin: 0.8rem 0.2rem;
+    gap: 2px;
+}
+
+#projects-header > input{
+    border-radius: 8px;
+    padding: 0 0 0 5px;
+    font-size: 1rem;
+}
+
+#projects-header > button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    font-size: 1.1rem;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    padding: 0 2px;
+}
+
+#projects-header > button:hover{
+    background: rgb(213, 213, 213);
+}
+
+#projects-header > button::after{
+    content: "+";
+    font-style: bold;
+    font-size: 1.7rem;
+    transform: translateY(-2px);
+}
+
+.project{
+    font-size: 1.6rem;
+    font-family:Arial, Helvetica, sans-serif;
+    background: #4a3040;
+    padding: 2px 0;
+    color: #e8d5c4;
+    cursor: pointer;
+}
+
+.project:hover{
+    background: #3a2030;
+    border-left: 4px solid #8b4560;
+}
+
+#projects-list{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 }

@@ -10,20 +10,6 @@ class project {
         this.name = name;
         this.tasks = [];
     }
-    static fromJSON(data){
-        let parsifiedStorage = JSON.parse(data);
-        console.log(parsifiedStorage);
-        let parsifiedTasks = [];
-        parsifiedStorage.forEach(function(element, index){
-            console.log(element);
-            let temporaryTask = new task(element.title);
-            let instanceTask = Object.assign(temporaryTask, element);
-            parsifiedTasks.push(instanceTask);
-            console.table(`Loop #${index + 1} Element is ${element}, Finalized task to be appended is ${instanceTask}`);
-        })
-        console.log(parsifiedTasks)
-        return parsifiedTasks;
-    }
     createTask(title, description, dueDate, priority, notes) {
         const t = new task(title, description, dueDate, priority, notes);
         this.tasks.push(t);
@@ -46,10 +32,6 @@ class task {
     toggle() {
         this.completed = !this.completed;
     }
-    static fromJSON(data){
-        const t = new task(data.id);
-        Object.assign(t, data);
-    }
     editTitle(newTitle) { this.title = newTitle }
     editDescription(newDescription) { this.description = newDescription }
     editDueDate(newDate) { this.newDate = newDate }
@@ -62,24 +44,29 @@ class render {
         this.root = document.querySelector('#app');
         this.taskForm = document.querySelector('#form');
         this.addButton = document.querySelector('#add-button')
-        this.projectContainer = document.querySelector('#projects-container');
+        this.projectContainer = document.querySelector('#projects-list');
         this.tasksContainer = document.querySelector('#tasks-container');
         this.dialog = document.querySelector('#task-dialog')
         this.dialogForm = document.querySelector('.dialog-container')
         this.closeDialog = document.querySelector('#close-task');
         this.submitDialog = document.querySelector('#submit-task');
+        this.addProject = document.getElementById('add-project');
     }
     bindAddTask(addTaskHandler) { this.addButton.addEventListener('click', addTaskHandler) }
     bindCloseDialog(closeDialogHandler) { this.closeDialog.addEventListener('click', closeDialogHandler) }
     bindsubmitDialog(submitDialogHandler) {
         this.dialogForm.addEventListener('submit', submitDialogHandler)
     }
-    showProjects(projects) {
+    bindaddProject(addProjectHandler) { this.addProject.addEventListener("click", addProjectHandler) };
+    showProjects(projects, showProjectsHandler) {
+        this.projectContainer.replaceChildren();
         projects.forEach((prj) => {
             const frag = new DocumentFragment();
             const pj = document.createElement('p');
             pj.textContent = prj.name;
             pj.classList.add('project');
+            pj.setAttribute("id", prj.id)
+            pj.addEventListener("click", showProjectsHandler);
             frag.append(pj);
             this.projectContainer.append(frag);
         })
@@ -88,7 +75,8 @@ class render {
         this.tasksContainer.replaceChildren();
         const taskHeader = document.createElement('div');
         taskHeader.setAttribute('id', 'task-header');
-        if(project.tasks.length == 0) return;
+        console.log(project)
+        if (project.tasks.length == 0) return;
         for (const key of Object.keys(project.tasks[0])) {
             if (key == 'id') continue;
             const subject = document.createElement('span');
@@ -146,20 +134,46 @@ class render {
 
 class controller {
     constructor() {
-        this.projects = [new project('default')];
+        this.projects = [new project('Default')];
         this.render = new render();
         this.activeProject = this.projects[0];
 
         this.s = this.submitHandle.bind(this);
         this.render.bindAddTask(this.addTaskHandle.bind(this))
         this.render.bindCloseDialog(this.closeHandle.bind(this))
+        this.render.bindaddProject(this.addProjectHandler.bind(this));
+    }
+    fromJSON(data){
+        let parsifiedData = JSON.parse(data);
+        let parsifiedprojects = [];
+
+        //Instantiate Projects
+        parsifiedData.forEach(function(prj, index){
+            let p = new project(prj.name);
+            let parsifiedTasks = [];
+            Object.assign(p, prj);
+            
+            //Instantiate Tasks
+            p.tasks.forEach(function(tsk, index){
+                let t = new task(tsk.title);
+                Object.assign(t, tsk);
+                parsifiedTasks.push(t);
+            })
+            p.tasks = parsifiedTasks;
+            parsifiedprojects.push(p);
+        })
+        console.log(parsifiedprojects);
+        return parsifiedprojects;
     }
     reRender() {
+        this.getFromStorage.bind(this);
         this.render.showTasks(this.activeProject, this.handleToggle.bind(this), this.handleEdit.bind(this), this.handleDelete.bind(this));
+        this.render.showProjects(this.projects, this.showProjectsHandler.bind(this));
     }
     createProject(name) {
         const prj = new project(name);
         this.projects.push(prj);
+        this.reRender();
     }
     addTaskHandle() {
         const taskInput = document.querySelector('#add-task');
@@ -176,7 +190,7 @@ class controller {
         e.preventDefault();
         const values = new FormData(this.render.dialogForm);
         this.activeProject.createTask(values.get('title'), values.get('description'), values.get('dueDate'), values.get('priority'), values.get('notes'));
-        localStorage.setItem("activeProject", JSON.stringify(this.activeProject.tasks));
+        localStorage.setItem("projects", JSON.stringify(this.projects));
         this.render.dialogForm.removeEventListener("submit", this.s);
         this.render.dialog.close();
         this.reRender();
@@ -185,7 +199,7 @@ class controller {
         let index = this.activeProject.tasks.indexOf(task);
         if (index !== -1) {
             this.activeProject.tasks[index].toggle()
-            this.updateStorage(); 
+            this.updateStorage();
             this.reRender();
         }
     }
@@ -193,14 +207,13 @@ class controller {
         let index = this.activeProject.tasks.indexOf(task);
         if (index !== -1) {
             this.activeProject.removeTask(task);
-            this.updateStorage();
+            this.updateStorage()
             this.reRender();
         }
     }
     handleEdit(e, task) {
         let index = this.activeProject.tasks.indexOf(task);
         const form = this.render.dialogForm;
-        console.log("Am being used");
         if (index !== -1) {
             // Equate the values in the model to the view
             form.elements.title.value = task.title;
@@ -208,17 +221,15 @@ class controller {
             form.elements.dueDate.value = task.dueDate;
             document.querySelector(`[value=${task.priority}]`).checked = true;
             form.elements.notes.value = task.notes;
-            console.log("Inside if block");
         }
         // Add Event Listener to Edit the value upon pressing submit
-        let editTask = function(e){
+        let editTask = function (e) {
             e.preventDefault();
             task.title = form.elements.title.value;
             task.description = form.elements.description.value;
             task.dueDate = form.elements.dueDate.value;
             task.priority = form.elements.priority.value;
             task.notes = form.elements.notes.value;
-            console.log(`Value of title now is ${task.title}`);
             //Update Storage
             this.updateStorage();
             //Re-Render
@@ -229,19 +240,31 @@ class controller {
             this.render.dialog.close();
         }
         let bindedEditTask = editTask.bind(this);
-        this.render.dialogForm.addEventListener("submit", bindedEditTask, {once: true});
-        console.log("above is being called");
+        this.render.dialogForm.addEventListener("submit", bindedEditTask, { once: true });
     }
-    getFromStorage(){
+    getFromStorage() {
         let temp;
-        if (localStorage.getItem("activeProject")) {temp = project.fromJSON(localStorage.getItem("activeProject"))}; 
-        if (temp) this.activeProject.tasks = temp;
+        if (localStorage.getItem("projects")) { temp = this.fromJSON(localStorage.getItem("projects")) };
+        if (temp) this.projects = temp;
     }
-    updateStorage(){
-        localStorage.setItem("activeProject", JSON.stringify(this.activeProject.tasks));
+    updateStorage() {
+        localStorage.setItem("projects", JSON.stringify(this.projects));
+    }
+    showProjectsHandler(e) {
+        let prj = this.projects.find((element)=> element['name'] == e.target.textContent);
+        console.log(prj)
+        this.activeProject = prj;
+        this.render.showProjects(this.projects, this.showProjectsHandler.bind(this));
+        this.render.showTasks(this.activeProject, this.handleToggle.bind(this), this.handleEdit.bind(this), this.handleDelete.bind(this));
+    }
+    addProjectHandler() {
+        let name = document.getElementById("new-project-name");
+        if (name.value.length < 1) return;
+        this.createProject(name.value);
+        name.value = "";
     }
 }
-
+let x = [{}, {}]
 const c = new controller();
 
 c.getFromStorage();
