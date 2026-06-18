@@ -1,10 +1,28 @@
 //'HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch'
 
+
+//Create Project maintaining a view per project with maintaining localStorage
+//Update setItem key to match the currently active project
+
 class project {
     constructor(name) {
         this.id = crypto.randomUUID();
         this.name = name;
         this.tasks = [];
+    }
+    static fromJSON(data){
+        let parsifiedStorage = JSON.parse(data);
+        console.log(parsifiedStorage);
+        let parsifiedTasks = [];
+        parsifiedStorage.forEach(function(element, index){
+            console.log(element);
+            let temporaryTask = new task(element.title);
+            let instanceTask = Object.assign(temporaryTask, element);
+            parsifiedTasks.push(instanceTask);
+            console.table(`Loop #${index + 1} Element is ${element}, Finalized task to be appended is ${instanceTask}`);
+        })
+        console.log(parsifiedTasks)
+        return parsifiedTasks;
     }
     createTask(title, description, dueDate, priority, notes) {
         const t = new task(title, description, dueDate, priority, notes);
@@ -27,6 +45,10 @@ class task {
     }
     toggle() {
         this.completed = !this.completed;
+    }
+    static fromJSON(data){
+        const t = new task(data.id);
+        Object.assign(t, data);
     }
     editTitle(newTitle) { this.title = newTitle }
     editDescription(newDescription) { this.description = newDescription }
@@ -154,6 +176,7 @@ class controller {
         e.preventDefault();
         const values = new FormData(this.render.dialogForm);
         this.activeProject.createTask(values.get('title'), values.get('description'), values.get('dueDate'), values.get('priority'), values.get('notes'));
+        localStorage.setItem("activeProject", JSON.stringify(this.activeProject.tasks));
         this.render.dialogForm.removeEventListener("submit", this.s);
         this.render.dialog.close();
         this.reRender();
@@ -162,6 +185,7 @@ class controller {
         let index = this.activeProject.tasks.indexOf(task);
         if (index !== -1) {
             this.activeProject.tasks[index].toggle()
+            this.updateStorage(); 
             this.reRender();
         }
     }
@@ -169,6 +193,7 @@ class controller {
         let index = this.activeProject.tasks.indexOf(task);
         if (index !== -1) {
             this.activeProject.removeTask(task);
+            this.updateStorage();
             this.reRender();
         }
     }
@@ -194,6 +219,8 @@ class controller {
             task.priority = form.elements.priority.value;
             task.notes = form.elements.notes.value;
             console.log(`Value of title now is ${task.title}`);
+            //Update Storage
+            this.updateStorage();
             //Re-Render
             this.reRender();
             //Remove Event Listener
@@ -205,9 +232,17 @@ class controller {
         this.render.dialogForm.addEventListener("submit", bindedEditTask, {once: true});
         console.log("above is being called");
     }
+    getFromStorage(){
+        let temp;
+        if (localStorage.getItem("activeProject")) {temp = project.fromJSON(localStorage.getItem("activeProject"))}; 
+        if (temp) this.activeProject.tasks = temp;
+    }
+    updateStorage(){
+        localStorage.setItem("activeProject", JSON.stringify(this.activeProject.tasks));
+    }
 }
 
 const c = new controller();
 
-
+c.getFromStorage();
 c.reRender();
