@@ -66,6 +66,7 @@ class render {
         this.tasksContainer.replaceChildren();
         const taskHeader = document.createElement('div');
         taskHeader.setAttribute('id', 'task-header');
+        if(project.tasks.length == 0) return;
         for (const key of Object.keys(project.tasks[0])) {
             if (key == 'id') continue;
             const subject = document.createElement('span');
@@ -153,9 +154,9 @@ class controller {
         e.preventDefault();
         const values = new FormData(this.render.dialogForm);
         this.activeProject.createTask(values.get('title'), values.get('description'), values.get('dueDate'), values.get('priority'), values.get('notes'));
-        this.render.showTasks(c.activeProject);
         this.render.dialogForm.removeEventListener("submit", this.s);
         this.render.dialog.close();
+        this.reRender();
     }
     handleToggle(e, task) {
         let index = this.activeProject.tasks.indexOf(task);
@@ -174,6 +175,7 @@ class controller {
     handleEdit(e, task) {
         let index = this.activeProject.tasks.indexOf(task);
         const form = this.render.dialogForm;
+        console.log("Am being used");
         if (index !== -1) {
             // Equate the values in the model to the view
             form.elements.title.value = task.title;
@@ -181,6 +183,7 @@ class controller {
             form.elements.dueDate.value = task.dueDate;
             document.querySelector(`[value=${task.priority}]`).checked = true;
             form.elements.notes.value = task.notes;
+            console.log("Inside if block");
         }
         // Add Event Listener to Edit the value upon pressing submit
         let editTask = function(e){
@@ -200,18 +203,11 @@ class controller {
         }
         let bindedEditTask = editTask.bind(this);
         this.render.dialogForm.addEventListener("submit", bindedEditTask, {once: true});
+        console.log("above is being called");
     }
 }
 
 const c = new controller();
 
-c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
-c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
-c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
-c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
-c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
-c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
-c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
-c.projects[0].createTask('HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch')
-c.render.showProjects(c.projects);
+
 c.reRender();
