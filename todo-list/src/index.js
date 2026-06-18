@@ -1,3 +1,4 @@
+import "./styles.css";
 //'HomeWork', 'Math Homework', '1/6/2026', 'high', 'Do it before lunch'
 
 

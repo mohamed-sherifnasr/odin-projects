@@ -4,14 +4,14 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import Module from "node:module";
 
 export default {
-  mode: "production",
+  mode: "development",
 
   entry: "./src/index.js",
 
   output: {
   filename: "main.js",
   path: path.resolve(import.meta.dirname, "dist"),
-  publicPath: "/odin-projects/restaurant-page/",
+  publicPath: "/odin-projects/todo-list",
   clean: true,
 },
   devServer: {
