@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+    <script defer src="./index.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+<script defer src="/odin-projects/todo-list/main.js"></script></head>
+<body>
+    <div id="app">
+        <form id="form">
+            <label for="add-task">Enter a Task:</label>
+            <input id="add-task" name="task">
+            <button id="add-button" type="button" commandfor="task-dialog" command="show-modal">Add Task</button>
+        </form>
+        <div id="projects-container">
+            <div id="projects-header">
+                <input id="new-project-name" placeholder="Add Project Name"></input>
+                <button id="add-project">Add</button>
+            </div>
+            <div id="projects-list">
+
+            </div>
+        </div>
+        <div id="tasks-container"></div>
+    </div>
+    <dialog id="task-dialog">
+        <form class="dialog-container">
+            <h2>Enter Task Details:</h2>
+            <div class="input-container">
+                <label for="dialog-title">Title: </label>
+                <input id="dialog-title" type="text" name="title" required>
+            </div>
+            <div class="input-container">
+                <label for="dialog-description">Description: </label>
+                <input id="dialog-description" type="text" name="description" required>
+            </div>
+            <div class="input-container">
+                <label for="dialog-date">Due Date: </label>
+                <input id="dialog-date" type="date" name="dueDate">
+            </div>
+            <fieldset class="input-container">
+                <legend>Priority: </legend>
+                <div id="radio-container">
+                    <div class="radio-option">
+                        <input id="dialog-priority-low" type="radio" name="priority" value="low">
+                        <label for="dialog-priority-low">Low</label>
+                    </div>
+                    <div class="radio-option">
+                        <input id="dialog-priority-medium" type="radio" name="priority" value="medium">
+                        <label for="dialog-priority-medium">Medium</label>    
+                    </div>
+                    <div class="radio-option">
+                        <input id="dialog-priority-high" type="radio" name="priority" value="high" required>
+                        <label for="dialog-priority-high">High</label>                    
+                    </div>
+                </div>
+            </fieldset>
+            <div class="input-container">
+                <label for="dialog-notes">Notes: </label>
+                <textarea id="dialog-notes" name="notes"></textarea>
+            </div>
+            <div id="dialog-buttons">
+                <button id="close-task" type="button">Close</button>
+                <button id="submit-task" type="submit">Submit</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+</html>
