@@ -1,3 +1,9 @@
+//References
+let authorElement = document.querySelector("#author");
+let titleElement = document.querySelector("#title");
+let pagesElement = document.querySelector("#pages");
+let readElement = document.querySelector("#read");
+
 class Book{
   //Constructor
   constructor(title, author, pages, read){
@@ -93,10 +99,17 @@ let theLibrary = new Library();
 form = document.querySelector("#form");
 form.addEventListener("submit", (event)=>{
   event.preventDefault();
-  formData = new FormData(form);
-  theLibrary.addBookToLibrary(new Book(formData.get("title"), formData.get("author"), formData.get("pages"), formData.get("read")));
-  theLibrary.showBook(theLibrary.myLibrary.at(-1));
-  form.reset();
+  if (authorElement.validity.valueMissing){authorElement.setCustomValidity("Author name is Missing!"); authorElement.reportValidity();} else {authorElement.setCustomValidity("");}
+  if (titleElement.validity.valueMissing){titleElement.setCustomValidity("Title is Missing!"); titleElement.reportValidity();} else {titleElement.setCustomValidity("");}
+  if (pagesElement.validity.valueMissing){pagesElement.setCustomValidity("Pages number is Missing!"); pagesElement.reportValidity();} else {pagesElement.setCustomValidity("");}
+  if (readElement.validity.valueMissing){readElement.setCustomValidity("read value is Missing!"); readElement.reportValidity();} else {readElement.setCustomValidity("");}
+
+  if (!authorElement.validity.valueMissing && !titleElement.validity.valueMissing && !pagesElement.validity.valueMissing && !readElement.validity.valueMissing){
+    formData = new FormData(form);
+    theLibrary.addBookToLibrary(new Book(formData.get("title"), formData.get("author"), formData.get("pages"), formData.get("read")));
+    theLibrary.showBook(theLibrary.myLibrary.at(-1));
+    form.reset();
+  }
 })
 
 theLibrary.addBookToLibrary(new Book("1984", "George Orwell", "328", false));

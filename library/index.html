@@ -13,29 +13,29 @@
   <button id="add-book" command="show-modal" commandfor="my-dialog">Add Book</button>
   <dialog id="my-dialog">
     <h4>Enter New Book Details:</h4>
-    <form id="form">
+    <form id="form" novalidate>
       <p>
         <label for="title">Title:</label>
-        <input id="title" type="text" name="title">
+        <input id="title" type="text" name="title" required>
       </p>
       <p>
         <label for="author">Author:</label>
-        <input id="author" type="text" name="author">
+        <input id="author" type="text" name="author" required>
       </p>
       <p>
         <label for="pages">Pages:</label>
-        <input id="pages" type="number" min="1" name="pages">
+        <input id="pages" type="number" min="1" name="pages" required>
       </p>
       <p>
       <fieldset>
         <legend>Has been read:</legend>
         <div class="rcontainer">
           <div class="radio-option">
-            <input name="read" id="read" type="radio" value="true">
+            <input name="read" id="read" type="radio" value="true" required>
             <label for="read">Yes</label>
           </div>
           <div class="radio-option">
-            <input name="read" id="not-read" type="radio" value="false">
+            <input name="read" id="not-read" type="radio" value="false" required>
             <label for="not-read">No</label>
           </div>
         </div>
@@ -44,7 +44,7 @@
     </form>
     <div class="btncontainer">
       <button id="close-form" commandfor="my-dialog" command="close">Close</button>
-      <button id="add" form="form">Add</button>
+      <button id="add" form="form" type="submit">Add</button>
     </div>
   </dialog>
   <div id="library"></div>
