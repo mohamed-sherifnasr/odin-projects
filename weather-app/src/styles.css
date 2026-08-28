@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+}
+
+html, body{
+    height: 100vh;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mainContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.headerContainer{
+    display: flex;
+    margin: 25px;
+    padding-bottom: 30px;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex: 1;
+    gap: 15px;
+    font-family:Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid black;
+}
+
+#mainSearchContainer{
+    display: flex;
+}
+
+#mainSearch{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 12px 10px;
+    font-size: 21px;
+}
+
+#mainSearchBtn{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#mainSearchBtn > svg{
+    padding: 0 15px 0 10px; 
+}
