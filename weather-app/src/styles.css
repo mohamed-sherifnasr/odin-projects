@@ -13,6 +13,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(237, 237, 237);
 }
 
 /* Prevents SVG Icons containers from taking up space */
@@ -78,4 +79,88 @@ body{
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
 
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+/* Quick Data Component */
+#quickRenderContainer{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    background-color: skyblue;
+    padding: 10px 20px 0 0;
+}
+/* 1-of-3 */
+#tempContainer{
+    display:flex;
+    align-items: flex-start;
+}
+#primaryTemp{
+    font-size: 3.1rem;
+    padding-right: 15px;
+}
+#tempButtonsContainer{
+    display: flex;
+    gap: 3px;
+}
+.divide{
+    font-size: 1.5rem;
+    padding-left: 4px;
+}
+.toggleUnit{
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    font-size: 1.6rem;
+}
+
+#tempContainer button:nth-of-type(2){
+}
+
+.toggleUnit:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+/* 2-of-3 */
+#humContainer{
+    padding: 0 10px;
+    border-left: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    /* align-self: center; */
+    gap: 5px;
+}
+.metric{
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* 3-of-3 */
+#locContainer{
+    display: flex;
+    flex-direction: column;
+}
+#location{
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+#location::first-letter{
+    text-transform: capitalize;
+}
+#location::before{
+    content: "●";
+    font-size: 1.2rem;
+    font-weight: 700;
+    color:rgb(214, 139, 1);
+    vertical-align: middle;
+    margin-right: 8px;
+}
+#condition{
+    font-size: 1.1rem;
 }
