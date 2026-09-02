@@ -27,20 +27,22 @@ const winDirTranslate = function(deg){
     let dir;
     console.log(deg);
     console.log("condition: ? ", 90 < deg < 180)
-    deg == 0? dir = 'North': 90 > deg > 0? dir = 'Northern East': deg == 90? 'East': 90 < deg < 180? dir = 'Southern East': deg == 180? dir = 'South': 180 < deg < 270? dir = 'South West': deg == 270? dir = 'West': 270 < deg < 360? dir = 'North West': dir = 'Error';
+    deg == 0? dir = 'n': 90 > deg > 0? dir = 'ne': deg == 90? 'e': 90 < deg < 180? dir = 'se': deg == 180? dir = 's': 180 < deg < 270? dir = 'sw': deg == 270? dir = 'w': 270 < deg < 360? dir = 'nw': dir = 'err';
     return dir;
 }
 
 const fahrToCelsius = function(deg){
     return (deg - 32 * (5/9)).toFixed();
 }
-const createIcon = function(iconId, cls = null, width = 50, height = 50){
+const createIcon = function(iconId, cls = null, id = null, width = 50, height = 50){
     //Define SVG Namespace
     const svgNS = "http://www.w3.org/2000/svg";
     //Creates SVG container element
     const svg = document.createElementNS(svgNS, "svg");
     //Adds a class name if provided
     if (cls) svg.classList.add(cls);
+    //Adds an ID if provided
+    if (id) svg.setAttribute("id", id);
     //Set Dimension constraints
     svg.style.width = width +'px';
     svg.style.height = height +'px';
@@ -156,16 +158,17 @@ const renderQuickData = function(data){
     const container = document.createElement("section");
     //1-of-3 element (Tempreture + IMG + Cels/Fahr)
     const tempContainer = document.createElement("div");
-    const conditionSVG = createIcon(icons[data.icon], undefined, 100, 100);
+    const conditionSVG = createIcon(icons[data.icon], undefined, "PrimarySVG", 120, 120);
     console.log("Here!");
     const temp = document.createElement("span");
+    const tempButtonsContainer = document.createElement("div");
     const celsius = document.createElement("button");
     const fahrenheit = document.createElement("button");
+    const divider = document.createElement("span");
     //2-of-3 element (UV Index + Humidity + Wind Speed + Wind Direction)
     const humContainer = document.createElement("div");
     const humidity = document.createElement("span");
-    const windSpeed = document.createElement("span");
-    const windDirection = document.createElement("span");
+    const wind = document.createElement("span");
     const uvIndex = document.createElement("span");
     //3-of-3 element (Location + Condition)
     const locContainer = document.createElement("div");
@@ -173,28 +176,44 @@ const renderQuickData = function(data){
     const condition = document.createElement("p");
 
     //style
-    console.log("true");
+    container.setAttribute("id", "quickRenderContainer");
 
+    tempContainer.setAttribute("id", "tempContainer");
+    temp.setAttribute("id", "primaryTemp");
+    tempButtonsContainer.setAttribute("id", "tempButtonsContainer");
+    celsius.classList.add("toggleUnit");
+    fahrenheit.classList.add("toggleUnit");
+    divider.classList.add('divide');
+    
+    humContainer.setAttribute("id", "humContainer");
+    humidity.classList.add("metric");
+    wind.classList.add("metric");
+    uvIndex.classList.add("metric");
+
+    locContainer.setAttribute("id", "locContainer");
+    location.setAttribute("id", "location");
+    condition.setAttribute("id", "condition");
 
     //inject data
     //1-of-3
     temp.textContent = data.temp;
     celsius.textContent = '°C';
     fahrenheit.textContent = '°F';
+    divider.textContent = "|";
     //2-of-3
-    humidity.textContent = data.humidity;
-    windSpeed.textContent = data.windspeed;
-    windDirection.textContent = data.winddir + "° deg " + winDirTranslate(data.winddir);
-    uvIndex.textContent = data.uvindex;
+    humidity.textContent = "Humidity: " + data.humidity + "%";
+    wind.textContent = "Wind: " + data.windspeed + " km/h"+ " "+ winDirTranslate(data.winddir);
+    uvIndex.textContent = "UV Index: " + data.uvindex;
     //3-of-3
-    location.textContent = data.location;
-    condition.textContent = data.description;
+    location.textContent = data.location.split(',')[0];
+    condition.textContent =  data.description;
 
     //Append
     // 1-of-3
-    tempContainer.append(conditionSVG, temp, celsius, fahrenheit);
+    tempButtonsContainer.append(celsius, divider, fahrenheit)
+    tempContainer.append(conditionSVG, temp, tempButtonsContainer);
     //2-of-3
-    humContainer.append(humidity, windSpeed, windDirection, uvIndex);
+    humContainer.append(humidity, wind, uvIndex);
     //3-of-3
     locContainer.append(location, condition);
     //Append to primary container
@@ -217,8 +236,10 @@ const renderContent = function (data = null){
     //Instantiate Page Components
     let header = renderHeader();
     let quick = renderQuickData(data);
+    let main = document.createElement("main");
     //Re-Draw Screen
-    document.body.replaceChildren(header, quick);
+    main.append(header, quick);
+    document.body.replaceChildren(main);
     //Tiny Fixes
     document.body.style.alignItems = "flex-start";
 }
