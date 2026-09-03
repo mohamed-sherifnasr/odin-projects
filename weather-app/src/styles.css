@@ -16,6 +16,11 @@ body{
     background-color: rgb(237, 237, 237);
 }
 
+main{
+    margin: 0 15%;
+    flex: 1;
+}
+
 /* Prevents SVG Icons containers from taking up space */
 .containSVG{
     width: 1.75rem;
@@ -35,12 +40,12 @@ body{
 
 .headerContainer{
     display: flex;
-    margin: 20px 10%;
+    margin: 20px 5%;
     padding-bottom: 20px;
     justify-content: space-between;
     align-items: center;
     flex: 1;
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     font-family:Arial, Helvetica, sans-serif;
     border-bottom: 1px solid black;
 }
@@ -55,7 +60,7 @@ body{
     border-top-left-radius: 18px;
     border-bottom-left-radius: 18px;
     padding: 12px 10px;
-    font-size: 21px;
+    font-size: 1.5rem;
 }
 
 /* //Tinker */
@@ -63,8 +68,8 @@ body{
     border: 1px solid black;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    padding: 8px 15px;
-    font-size: 1.5rem;
+    padding: 3px 15px;
+    font-size: 1rem;
 }
 
 #mainSearchBtn{
@@ -91,21 +96,31 @@ main{
 #quickRenderContainer{
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 30px;
     background-color: skyblue;
-    padding: 10px 20px 0 0;
+    padding: 10px 0 0 0;
 }
 /* 1-of-3 */
 #tempContainer{
     display:flex;
     align-items: flex-start;
 }
+#primarySVG{
+    /* padding: 0 10px; */
+    display: flex;
+    text-align: center;
+}
+use{
+    width: 100%;
+    height: 100%;
+}
 #primaryTemp{
     font-size: 3.1rem;
-    padding-right: 15px;
+    /* padding-right: 15px; */
 }
 #tempButtonsContainer{
+    margin-left: 15px;
     display: flex;
     gap: 3px;
 }
@@ -119,13 +134,15 @@ main{
     border: none;
     font-size: 1.6rem;
 }
-
-#tempContainer button:nth-of-type(2){
+.toggled{
+    color: rgb(210, 130, 0);
 }
-
-.toggleUnit:hover{
+.toggleUnit{
     cursor: pointer;
-    transform: scale(1.1);
+}
+.unToggledUnit:hover{
+    transform: scale(1.2);
+    color: rgb(210, 130, 0);
 }
 /* 2-of-3 */
 #humContainer{
@@ -140,11 +157,11 @@ main{
     font-weight: 700;
     font-size: 1rem;
 }
-
 /* 3-of-3 */
 #locContainer{
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 #location{
     font-weight: 700;
@@ -163,4 +180,28 @@ main{
 }
 #condition{
     font-size: 1.1rem;
+    font-style: italic;
+    text-wrap: wrap;
+    max-width: 35ch;
+}
+
+/*Secondary Data Component*/
+.secondaryDataContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid black;
+}
+.secondaryDataElementContainer{
+    margin-top: 10px;
+    text-align: center;
+    flex: 1 1 33%;
+}
+.secondaryDataTitle{
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 0.9rem;
+}
+.secondaryDataValue{
+    font-size: 1.4rem;
 }
