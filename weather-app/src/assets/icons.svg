@@ -1,50 +1,284 @@
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo1YmJlNGY1MC1kMTlkLTQxODEtYjk1OC04OGM4NDY0MjhkMzYAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaFQDG8YqL4UhdF7JrSfziPkAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpjYjllYTZlNC0yYzA0LTQxMjktOWM5MC05MjY0MzE5NjE3ZWNscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoIC/i3rFhQ3SJyD4WWEHezwAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggnS/mCM3TsEsnGrnrl1XeWr2egtTkx+C2+S5G0arsU2SkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaDJnz7UqSnf+nq0O0yg6p5MAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCC/5hW2XmI8X36ZBgytFZS94nHH9hkgtcJjyIsb+VfbVmRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBh+Zmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjViYmU0ZjUwLWQxOWQtNDE4MS1iOTU4LTg4Yzg0NjQyOGQzNi9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmJiMjBjNDM5LWRlMjgtNDBiOC04ZTkwLTYzNjJiZDIxNjZkNHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCCdL+YIzdOwSycaueuXVd5avZ6C1OTH4Lb5LkbRquxTZKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggfWkKXd4ldBNryXLuJgB44izayq/nhkxQg0O8LSrjP3eiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggXli4as6u1ApvZnwPC3uJ+3tarASNyswR7bv/OaeYlc10Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQK/d7sQyHNBr4nivTtqAvYPG4ByPD7x+PXltnkHa94fsmLMTCtCmBmQQLwRS1pv4g5ULMuqpWUswdytshtxLgcM=</c2pa:manifest></metadata>
+    <!--Assets Icons-->
     <!-- Search Icon -->
-    <symbol id="searchSVG" viewBox="0 0 24 24">
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-        <g id="SVGRepo_iconCarrier"> 
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M15 10.5C15 12.9853 12.9853 15 10.5 15C8.01472 15 6 12.9853 6 10.5C6 8.01472 8.01472 6 10.5 6C12.9853 6 15 8.01472 15 10.5ZM14.1793 15.2399C13.1632 16.0297 11.8865 16.5 10.5 16.5C7.18629 16.5 4.5 13.8137 4.5 10.5C4.5 7.18629 7.18629 4.5 10.5 4.5C13.8137 4.5 16.5 7.18629 16.5 10.5C16.5 11.8865 16.0297 13.1632 15.2399 14.1792L20.0304 18.9697L18.9697 20.0303L14.1793 15.2399Z" fill="#080341"></path> 
+    <symbol id="searchSVG" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(-14.6636 -14.6636) scale(5.272634)"><g id="searchSVG__SVGRepo_bgCarrier" stroke-width="0"/>
+        <g id="searchSVG__SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+        <g id="searchSVG__SVGRepo_iconCarrier"> 
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15 10.5C15 12.9853 12.9853 15 10.5 15C8.01472 15 6 12.9853 6 10.5C6 8.01472 8.01472 6 10.5 6C12.9853 6 15 8.01472 15 10.5ZM14.1793 15.2399C13.1632 16.0297 11.8865 16.5 10.5 16.5C7.18629 16.5 4.5 13.8137 4.5 10.5C4.5 7.18629 7.18629 4.5 10.5 4.5C13.8137 4.5 16.5 7.18629 16.5 10.5C16.5 11.8865 16.0297 13.1632 15.2399 14.1792L20.0304 18.9697L18.9697 20.0303L14.1793 15.2399Z" fill="#080341"/> 
         </g>
-    </symbol>
+    </g></symbol>
+    <!-- Weather Icons -->
     <!-- Clear Day Icon -->
-    <symbol id="clearDaySVG" viewBox="0 0 384 384">
-        <defs>
-            <linearGradient id="SVGeq4GoeLw" x1="150" x2="234" y1="119.2" y2="264.8" gradientUnits="userSpaceOnUse">
+    <symbol id="clearDaySVG" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(9.0000 9.0000) scale(0.213542)"><defs>
+            <linearGradient id="clearDaySVG__SVGeq4GoeLw" x1="150" x2="234" y1="119.2" y2="264.8" gradientUnits="userSpaceOnUse">
                 <stop offset="0" stop-color="#fbbf24"/>
                 <stop offset=".5" stop-color="#fbbf24"/>
                 <stop offset="1" stop-color="#f59e0b"/>
             </linearGradient>
         </defs>
-        <circle cx="192" cy="192" r="84" fill="url(#SVGeq4GoeLw)" stroke="#f8af18" stroke-miterlimit="10" stroke-width="6"/>
+        <circle cx="192" cy="192" r="84" fill="url(#clearDaySVG__SVGeq4GoeLw)" stroke="#f8af18" stroke-miterlimit="10" stroke-width="6"/>
         <path fill="none" stroke="#fbbf24" stroke-linecap="round" stroke-miterlimit="10" stroke-width="24" d="M192 61.7V12m0 360v-49.7m92.2-222.5l35-35M64.8 319.2l35.1-35.1m0-184.4l-35-35m254.5 254.5l-35.1-35.1M61.7 192H12m360 0h-49.7" transform="rotate(45 192 192)"/>
-    </symbol>
-    <!-- Partially Cloudy Day Icon -->
-    <symbol id ="partlyCloudyDaySVG" viewBox="0 0 512 512">
-        <path d="M0 0h512v512H0z" fill="none" />
-        <defs>
-            <symbol id="SVGnoI23bPp" viewBox="0 0 196 196">
-                <circle cx="98" cy="98" r="40" fill="url(#SVG9IEgDxri)" stroke="#f8af18" stroke-miterlimit="10" stroke-width="4" />
-                <path fill="none" stroke="#fbbf24" stroke-linecap="round" stroke-miterlimit="10" stroke-width="12" d="M98 31.4V6m0 184v-25.4M145.1 51l18-17.9M33 163l18-17.9M51 51L33 33m130.1 130.1l-18-18M6 98h25.4M190 98h-25.4" transform="rotate(45 98 98)" />
-            </symbol>
-            <symbol id="SVGMnBDAb4I" viewBox="0 0 350 222">
-                <path fill="url(#SVGMeEfudbH)" stroke="#e6effc" stroke-miterlimit="10" stroke-width="6" d="m291 107l-2.5.1A83.9 83.9 0 0 0 135.6 43A56 56 0 0 0 51 91a56.6 56.6 0 0 0 .8 9A60 60 0 0 0 63 219l4-.2v.2h224a56 56 0 0 0 0-112Z" />
-            </symbol>
-            <symbol id="SVGpSsklbqg" viewBox="0 0 363 258">
-                <use width="196" height="196" href="#SVGnoI23bPp" />
-                <use width="350" height="222" href="#SVGMnBDAb4I" transform="translate(13 36)" />
-            </symbol>
-            <linearGradient id="SVGMeEfudbH" x1="99.5" x2="232.6" y1="30.7" y2="261.4" gradientUnits="userSpaceOnUse">
-                <stop offset="0" stop-color="#f3f7fe" />
-                <stop offset=".5" stop-color="#f3f7fe" />
-                <stop offset="1" stop-color="#deeafb" />
+    </g></symbol>
+    <!-- Clear Night Icon -->
+    <symbol id="clearNightSVG" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(-29.0153 -29.6437) scale(0.306813)"><defs>
+            <linearGradient id="clearNightSVG__SVGpS2jccQh" x1="54.3" x2="187.2" y1="29" y2="259.1" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#fff925"/>
+                <stop offset=".5" stop-color="#fff925"/>
+                <stop offset="1" stop-color="#bab862"/>
             </linearGradient>
-            <linearGradient id="SVG9IEgDxri" x1="78" x2="118" y1="63.4" y2="132.7" gradientUnits="userSpaceOnUse">
-                <stop offset="0" stop-color="#fbbf24" />
-                <stop offset=".5" stop-color="#fbbf24" />
-                <stop offset="1" stop-color="#f59e0b" />
+            <symbol id="clearNightSVG__SVG7sC0PeQg" viewBox="0 0 270 270">
+                <path fill="url(#clearNightSVG__SVGpS2jccQh)" stroke="#fff911" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" d="M252.3 168.6A133.4 133.4 0 0 1 118 36.2A130.5 130.5 0 0 1 122.5 3A133 133 0 0 0 3 134.6C3 207.7 63 267 137.2 267c62.5 0 114.8-42.2 129.8-99.2a135.6 135.6 0 0 1-14.8.8Z" transform="rotate(-15 135 135)"/>
+            </symbol>
+        </defs>
+        <use width="270" height="270" href="#clearNightSVG__SVG7sC0PeQg" transform="translate(121 121)"/>
+    </g></symbol>
+    <!-- Snowy Icon -->
+    <symbol id="snowySVG" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(5.7689 6.8168) scale(0.682242)"><path fill="#E4EAEE" d="M108.55 45.69s1.97-34.42-27.94-38.86C53.72 2.85 48.44 28.38 48.44 28.38s-9.52-2.44-16.82 4.08C24.36 38.93 25 46.11 25 46.11S6.84 44.28 5.01 59.63c-1.71 14.34 19 10.35 19 10.35l100.38-7.39s2.38-7.54-5.21-13.23c-4.51-3.39-10.63-3.67-10.63-3.67"/>
+        <path fill="#B9CED2" d="M56.95 55.83c.84-.28 3.37 2.96 17.18 2.96c14.36 0 32.1-12.11 32.1-12.11s-.07 4.74-1.55 7.18c-1.97 3.24-6.48 5.07-6.48 5.07s6.48 2.67 15.06 1.97c6.51-.53 11.17-3.99 11.17-3.99s.63 3.21.28 6.34c-.7 6.24-4.32 8.02-8.35 8.49c-2.97.34-28.39 1.21-38.81 1.31c-9.39.09-56.96.21-61.85-.33c-5.07-.56-8.87-3.24-10.28-7.6C4.35 61.81 5 58.64 5 58.64s5.77 2.25 12.67 2.25c6.61 0 11.54-3.1 11.54-3.1s5.21 3.57 13.94 2.82c7.54-.64 13.8-4.78 13.8-4.78"/>
+        <path fill="#92C9F4" d="M104.07 81.59s2.25-3.66 2.85-4.4s1.62-1.55 2.89-.84c1.27.7.84 2.15.49 2.78s-2.46 4.72-2.46 4.72s3.98.04 4.86.04s2.46.7 2.46 2.25c0 1.34-.63 2.18-2.15 2.25s-5.31.07-5.31.07s2.04 3.34 2.64 4.36s.67 2.25-.21 2.99c-1.13.95-2.6.42-3.48-.95c-.66-1.04-2.71-4.01-2.71-4.01s-2.43 3.52-3.06 4.29s-1.79 1.69-2.96.81c-1.44-1.09-.61-2.32 0-3.27l2.6-4.08s-4.43-.11-5.7-.11s-2.36-.7-2.29-2.15c.07-1.48.99-2.08 2.5-2.11c1.51-.04 5.53-.04 5.53-.04s-2.46-3.52-3.1-4.54c-.63-1.02-.7-2.32.28-3.06c.99-.74 2.15-.32 2.89.63s3.44 4.37 3.44 4.37m-38.86 3.63s2.25-3.66 2.85-4.4s1.62-1.55 2.89-.84c1.27.7.84 2.15.49 2.78s-2.46 4.72-2.46 4.72s3.98.04 4.86.04s2.46.7 2.46 2.25c0 1.34-.63 2.18-2.15 2.25c-1.51.07-5.31.07-5.31.07s2.04 3.34 2.64 4.36s.67 2.25-.21 2.99c-1.13.95-2.6.42-3.48-.95c-.66-1.04-2.71-4.01-2.71-4.01s-2.43 3.52-3.06 4.29s-1.79 1.69-2.96.81c-1.44-1.09-.61-2.32 0-3.27l2.6-4.08s-4.43-.11-5.7-.11s-2.36-.7-2.29-2.15c.07-1.48.99-2.08 2.5-2.11c1.51-.04 5.53-.04 5.53-.04s-2.46-3.52-3.1-4.54c-.63-1.02-.7-2.32.28-3.06c.99-.74 2.15-.32 2.89.63s3.44 4.37 3.44 4.37m-21.02 20.21s2.25-3.66 2.85-4.4s1.62-1.55 2.89-.84c1.27.7.84 2.15.49 2.78s-2.46 4.72-2.46 4.72s3.98.04 4.86.04s2.46.7 2.46 2.25c0 1.34-.63 2.18-2.15 2.25c-1.51.07-5.31.07-5.31.07s2.04 3.34 2.64 4.36s.67 2.25-.21 2.99c-1.13.95-2.6.42-3.48-.95c-.66-1.04-2.71-4.01-2.71-4.01s-2.43 3.52-3.06 4.29s-1.79 1.69-2.96.81c-1.44-1.09-.61-2.32 0-3.27l2.6-4.08s-4.43-.11-5.7-.11s-2.36-.7-2.29-2.15c.07-1.48.99-2.08 2.5-2.11c1.51-.04 5.53-.04 5.53-.04s-2.46-3.52-3.1-4.54c-.63-1.02-.7-2.32.28-3.06c.99-.74 2.15-.32 2.89.63s3.44 4.37 3.44 4.37M26.9 82.16s2.31-3.63 2.92-4.36s1.65-1.52 2.9-.8c1.26.72.81 2.16.45 2.79s-2.54 4.68-2.54 4.68s3.98.1 4.86.11s2.45.74 2.43 2.29c-.02 1.34-.67 2.17-2.18 2.22s-5.31-.01-5.31-.01s1.99 3.37 2.57 4.4s.64 2.26-.26 2.99c-1.14.93-2.61.38-3.47-1c-.65-1.05-2.65-4.05-2.65-4.05s-2.48 3.48-3.13 4.25c-.65.76-1.81 1.67-2.97.76c-1.43-1.11-.57-2.33.05-3.27l2.67-4.04s-4.43-.17-5.7-.19s-2.35-.74-2.25-2.18c.09-1.48 1.02-2.06 2.53-2.07s5.53.05 5.53.05s-2.41-3.56-3.03-4.59s-.67-2.33.33-3.06c1-.72 2.15-.28 2.88.68c.71.94 3.37 4.4 3.37 4.4m60.18 22.99s2.25-3.66 2.85-4.4s1.62-1.55 2.89-.84c1.27.7.84 2.15.49 2.78s-2.46 4.72-2.46 4.72s3.98.04 4.86.04s2.46.7 2.46 2.25c0 1.34-.63 2.18-2.15 2.25s-5.31.07-5.31.07s2.04 3.34 2.64 4.36s.67 2.25-.21 2.99c-1.13.95-2.6.42-3.48-.95c-.66-1.04-2.71-4.01-2.71-4.01s-2.43 3.52-3.06 4.29s-1.79 1.69-2.96.81c-1.44-1.09-.61-2.32 0-3.27l2.6-4.08s-4.43-.11-5.7-.11s-2.36-.7-2.29-2.15c.07-1.48.99-2.08 2.5-2.11s5.53-.04 5.53-.04s-2.46-3.52-3.1-4.54c-.63-1.02-.7-2.32.28-3.06c.99-.74 2.15-.32 2.89.63s3.44 4.37 3.44 4.37"/>
+    </g></symbol>
+    <!-- Rainy Icon-->
+    <symbol id="rainySVG" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(9.0000 9.6150) scale(2.277778)"><path fill="#e1e8ed" d="M28 4c-.825 0-1.62.125-2.369.357A6.5 6.5 0 0 0 19.5 0c-3.044 0-5.592 2.096-6.299 4.921A4.46 4.46 0 0 0 10.5 4A4.5 4.5 0 0 0 6 8.5c0 .604.123 1.178.339 1.704A5 5 0 0 0 5 10c-2.762 0-5 2.238-5 5s2.238 5 5 5h23a8 8 0 1 0 0-16"/>
+        <path fill="#5dadec" d="m11.999 24.961l-.113-3.421l-2.87 1.708a1.97 1.97 0 0 0-1.036 1.799A2.033 2.033 0 0 0 10.056 27a1.975 1.975 0 0 0 1.943-2.039m-1.979 7.46L9.907 29l-2.87 1.708a1.97 1.97 0 0 0-1.036 1.799a2.033 2.033 0 0 0 2.076 1.953a1.974 1.974 0 0 0 1.943-2.039m-5-4.46l-.113-3.421l-2.87 1.708a1.97 1.97 0 0 0-1.036 1.799A2.034 2.034 0 0 0 3.077 30a1.974 1.974 0 0 0 1.943-2.039m18-3l-.113-3.421l-2.869 1.708a1.96 1.96 0 0 0-1.036 1.799A2.033 2.033 0 0 0 21.078 27a1.974 1.974 0 0 0 1.942-2.039m-6.021 4l-.113-3.421l-2.869 1.708a1.96 1.96 0 0 0-1.036 1.799A2.033 2.033 0 0 0 15.057 31a1.974 1.974 0 0 0 1.942-2.039m5.021 4.46L21.906 30l-2.869 1.708a1.96 1.96 0 0 0-1.036 1.799a2.033 2.033 0 0 0 2.076 1.953a1.974 1.974 0 0 0 1.943-2.039m6.979-5.46l-.113-3.421l-2.869 1.708a1.96 1.96 0 0 0-1.036 1.799A2.033 2.033 0 0 0 27.057 30a1.974 1.974 0 0 0 1.942-2.039"/>
+    </g></symbol>
+    <!-- Foggy Icon -->
+    <symbol id="foggySVG" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(-7.9307 -26.3775) scale(0.246774)"><defs>
+            <linearGradient id="foggySVG__SVGMeEfudbH" x1="99.5" x2="232.6" y1="30.7" y2="261.4" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#f3f7fe"/>
+                <stop offset=".5" stop-color="#f3f7fe"/>
+                <stop offset="1" stop-color="#deeafb"/>
+            </linearGradient>
+            <linearGradient id="foggySVG__SVGqOTCtbDJ" x1="52.7" x2="133.4" y1="9.6" y2="149.3" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#9ca3af"/>
+                <stop offset=".5" stop-color="#9ca3af"/>
+                <stop offset="1" stop-color="#6b7280"/>
+            </linearGradient>
+            <linearGradient id="foggySVG__SVGiX2gieTW" x1="17.3" x2="89.3" y1="43.1" y2="167.8" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#d4d7dd"/>
+                <stop offset=".5" stop-color="#d4d7dd"/>
+                <stop offset="1" stop-color="#bec1c6"/>
+            </linearGradient>
+            <linearGradient id="foggySVG__SVGr7ySgKqF" x1="107.3" x2="179.3" y1="-8.8" y2="115.9" href="#foggySVG__SVGiX2gieTW"/>
+            <linearGradient id="foggySVG__SVGEhBiZcsU" x1="174.8" x2="246.8" y1="-47.8" y2="76.9" href="#foggySVG__SVGiX2gieTW"/>
+            <linearGradient id="foggySVG__SVGZVKV2dgJ" x2="89.3" y1="-4.9" y2="119.8" href="#foggySVG__SVGiX2gieTW"/>
+            <linearGradient id="foggySVG__SVGe0Ih6bQE" x1="107.3" x2="179.3" y1="-56.9" y2="67.9" href="#foggySVG__SVGiX2gieTW"/>
+            <linearGradient id="foggySVG__SVGndGIYckV" x1="174.8" x2="246.8" y1="-95.8" y2="28.9" href="#foggySVG__SVGiX2gieTW"/>
+            <symbol id="foggySVG__SVGa7dgPttN" viewBox="0 0 200.3 126.1">
+                <path fill="url(#foggySVG__SVGqOTCtbDJ)" stroke="#848b98" stroke-miterlimit="10" d="M.5 93.2a32.4 32.4 0 0 0 32.4 32.4h129.8v-.1l2.3.1a34.8 34.8 0 0 0 6.5-68.9a32.4 32.4 0 0 0-48.5-33a48.6 48.6 0 0 0-88.6 37.1h-1.5A32.4 32.4 0 0 0 .5 93.1Z"/>
+            </symbol>
+            <symbol id="foggySVG__SVGMnBDAb4I" viewBox="0 0 350 222">
+                <path fill="url(#foggySVG__SVGMeEfudbH)" stroke="#e6effc" stroke-miterlimit="10" stroke-width="6" d="m291 107l-2.5.1A83.9 83.9 0 0 0 135.6 43A56 56 0 0 0 51 91a56.6 56.6 0 0 0 .8 9A60 60 0 0 0 63 219l4-.2v.2h224a56 56 0 0 0 0-112Z"/>
+            </symbol>
+            <symbol id="foggySVG__SVGxmf1dE1T" viewBox="0 0 398 222">
+                <use width="200.3" height="126.1" href="#foggySVG__SVGa7dgPttN" transform="translate(-9 0)"/>
+                <use width="350" height="222" href="#foggySVG__SVGMnBDAb4I" transform="translate(-18 0)"/>
+            </symbol>
+            <symbol id="foggySVG__SVG5z0E2bXo" viewBox="0 0 264 72">
+                <g transform="translate(-24 0)">
+                    <path fill="none" stroke="url(#foggySVG__SVGiX2gieTW)" stroke-linecap="round" stroke-miterlimit="10" stroke-width="24" d="M12 60h30"/>
+                    <path fill="none" stroke="url(#foggySVG__SVGr7ySgKqF)" stroke-dasharray="60 60" stroke-linecap="round" stroke-miterlimit="10" stroke-width="24" d="M102 60h90"/>
+                    <path fill="none" stroke="url(#foggySVG__SVGEhBiZcsU)" stroke-linecap="round" stroke-miterlimit="10" stroke-width="24" d="M222 60h30"/>
+                </g>
+                <g transform="translate(24 0)">
+                    <path fill="none" stroke="url(#foggySVG__SVGZVKV2dgJ)" stroke-linecap="round" stroke-miterlimit="10" stroke-width="24" d="M12 12h30"/>
+                    <path fill="none" stroke="url(#foggySVG__SVGe0Ih6bQE)" stroke-dasharray="60 60" stroke-linecap="round" stroke-miterlimit="10" stroke-width="24" d="M102 12h90"/>
+                    <path fill="none" stroke="url(#foggySVG__SVGndGIYckV)" stroke-linecap="round" stroke-miterlimit="10" stroke-width="24" d="M222 12h30"/>
+                </g>
+            </symbol>
+        </defs>
+        <use width="398" height="222" href="#foggySVG__SVGxmf1dE1T" transform="translate(68.84 145)"/>
+        <use width="264" height="72" href="#foggySVG__SVG5z0E2bXo" transform="translate(124 402)"/>
+    </g></symbol>
+    <!-- Windy -->
+    <symbol id="windySVG" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(5.3377 5.3377) scale(3.721859)"><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 5a3 3 0 1 1 3 3H2m2 11a3 3 0 1 0 3-3H2m14-1a3 3 0 1 0 3-3H2"/>
+    </g></symbol>
+    <!-- Cloudy -->
+    <symbol id="cloudySVG" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(-1.1348 -1.1860) scale(5.118602)"><path fill="#fff" d="M11 7c2.465 0 3.863 1.574 4.066 3.474h.062c1.586 0 2.872 1.237 2.872 2.763S16.714 16 15.128 16H6.872C5.286 16 4 14.763 4 13.237s1.286-2.763 2.872-2.763h.062C7.139 8.561 8.535 7 11 7M8.392 4c1.456 0 2.726.828 3.353 2.045A6 6 0 0 0 11 6C8.61 6 6.868 7.307 6.246 9.286l-.062.214l-.046.187l-.165.03a3.73 3.73 0 0 0-2.716 2.258a2.622 2.622 0 0 1 1.2-4.856l.222-.005A3.77 3.77 0 0 1 8.392 4"/>
+    </g></symbol>
+    <!-- Partially Cloudy Day Icon -->
+    <symbol id="partlyCloudyDaySVG" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(-6.2451 -3.7042) scale(0.225572)"><path d="M0 0h512v512H0z" fill="none"/>
+        <defs>
+            <symbol id="partlyCloudyDaySVG__SVGnoI23bPp" viewBox="0 0 196 196">
+                <circle cx="98" cy="98" r="40" fill="url(#partlyCloudyDaySVG__SVG9IEgDxri)" stroke="#f8af18" stroke-miterlimit="10" stroke-width="4"/>
+                <path fill="none" stroke="#fbbf24" stroke-linecap="round" stroke-miterlimit="10" stroke-width="12" d="M98 31.4V6m0 184v-25.4M145.1 51l18-17.9M33 163l18-17.9M51 51L33 33m130.1 130.1l-18-18M6 98h25.4M190 98h-25.4" transform="rotate(45 98 98)"/>
+            </symbol>
+            <symbol id="partlyCloudyDaySVG__SVGMnBDAb4I" viewBox="0 0 350 222">
+                <path fill="url(#partlyCloudyDaySVG__SVGMeEfudbH)" stroke="#e6effc" stroke-miterlimit="10" stroke-width="6" d="m291 107l-2.5.1A83.9 83.9 0 0 0 135.6 43A56 56 0 0 0 51 91a56.6 56.6 0 0 0 .8 9A60 60 0 0 0 63 219l4-.2v.2h224a56 56 0 0 0 0-112Z"/>
+            </symbol>
+            <symbol id="partlyCloudyDaySVG__SVGpSsklbqg" viewBox="0 0 363 258">
+                <use width="196" height="196" href="#partlyCloudyDaySVG__SVGnoI23bPp"/>
+                <use width="350" height="222" href="#partlyCloudyDaySVG__SVGMnBDAb4I" transform="translate(13 36)"/>
+            </symbol>
+            <linearGradient id="partlyCloudyDaySVG__SVGMeEfudbH" x1="99.5" x2="232.6" y1="30.7" y2="261.4" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#f3f7fe"/>
+                <stop offset=".5" stop-color="#f3f7fe"/>
+                <stop offset="1" stop-color="#deeafb"/>
+            </linearGradient>
+            <linearGradient id="partlyCloudyDaySVG__SVG9IEgDxri" x1="78" x2="118" y1="63.4" y2="132.7" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#fbbf24"/>
+                <stop offset=".5" stop-color="#fbbf24"/>
+                <stop offset="1" stop-color="#f59e0b"/>
             </linearGradient>
         </defs>
-        <use width="363" height="258" href="#SVGpSsklbqg" transform="translate(68 109)" />
-    </symbol>
+        <use width="363" height="258" href="#partlyCloudyDaySVG__SVGpSsklbqg" transform="translate(68 109)"/>
+    </g></symbol>
+    <!-- Partially Cloudy Night Icon -->
+    <symbol id="partlyCloudyNightSVG" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(-9.6472 -7.4956) scale(0.233464)"><defs>
+            <linearGradient id="partlyCloudyNightSVG__SVGMeEfudbH" x1="99.5" x2="232.6" y1="30.7" y2="261.4" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#f3f7fe"/>
+                <stop offset=".5" stop-color="#f3f7fe"/>
+                <stop offset="1" stop-color="#deeafb"/>
+            </linearGradient>
+            <linearGradient id="partlyCloudyNightSVG__SVGZtvutewA" x1="34.7" x2="119.2" y1="18.6" y2="165" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#fff911"/>
+                <stop offset=".5" stop-color="#fff911"/>
+                <stop offset="1" stop-color="#5eafcf"/>
+            </linearGradient>
+            <linearGradient id="partlyCloudyNightSVG__SVGqoPieb4H" x1="1399.3" x2="1408.7" y1="-1137.3" y2="-1112.7" gradientTransform="rotate(-9 8016.182 8229.021)" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#0b65ed"/>
+                <stop offset=".5" stop-color="#0a5ad4"/>
+                <stop offset="1" stop-color="#0950bc"/>
+            </linearGradient>
+            <linearGradient id="partlyCloudyNightSVG__SVG3BsI9dJr" x1="1454.6" x2="1464" y1="-1128.6" y2="-1104" href="#partlyCloudyNightSVG__SVGqoPieb4H"/>
+            <linearGradient id="partlyCloudyNightSVG__SVGr0laOb6n" x1="1509.9" x2="1519.3" y1="-1119.8" y2="-1095.2" href="#partlyCloudyNightSVG__SVGqoPieb4H"/>
+            <linearGradient id="partlyCloudyNightSVG__SVGnK1vQdoS" x1="11.4" x2="32.8" y1="5.9" y2="43.1" href="#partlyCloudyNightSVG__SVGZtvutewA"/>
+            <linearGradient id="partlyCloudyNightSVG__SVGCgQdGRIO" x1="67.4" x2="88.8" y1="5.9" y2="43.1" href="#partlyCloudyNightSVG__SVGZtvutewA"/>
+            <linearGradient id="partlyCloudyNightSVG__SVG5lnOW19b" x1="123.4" x2="144.8" y1="5.9" y2="43.1" href="#partlyCloudyNightSVG__SVGZtvutewA"/>
+            <symbol id="partlyCloudyNightSVG__SVGsJRxDb0X" viewBox="0 0 172 172">
+                <path fill="url(#partlyCloudyNightSVG__SVGZtvutewA)" stroke="#fff911" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M160.6 107.4a84.8 84.8 0 0 1-85.4-84.3A83.3 83.3 0 0 1 78 2A84.7 84.7 0 0 0 2 85.7A84.8 84.8 0 0 0 87.4 170a85.2 85.2 0 0 0 82.6-63.1a88 88 0 0 1-9.4.5Z" transform="rotate(-15 86 86)"/>
+            </symbol>
+            <symbol id="partlyCloudyNightSVG__SVGMnBDAb4I" viewBox="0 0 350 222">
+                <path fill="url(#partlyCloudyNightSVG__SVGMeEfudbH)" stroke="#e6effc" stroke-miterlimit="10" stroke-width="6" d="m291 107l-2.5.1A83.9 83.9 0 0 0 135.6 43A56 56 0 0 0 51 91a56.6 56.6 0 0 0 .8 9A60 60 0 0 0 63 219l4-.2v.2h224a56 56 0 0 0 0-112Z"/>
+            </symbol>
+            <symbol id="partlyCloudyNightSVG__SVG28kZBITK" viewBox="0 0 351 246">
+                <use width="172" height="172" href="#partlyCloudyNightSVG__SVGsJRxDb0X"/>
+                <use width="350" height="222" href="#partlyCloudyNightSVG__SVGMnBDAb4I" transform="translate(1 24)"/>
+            </symbol>
+            <symbol id="partlyCloudyNightSVG__SVGki4CCb7O" viewBox="0 0 156.2 49">
+                <g transform="translate()">
+                    <path fill="url(#partlyCloudyNightSVG__SVGnK1vQdoS)" stroke="#fff911" stroke-miterlimit="10" d="m41.7 31l-5.8-3.3a13.7 13.7 0 0 0 0-6.5l5.8-3.2a4 4 0 0 0 1.5-5.5a4 4 0 0 0-5.6-1.5l-5.8 3.3a13.6 13.6 0 0 0-2.6-2a13.8 13.8 0 0 0-3-1.3V4.5a4 4 0 0 0-8.1 0v6.6a14.3 14.3 0 0 0-5.7 3.2L6.6 11A4 4 0 0 0 1 12.5A4 4 0 0 0 2.5 18l5.8 3.3a13.7 13.7 0 0 0 0 6.5L2.5 31A4 4 0 0 0 1 36.5a4 4 0 0 0 3.5 2a4 4 0 0 0 2-.5l5.8-3.3a13.6 13.6 0 0 0 2.6 2a13.8 13.8 0 0 0 3 1.2v6.6a4 4 0 0 0 8.2 0v-6.6a14.2 14.2 0 0 0 5.6-3.2l6 3.3a4 4 0 0 0 2 .5a4 4 0 0 0 3.4-2a4 4 0 0 0-1.4-5.5ZM19 29.7a6 6 0 0 1-2.3-8.2a6.1 6.1 0 0 1 5.3-3a6.2 6.2 0 0 1 3 .8a6 6 0 0 1 2.2 8.2a6.1 6.1 0 0 1-8.2 2.2Z" opacity="0" stroke-width="1" transform="rotate(360 24 24)"/>
+                </g>
+                <g transform="translate()">
+                    <path fill="url(#partlyCloudyNightSVG__SVGCgQdGRIO)" stroke="#fff911" stroke-miterlimit="10" d="m97.7 31l-5.8-3.3a13.7 13.7 0 0 0 0-6.5l5.8-3.2a4 4 0 0 0 1.5-5.5a4 4 0 0 0-5.6-1.5l-5.8 3.3a13.6 13.6 0 0 0-2.6-2a13.8 13.8 0 0 0-3-1.3V4.5a4 4 0 0 0-8.1 0v6.6a14.3 14.3 0 0 0-5.7 3.2L62.6 11a4 4 0 0 0-5.6 1.5a4 4 0 0 0 1.5 5.5l5.8 3.3a13.7 13.7 0 0 0 0 6.5L58.5 31a4 4 0 0 0-1.5 5.5a4 4 0 0 0 3.5 2a4 4 0 0 0 2-.5l5.8-3.3a13.6 13.6 0 0 0 2.7 2a13.8 13.8 0 0 0 3 1.2v6.6a4 4 0 0 0 8 0v-6.6a14.2 14.2 0 0 0 5.7-3.2l6 3.3a4 4 0 0 0 2 .5a4 4 0 0 0 3.4-2a4 4 0 0 0-1.4-5.5ZM75 29.7a6 6 0 0 1-2.3-8.2a6.1 6.1 0 0 1 5.3-3a6.2 6.2 0 0 1 3 .8a6 6 0 0 1 2.2 8.2a6.1 6.1 0 0 1-8.2 2.2Z" opacity="0" stroke-width="1" transform="rotate(360 80 24)"/>
+                </g>
+                <g transform="translate()">
+                    <path fill="url(#partlyCloudyNightSVG__SVG5lnOW19b)" stroke="#fff911" stroke-miterlimit="10" d="m153.7 31l-5.8-3.3a13.7 13.7 0 0 0 0-6.5l5.8-3.2a4 4 0 0 0 1.5-5.5a4 4 0 0 0-5.6-1.5l-5.8 3.3a13.6 13.6 0 0 0-2.6-2a13.8 13.8 0 0 0-3-1.3V4.5a4 4 0 0 0-8.1 0v6.6a14.3 14.3 0 0 0-5.7 3.2l-5.8-3.3a4 4 0 0 0-5.6 1.5a4 4 0 0 0 1.5 5.5l5.8 3.3a13.7 13.7 0 0 0 0 6.5l-5.8 3.2a4 4 0 0 0-1.5 5.5a4 4 0 0 0 3.5 2a4 4 0 0 0 2-.5l5.8-3.3a13.6 13.6 0 0 0 2.7 2a13.8 13.8 0 0 0 3 1.2v6.6a4 4 0 0 0 8 0v-6.6a14.2 14.2 0 0 0 5.7-3.2l5.8 3.3a4 4 0 0 0 2 .5a4 4 0 0 0 3.5-2a4 4 0 0 0-1.3-5.5ZM131 29.7a6 6 0 0 1-2.3-8.2a6.1 6.1 0 0 1 5.3-3a6.2 6.2 0 0 1 3 .8a6 6 0 0 1 2.2 8.2a6.1 6.1 0 0 1-8.2 2.2Z" opacity="0" stroke-width="1" transform="rotate(360 136 24)"/>
+                </g>
+            </symbol>
+            <symbol id="partlyCloudyNightSVG__SVGwBVRrdhd" viewBox="0 0 156.2 49">
+                <use width="156.2" height="49" href="#partlyCloudyNightSVG__SVGki4CCb7O"/>
+                <path fill="url(#partlyCloudyNightSVG__SVGqoPieb4H)" stroke="#0a5ad4" stroke-miterlimit="10" d="M22.1 38.5a8 8 0 0 1-8-8v-12a8 8 0 0 1 16 0v12a8 8 0 0 1-8 8Z" opacity="0" stroke-width="1" transform="translate()"/>
+                <path fill="url(#partlyCloudyNightSVG__SVG3BsI9dJr)" stroke="#0a5ad4" stroke-miterlimit="10" d="M78.1 38.5a8 8 0 0 1-8-8v-12a8 8 0 0 1 16 0v12a8 8 0 0 1-8 8Z" opacity="0" stroke-width="1" transform="translate()"/>
+                <path fill="url(#partlyCloudyNightSVG__SVGr0laOb6n)" stroke="#0a5ad4" stroke-miterlimit="10" d="M134.1 38.5a8 8 0 0 1-8-8v-12a8 8 0 0 1 16 0v12a8 8 0 0 1-8 8Z" opacity="0" stroke-width="1" transform="translate()"/>
+            </symbol>
+        </defs>
+        <use width="351" height="246" href="#partlyCloudyNightSVG__SVG28kZBITK" transform="translate(80 121)"/>
+        <use width="156.2" height="49" href="#partlyCloudyNightSVG__SVGwBVRrdhd" transform="translate(177.9 337.5)"/>
+    </g></symbol>
+    <!-- Thunder Rain Icon-->
+    <symbol id="thunderRainSVG" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(9.0000 9.0000) scale(2.277778)"><path fill="#f4900c" d="M13.917 36a.417.417 0 0 1-.371-.607L17 29h-5.078c-.174 0-.438-.031-.562-.297c-.114-.243-.057-.474.047-.703L15 19c.078-.067 6.902.393 7 .393a.417.417 0 0 1 .369.608l-3.817 6h5.032c.174 0 .329.108.391.271a.42.42 0 0 1-.119.461l-9.666 9.166a.42.42 0 0 1-.273.101"/>
+        <path fill="#e1e8ed" d="M28 4c-.825 0-1.62.125-2.369.357A6.5 6.5 0 0 0 19.5 0c-3.044 0-5.592 2.096-6.299 4.921A4.46 4.46 0 0 0 10.5 4A4.5 4.5 0 0 0 6 8.5c0 .604.123 1.178.339 1.704A5 5 0 0 0 5 10c-2.762 0-5 2.238-5 5s2.238 5 5 5h23a8 8 0 1 0 0-16"/>
+        <path fill="#5dadec" d="m10.999 24.961l-.113-3.421l-2.87 1.708a1.97 1.97 0 0 0-1.036 1.799A2.034 2.034 0 0 0 9.056 27a1.975 1.975 0 0 0 1.943-2.039m-2 8l-.113-3.421l-2.87 1.708a1.97 1.97 0 0 0-1.036 1.799A2.034 2.034 0 0 0 7.056 35a1.974 1.974 0 0 0 1.943-2.039m-4.979-5.54L3.907 24l-2.87 1.708a1.97 1.97 0 0 0-1.036 1.799a2.033 2.033 0 0 0 2.076 1.953a1.974 1.974 0 0 0 1.943-2.039m25-2.46l-.113-3.421l-2.869 1.708a1.96 1.96 0 0 0-1.036 1.799A2.033 2.033 0 0 0 27.078 27a1.974 1.974 0 0 0 1.942-2.039m-2 9l-.113-3.421l-2.869 1.708a1.96 1.96 0 0 0-1.036 1.799A2.033 2.033 0 0 0 25.078 36a1.974 1.974 0 0 0 1.942-2.039m6-4l-.113-3.421l-2.869 1.708a1.96 1.96 0 0 0-1.036 1.799A2.033 2.033 0 0 0 31.078 32a1.974 1.974 0 0 0 1.942-2.039"/>
+    </g></symbol>
+    <!-- Thunder Showers Day Icon -->
+    <symbol id="thunderShowersDaySVG" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(-5.4639 -15.2583) scale(0.222439)"><defs>
+            <symbol id="thunderShowersDaySVG__SVGnoI23bPp" viewBox="0 0 196 196">
+                <circle cx="98" cy="98" r="40" fill="url(#thunderShowersDaySVG__SVG9IEgDxri)" stroke="#f8af18" stroke-miterlimit="10" stroke-width="4"/>
+                <path fill="none" stroke="#fbbf24" stroke-linecap="round" stroke-miterlimit="10" stroke-width="12" d="M98 31.4V6m0 184v-25.4M145.1 51l18-17.9M33 163l18-17.9M51 51L33 33m130.1 130.1l-18-18M6 98h25.4M190 98h-25.4" transform="rotate(45 98 98)"/>
+            </symbol>
+            <symbol id="thunderShowersDaySVG__SVGMnBDAb4I" viewBox="0 0 350 222">
+                <path fill="url(#thunderShowersDaySVG__SVGMeEfudbH)" stroke="#e6effc" stroke-miterlimit="10" stroke-width="6" d="m291 107l-2.5.1A83.9 83.9 0 0 0 135.6 43A56 56 0 0 0 51 91a56.6 56.6 0 0 0 .8 9A60 60 0 0 0 63 219l4-.2v.2h224a56 56 0 0 0 0-112Z"/>
+            </symbol>
+            <symbol id="thunderShowersDaySVG__SVGpSsklbqg" viewBox="0 0 363 258">
+                <use width="196" height="196" href="#thunderShowersDaySVG__SVGnoI23bPp"/>
+                <use width="350" height="222" href="#thunderShowersDaySVG__SVGMnBDAb4I" transform="translate(13 36)"/>
+            </symbol>
+            <symbol id="thunderShowersDaySVG__SVGD00Kwd0A" viewBox="0 0 102.7 186.8">
+                <path fill="url(#thunderShowersDaySVG__SVGvnYDXzed)" stroke="#f6a823" stroke-miterlimit="10" stroke-width="4" d="m34.8 2l-32 96h32l-16 80l80-112h-48l32-64h-48z" opacity="1"/>
+            </symbol>
+            <linearGradient id="thunderShowersDaySVG__SVGMeEfudbH" x1="99.5" x2="232.6" y1="30.7" y2="261.4" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#f3f7fe"/>
+                <stop offset=".5" stop-color="#f3f7fe"/>
+                <stop offset="1" stop-color="#deeafb"/>
+            </linearGradient>
+            <linearGradient id="thunderShowersDaySVG__SVGvnYDXzed" x1="8.7" x2="80.9" y1="17.1" y2="142.1" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#f7b23b"/>
+                <stop offset=".5" stop-color="#f7b23b"/>
+                <stop offset="1" stop-color="#f59e0b"/>
+            </linearGradient>
+            <linearGradient id="thunderShowersDaySVG__SVG9IEgDxri" x1="78" x2="118" y1="63.4" y2="132.7" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#fbbf24"/>
+                <stop offset=".5" stop-color="#fbbf24"/>
+                <stop offset="1" stop-color="#f59e0b"/>
+            </linearGradient>
+        </defs>
+        <use width="363" height="258" href="#thunderShowersDaySVG__SVGpSsklbqg" transform="translate(68 109)"/>
+        <use width="102.7" height="186.7" href="#thunderShowersDaySVG__SVGD00Kwd0A" transform="translate(205.23 291)"/>
+    </g></symbol>
+    <!-- Thunder Showers Night Icon -->
+    <symbol id="thunderShowersNightSVG" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(-4.5276 -20.2006) scale(0.232785)"><defs>
+            <symbol id="thunderShowersNightSVG__SVGsJRxDb0X" viewBox="0 0 172 172">
+                <path fill="url(#thunderShowersNightSVG__SVGZtvutewA)" stroke="#72b9d5" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M160.6 107.4a84.8 84.8 0 0 1-85.4-84.3A83.3 83.3 0 0 1 78 2A84.7 84.7 0 0 0 2 85.7A84.8 84.8 0 0 0 87.4 170a85.2 85.2 0 0 0 82.6-63.1a88 88 0 0 1-9.4.5Z" transform="rotate(-15 86 86)"/>
+            </symbol>
+            <symbol id="thunderShowersNightSVG__SVGa7dgPttN" viewBox="0 0 200.3 126.1">
+                <path fill="url(#thunderShowersNightSVG__SVGqOTCtbDJ)" stroke="#848b98" stroke-miterlimit="10" d="M.5 93.2a32.4 32.4 0 0 0 32.4 32.4h129.8v-.1l2.3.1a34.8 34.8 0 0 0 6.5-68.9a32.4 32.4 0 0 0-48.5-33a48.6 48.6 0 0 0-88.6 37.1h-1.5A32.4 32.4 0 0 0 .5 93.1Z"/>
+            </symbol>
+            <symbol id="thunderShowersNightSVG__SVGMnBDAb4I" viewBox="0 0 350 222">
+                <path fill="url(#thunderShowersNightSVG__SVGMeEfudbH)" stroke="#e6effc" stroke-miterlimit="10" stroke-width="6" d="m291 107l-2.5.1A83.9 83.9 0 0 0 135.6 43A56 56 0 0 0 51 91a56.6 56.6 0 0 0 .8 9A60 60 0 0 0 63 219l4-.2v.2h224a56 56 0 0 0 0-112Z"/>
+            </symbol>
+            <symbol id="thunderShowersNightSVG__SVGxmf1dE1T" viewBox="0 0 398 222">
+                <use width="200.3" height="126.1" href="#thunderShowersNightSVG__SVGa7dgPttN" transform="translate(-9 0)"/>
+                <use width="350" height="222" href="#thunderShowersNightSVG__SVGMnBDAb4I" transform="translate(-18 0)"/>
+            </symbol>
+            <symbol id="thunderShowersNightSVG__SVGqqKY7JAX" viewBox="0 0 398.8 246">
+                <use width="172" height="172" href="#thunderShowersNightSVG__SVGsJRxDb0X"/>
+                <use width="398" height="222" href="#thunderShowersNightSVG__SVGxmf1dE1T" transform="translate(.84 24)"/>
+            </symbol>
+            <symbol id="thunderShowersNightSVG__SVGD00Kwd0A" viewBox="0 0 102.7 186.8">
+                <path fill="url(#thunderShowersNightSVG__SVGvnYDXzed)" stroke="#f6a823" stroke-miterlimit="10" stroke-width="4" d="m34.8 2l-32 96h32l-16 80l80-112h-48l32-64h-48z" opacity="1"/>
+            </symbol>
+            <linearGradient id="thunderShowersNightSVG__SVGMeEfudbH" x1="99.5" x2="232.6" y1="30.7" y2="261.4" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#f3f7fe"/>
+                <stop offset=".5" stop-color="#f3f7fe"/>
+                <stop offset="1" stop-color="#deeafb"/>
+            </linearGradient>
+            <linearGradient id="thunderShowersNightSVG__SVGqOTCtbDJ" x1="52.7" x2="133.4" y1="9.6" y2="149.3" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#9ca3af"/>
+                <stop offset=".5" stop-color="#9ca3af"/>
+                <stop offset="1" stop-color="#6b7280"/>
+            </linearGradient>
+            <linearGradient id="thunderShowersNightSVG__SVGvnYDXzed" x1="8.7" x2="80.9" y1="17.1" y2="142.1" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#f7b23b"/>
+                <stop offset=".5" stop-color="#f7b23b"/>
+                <stop offset="1" stop-color="#f59e0b"/>
+            </linearGradient>
+            <linearGradient id="thunderShowersNightSVG__SVGZtvutewA" x1="34.7" x2="119.2" y1="18.6" y2="165" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#86c3db"/>
+                <stop offset=".5" stop-color="#86c3db"/>
+                <stop offset="1" stop-color="#5eafcf"/>
+            </linearGradient>
+        </defs>
+        <use width="398.8" height="246" href="#thunderShowersNightSVG__SVGqqKY7JAX" transform="translate(68 121)"/>
+        <use width="102.7" height="186.7" href="#thunderShowersNightSVG__SVGD00Kwd0A" transform="translate(205.23 291)"/>
+    </g></symbol>
+    <!-- Showers Day Icon -->
+    <symbol id="showersDaySVG" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(9.0000 9.0000) scale(2.277778)"><path fill="#ffac33" d="M13 2s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2zM4 13s2 0 2 2s-2 2-2 2H2s-2 0-2-2s2-2 2-2zm3.872-6.957s1.414 1.414 0 2.828s-2.828 0-2.828 0L3.629 7.458s-1.414-1.414 0-2.829c1.415-1.414 2.829 0 2.829 0zm17.085 2.828s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828z"/>
+        <circle cx="15" cy="15" r="8" fill="#ffac33"/>
+        <path fill="#e1e8ed" d="M28.223 12.8c-.803 0-1.575.119-2.304.34C25.057 10.731 22.718 9 19.958 9c-2.959 0-5.437 1.991-6.123 4.675a4.4 4.4 0 0 0-2.626-.875c-2.417 0-4.375 1.914-4.375 4.275c0 .573.12 1.119.329 1.619a5 5 0 0 0-1.302-.194C3.176 18.5 1 20.626 1 23.25S3.176 28 5.861 28h22.361C32.518 28 36 24.598 36 20.4s-3.482-7.6-7.777-7.6"/>
+        <path fill="#5dadec" d="m11.999 33.961l-.113-3.421l-2.869 1.708a1.96 1.96 0 0 0-1.036 1.799A2.033 2.033 0 0 0 10.057 36a1.974 1.974 0 0 0 1.942-2.039m-6.979-1.54L4.906 29l-2.869 1.708a1.96 1.96 0 0 0-1.036 1.799a2.033 2.033 0 0 0 2.076 1.953a1.974 1.974 0 0 0 1.943-2.039m14 .54l-.113-3.421l-2.869 1.708a1.96 1.96 0 0 0-1.036 1.799A2.033 2.033 0 0 0 17.078 35a1.974 1.974 0 0 0 1.942-2.039m5.978 1l-.113-3.421l-2.869 1.708a1.96 1.96 0 0 0-1.035 1.799A2.033 2.033 0 0 0 23.057 36a1.973 1.973 0 0 0 1.941-2.039m6.021-1.54L30.905 29l-2.869 1.708a1.96 1.96 0 0 0-1.035 1.799a2.03 2.03 0 0 0 2.076 1.953a1.974 1.974 0 0 0 1.942-2.039"/>
+    </g></symbol>
 </svg>
