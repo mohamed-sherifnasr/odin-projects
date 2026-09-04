@@ -1,105 +1,143 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Actor&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Actor&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
     padding: 0;
     margin: 0;
-    font-family: inherit;
     box-sizing: border-box;
 }
 
-html, body{
+html, body {
     height: 100vh;
+    width: 100%;
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(237, 237, 237);
+    background-color: #F4F7F9;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
 }
 
-main{
-    margin: 0 15%;
-    flex: 1;
-}
-
-/* Prevents SVG Icons containers from taking up space */
-.containSVG{
-    width: 1.75rem;
-    height: 1.75rem;
-    display: inline-block; 
-    vertical-align: middle;
-    flex-shrink: 0; 
-}
-
-#mainContainer{
+#mainContainer {
     display: flex;
+    width: 100%;
+    transition: all 0.25s ease-in-out;
+}
+
+#mainContainer.landing-mode {
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    gap: 32px;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+#mainContainer.landing-mode .searchBarContainer {
+    width: 100%;
+}
+
+#mainContainer.dashboard-mode {
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 100%;
+    padding: 24px 5%;
+    margin: 0;
+    align-self: flex-start;
+}
+
+#mainContainer.dashboard-mode .searchBarContainer {
+    width: 320px;
 }
 
 .headerContainer{
     display: flex;
-    margin: 20px 5%;
-    padding-bottom: 20px;
     justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+}
+
+.logoFirst {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    color: #7BC5ED;
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+.logoSecond {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+    color: #F59E0B;
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+.searchBarContainer {
+    display: flex;
+    position: relative;
     align-items: center;
-    flex: 1;
-    font-size: 1.3rem;
-    font-family:Arial, Helvetica, sans-serif;
-    border-bottom: 1px solid black;
 }
 
-.searchBarContainer{
-    display: flex;
-}
-
-#mainSearch{
+.searchBar {
+    width: 100%;
     appearance: none;
-    border: 1px solid black;
-    border-top-left-radius: 18px;
-    border-bottom-left-radius: 18px;
-    padding: 12px 10px;
-    font-size: 1.5rem;
-}
-
-/* //Tinker */
-.searchBar{
-    border: 1px solid black;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    padding: 3px 15px;
+    outline: none;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 12px 45px 12px 16px;
     font-size: 1rem;
+    color: #1E293B;
+    transition: all 0.2s ease-in-out;
 }
 
-#mainSearchBtn{
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 20px;
+.searchBar:focus {
+    border-color: #7BC5ED;
+    box-shadow: 0 0 0 3px rgba(123, 197, 237, 0.15);
 }
 
-.searchBtn{
-    padding: 0 15px 0 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 20px;
-
-}
-
-main{
+.searchBtn {
+    position: absolute;
+    right: 14px;
     display: flex;
-    flex-direction: column;
-    font-family:Arial, Helvetica, sans-serif
+    align-items: center;
+    justify-content: center;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
+
+.searchBtn:hover {
+    transform: scale(1.1);
+}
+
+.containSVG {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: #64748B;
+}
+
+
 
 /* Quick Data Component */
 #quickRenderContainer{
     display: flex;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    gap: 30px;
-    background-color: skyblue;
-    padding: 10px 0 0 0;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    background-color: #E1F1FC;
+    padding: 10px;
+    border-radius: 8px;
 }
 /* 1-of-3 */
 #tempContainer{
@@ -121,6 +159,7 @@ use{
 }
 #tempButtonsContainer{
     margin-left: 15px;
+    color: #1E293B;
     display: flex;
     gap: 3px;
 }
@@ -150,12 +189,31 @@ use{
     border-left: 1px solid black;
     display: flex;
     flex-direction: column;
-    /* align-self: center; */
+    /* align-items: center; */
+    flex-wrap: wrap;
     gap: 5px;
 }
+.metricContainer{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+.metricTitle{
+    flex-shrink: 0;
+    font-style: italic;
+    color: #64748B;
+}
 .metric{
-    font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    /* letter-spacing: -1px; */
+}
+.metricContainer:nth-child(1) .metric{
+    transform: translateX(7px);
 }
 /* 3-of-3 */
 #locContainer{
@@ -187,21 +245,140 @@ use{
 
 /*Secondary Data Component*/
 .secondaryDataContainer{
+    margin: 10px 0 10px 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    border-top: 2px solid black;
+    background-color: #FFFFFF;
+    /* border: 1px solid skyblue; */
+    border-radius: 8px;
 }
 .secondaryDataElementContainer{
-    margin-top: 10px;
+    margin: 7px 0;
     text-align: center;
     flex: 1 1 33%;
 }
 .secondaryDataTitle{
-    color: rgba(0, 0, 0, 0.8);
+    color: #64748B;
     font-size: 0.9rem;
 }
 .secondaryDataValue{
     font-size: 1.4rem;
+}
+
+/* 24 Hours Forecast Component */
+#hourlyForecastContainer{
+    margin-top: 10px;
+    display: flex;
+    /* justify-content: center; */
+    gap: 10px;
+    align-items: center;
+    flex: 0 0 auto;
+    min-height: 140px;
+    overflow: auto;
+    padding: 5px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    scrollbar-width: thin;
+    background-color: #FFFFFF;
+}
+#forecastTitle{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.hourlyContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 0 0 19%;
+}
+.hourTemp{
+    font-size: 1.4rem;
+}
+.hourTime{
+    font-size: 1.2rem;
+    text-wrap: nowrap;
+}
+
+/* {noOfDays}-Days Forecast Component */
+#mainDailyContainer{
+    margin-top: 10px;
+    padding: 5px 0 10px 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    background-color: #F4F7F9;
+}
+#daysOuterContainer{
+    padding: 10px 10px 0 10px;
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#dailyTitle{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.dailyInnerContainer {
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex: 1 1 30%;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.03) 0px 4px 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.dailyInnerContainer:hover {
+    transform: translateY(-4px);
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 8px 20px;
+    background-color: #F8FAFC;
+}
+
+.dailyInnerContainer:active {
+    transform: translateY(-1px);
+    box-shadow: rgba(0, 0, 0, 0.03) 0px 4px 10px;
+    background-color: #F1F5F9;
+}
+
+.dailyInnerContainer > *{
+    flex: 1 1 30%;
+}
+.dailyInnerContainer:hover{
+    cursor: pointer;
+}
+.dayOfMonth{
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #64748b;
+}
+.dayOfWeek{
+    font-size: 1rem;
+}
+.dailyHigh{
+    font-size: 1rem;
+    padding-right: 5px;
+    border-right: 2px solid black;
+}
+.dailyLow{
+    font-size: 1rem;
+    padding-left: 5px;
 }

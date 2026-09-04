@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>AvaDash</title>
     <script src="./index.js" defer></script>
     <link rel="stylesheet" href="./styles.css"/>
 </head>
 <body>
-    <div id="mainContainer">
-        <h1>Weather App</h1>
+    <main id="mainContainer" class="landing-mode">
+        <div class="logoContainer">
+            <span class="logoFirst">Ava</span>
+            <span class="logoSecond">Dash</span>
+        </div>
         <form id="mainSearchContainer" action="#" class="searchBarContainer">
             <input class="searchBar" type="search" id="mainSearch" name="search" placeholder="Put in a city (eg. London)"/>
             <button id="mainSearchBtn" class="searchBtn">
@@ -18,6 +21,6 @@
                 </svg>
             </button>
         </form>
-    </div>
+    </main>
 </body>
 </html>
