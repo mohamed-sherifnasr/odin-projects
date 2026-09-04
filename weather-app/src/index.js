@@ -24,15 +24,18 @@ const mainSearchBtn = document.getElementById("mainSearchBtn");
 const mainContainer = document.getElementById("mainContainer");
 
 //Holding Response for Future Mutation
-let serverResponse;
+let polishedServerResponse;
 
 //Helper Functions
 const winDirTranslate = function(deg){
     let dir;
-    deg == 0? dir = 'n': 90 > deg > 0? dir = 'ne': deg == 90? 'e': 90 < deg < 180? dir = 'se': deg == 180? dir = 's': 180 < deg < 270? dir = 'sw': deg == 270? dir = 'w': 270 < deg < 360? dir = 'nw': dir = 'err';
+    deg == 0? dir = 'n': 90 > deg && deg > 0? dir = 'ne': deg == 90? dir ='e': 90 < deg && deg < 180? dir = 'se': deg == 180? dir = 's': 180 < deg && deg < 270? dir = 'sw': deg == 270? dir = 'w': 270 < deg && deg < 360? dir = 'nw': dir = 'err';
     return dir.toUpperCase();
 }
-
+const getDayOfWeek = function(date){
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    return (days[new Date(date).getDay()]);
+}
 const celsiusToFahr = function(deg){
     return (deg * (9/5) + 32).toFixed();
 }
@@ -51,7 +54,9 @@ const createIcon = function(iconId, cls = null, id = null, width = 50, height = 
     //Creates inner use element 
     const use = document.createElementNS(svgNS, "use");
     //Sets the source of the use element to the exact SVG ID
-    use.setAttribute("href", `./assets/icons.svg#${iconId}`);
+    iconId == "searchSVG"?
+        use.setAttribute("href", `./assets/icons.svg#${iconId}`):
+        use.setAttribute("href", `./assets/icons.svg#${icons[iconId]}`);
     //Assemble the elements
     svg.append(use);
     //returns the newly created element
@@ -59,7 +64,15 @@ const createIcon = function(iconId, cls = null, id = null, width = 50, height = 
 }
 const convertHours = function(time){
     const timeAry = time.split(":");
-    return ((timeAry[0] % 12) + ":" + timeAry[1])
+    let format;
+    timeAry[0] >= 12? format = " PM" : timeAry[0] < 12? format = " AM" : null;
+    timeAry[0] == '00'? timeAry[0] = "12": null;
+    let hr = timeAry[0] % 12;
+    hr == "0"? hr = "12" : null;
+    return (hr + ":" + timeAry[1] + format)
+}
+const getDayMonth = function(date){
+    return (date.split("-")[2] +"-"+ date.split("-")[1]);
 }
 const extractData = function(data){
     let polishedData = {};
@@ -69,7 +82,7 @@ const extractData = function(data){
             let polishedHour = {};
             polishedHour["hour"] = hour.datetime;
             polishedHour["icon"] = hour.icon;
-            polishedHour["temp"] = hour.temp;
+            polishedHour["temp"] = hour.temp.toFixed();
             hrs.push(polishedHour);
         })
         return hrs
@@ -80,11 +93,12 @@ const extractData = function(data){
         days.forEach(day => {
             let polishedDay = {};
             polishedDay["date"] = day.datetime;
+            polishedDay["weekday"] = getDayOfWeek(day.datetime);
             polishedDay["description"] = day.description;
             polishedDay["feelslike"] = day.feelslike;
-            polishedDay["temp"] = day.temp;
-            polishedDay["tempmax"] = day.tempmax;
-            polishedDay["tempmin"] = day.tempmin;
+            polishedDay["temp"] = day.temp.toFixed();
+            polishedDay["tempmax"] = day.tempmax.toFixed();
+            polishedDay["tempmin"] = day.tempmin.toFixed();
             polishedDay["icon"] = day.icon;
             polishedDay["sunrise"] = day.sunrise;
             polishedDay["sunset"] = day.sunset;
@@ -128,8 +142,6 @@ const extractData = function(data){
         winddir: data.currentConditions.winddir,
         days: extractDays(data.days)
     }
-    console.log(polishedData);
-    console.log(polishedData);
     return polishedData
 }
 
@@ -137,24 +149,36 @@ const extractData = function(data){
 //Header
 const renderHeader = function(){
     const header = document.createElement('header');
-    const logo = document.createElement("h2");
+    const logoContainer = document.createElement('div');
+    const logoFirst = document.createElement("span");
+    const logoSecond = document.createElement("span");
     const searchContainer = document.createElement('form');
     const searchBar = document.createElement('input');
     const searchBtn = document.createElement('button');
-    const searchSVG = createIcon("searchSVG", ".containSVG", undefined, 30, 30);
+    const searchSVG = createIcon("searchSVG", ".containSVG", undefined, 20, 20);
 
     searchBar.setAttribute("name", "search")
-    logo.textContent = "Weather App";
-    searchBtn.addEventListener("click", handleClick);
+    logoFirst.textContent = "Ava";
+    logoSecond.textContent = "Dash";
+    searchBtn.addEventListener("click", handleClick, { once: true });
+
+    //Style
+    mainContainer.classList.add('dashboard-mode');
+    mainContainer.classList.remove('landing-mode');
 
     header.classList.add("headerContainer");
     searchContainer.classList.add("searchBarContainer");
     searchBar.classList.add("searchBar");
     searchBtn.classList.add("searchBtn");
+    logoContainer.classList.add("logoContainer");
+    logoFirst.classList.add("logoFirst");
+    logoSecond.classList.add("logoSecond");
 
+
+    logoContainer.append(logoFirst, logoSecond);
     searchBtn.append(searchSVG);
     searchContainer.append(searchBar, searchBtn);
-    header.append(logo, searchContainer);
+    header.append(logoContainer, searchContainer);
     return header;
 }
 
@@ -164,8 +188,7 @@ const renderQuickData = function(data, cel = true){
     const container = document.createElement("section");
     //1-of-3 element (Tempreture + IMG + Cels/Fahr)
     const tempContainer = document.createElement("div");
-    const conditionSVG = createIcon(icons[data.icon], undefined, "primarySVG", 100, 100);
-    console.log("Here!");
+    const conditionSVG = createIcon(data.icon, undefined, "primarySVG", 100, 100);
     const temp = document.createElement("span");
     const tempButtonsContainer = document.createElement("div");
     const celsius = document.createElement("button");
@@ -173,8 +196,14 @@ const renderQuickData = function(data, cel = true){
     const divider = document.createElement("span");
     //2-of-3 element (UV Index + Humidity + Wind Speed + Wind Direction)
     const humContainer = document.createElement("div");
+    const humidityElContainer= document.createElement('div');
+    const humidityTitle= document.createElement('span');
     const humidity = document.createElement("span");
+    const windElContainer= document.createElement('div');
+    const windTitle = document.createElement('span');
     const wind = document.createElement("span");
+    const uvIndexElContainer= document.createElement('div');
+    const uvIndexTitle = document.createElement('span');
     const uvIndex = document.createElement("span");
     //3-of-3 element (Location + Condition)
     const locContainer = document.createElement("div");
@@ -199,14 +228,19 @@ const renderQuickData = function(data, cel = true){
     divider.classList.add('divide');
     // 2-of-3
     humContainer.setAttribute("id", "humContainer");
+    humidityElContainer.classList.add('metricContainer');
+    humidityTitle.classList.add('metricTitle');
     humidity.classList.add("metric");
+    windElContainer.classList.add('metricContainer');
+    windTitle.classList.add('metricTitle');
     wind.classList.add("metric");
+    uvIndexElContainer.classList.add('metricContainer');
+    uvIndexTitle.classList.add('metricTitle');
     uvIndex.classList.add("metric");
     // 3-of-3
     locContainer.setAttribute("id", "locContainer");
     location.setAttribute("id", "location");
     condition.setAttribute("id", "condition");
-
     //inject data
     //1-of-3
     if (cel == true){
@@ -218,24 +252,23 @@ const renderQuickData = function(data, cel = true){
     fahrenheit.textContent = '°F';
     divider.textContent = "|";
     //2-of-3
-    humidity.textContent = "Humidity: " + data.humidity + "%";
-    wind.textContent = "Wind: " + data.windspeed + " KM/H"+ " "+ winDirTranslate(data.winddir);
-    uvIndex.textContent = "UV Index: " + data.uvindex;
+    humidityTitle.textContent = "Humidity:  ";
+    humidity.textContent = data.humidity + "%";
+    windTitle.textContent = "Wind (km/h): ";
+    wind.textContent = data.windspeed + " "+ winDirTranslate(data.winddir);
+    uvIndexTitle.textContent = "UV Index: ";
+    uvIndex.textContent = data.uvindex;
     //3-of-3
-    console.log(data, " ", data.location);
     location.textContent = data.location.split(',')[0];
     condition.textContent =  "~ " + data.description;
 
     //Interactivity
     const toggleUnit = function(e){
-        console.log('clicked!');
         if(e.target.classList.contains("toggled")) {console.log("element is toggled! Returning ..."); return;}
         if(e.target.classList.contains("unToggledUnit")){
-            console.log("Element is untoggled! Transversing ...")
             if(e.target.id == "fahrenheit"){
-                console.log("Fahrenheit that isn't toggled! Rendering! ...");
-                renderMain(serverResponse, false);
-            } else {console.log("Celsius that isn't toggled! Rendering ..."); renderMain(serverResponse)}
+                renderMain(polishedServerResponse, false);
+            } else {renderMain(polishedServerResponse)}
         }
     }
     fahrenheit.addEventListener("click", toggleUnit, {once: true});
@@ -245,7 +278,10 @@ const renderQuickData = function(data, cel = true){
     tempButtonsContainer.append(celsius, divider, fahrenheit)
     tempContainer.append(conditionSVG, temp, tempButtonsContainer);
     //2-of-3
-    humContainer.append(humidity, wind, uvIndex);
+    humidityElContainer.append(humidityTitle, humidity);
+    windElContainer.append(windTitle, wind);
+    uvIndexElContainer.append(uvIndexTitle, uvIndex);
+    humContainer.append(humidityElContainer, windElContainer, uvIndexElContainer);
     //3-of-3
     locContainer.append(location, condition);
     //Append to primary container
@@ -255,7 +291,7 @@ const renderQuickData = function(data, cel = true){
 // 2-of-4 main component (Secondary Data)
 const renderSecondaryData = function(data, cel = true){
     //create container Elements
-    const container = document.createElement("div");
+    const container = document.createElement("section");
     const feelsLikeCon = document.createElement("div");
     const highCon = document.createElement("div");
     const lowCon = document.createElement("div");
@@ -283,7 +319,6 @@ const renderSecondaryData = function(data, cel = true){
     //style
     //Containers
     container.classList.add("secondaryDataContainer")
-    console.log('running!');
     [feelsLikeCon, highCon, lowCon, pressureCon, sunRiseCon, sunSetCon].forEach(el=>{
         el.classList.add('secondaryDataElementContainer');
     });
@@ -309,8 +344,8 @@ const renderSecondaryData = function(data, cel = true){
     highValue.textContent = cel == true? data.tempmax + "°C": celsiusToFahr(data.tempmax) + "°F";
     lowValue.textContent = cel == true? data.tempmin + "°C": celsiusToFahr(data.tempmin) + "°F";
     pressureValue.textContent = data.pressure + " hPa";
-    sunRiseValue.textContent = data.sunrise + " AM";
-    sunSetValue.textContent = data.sunset + " PM";
+    sunRiseValue.textContent = data.sunrise;
+    sunSetValue.textContent = data.sunset;
     //Append
     feelsLikeCon.append(feelsLike, feelsLikeValue);
     highCon.append(high, highValue);
@@ -323,6 +358,107 @@ const renderSecondaryData = function(data, cel = true){
     //return
     return container;
 }
+// 3-of-4 main component (24-Hours Forecast)
+const renderHourlyForecast = function(data, cel = true){
+    //Create Elements
+    let hourlyContainer = document.createElement("section");
+    let title = document.createElement("span");
+    let hourlyForecastContainer =  document.createElement("div");
+    //Hourly Template
+    let hours = [];
+    data.days[0].hours.forEach(hr => {
+        //create Elements
+        const hourContainer = document.createElement("div");
+        const hourTemp = document.createElement("span");
+        const hourIcon = createIcon(hr.icon, "hourlyForecastSVG", undefined, 80, 80);
+        const hourTime = document.createElement("span");
+
+        //inject data
+        hourTemp.textContent = cel == true? hr.temp + "°": celsiusToFahr(hr.temp) + "°";
+        let x = convertHours(hr.hour);
+        // console.log(x);
+        hourTime.textContent = convertHours(hr.hour);
+
+        //styling
+        hourContainer.classList.add("hourlyContainer");
+        hourTemp.classList.add("hourTemp");
+        hourTime.classList.add("hourTime");
+
+        //Append
+        hourContainer.append(hourTemp, hourIcon, hourTime);
+
+        hourlyForecastContainer.append(hourContainer);
+    })
+    //Content
+    title.textContent = "24-Hours Forecast";
+    // Style
+    hourlyForecastContainer.setAttribute("id", "hourlyForecastContainer");
+    hourlyContainer.setAttribute("id", "hourlyMainContainer");
+    title.setAttribute("id", "forecastTitle");
+
+    //Append
+    hourlyForecastContainer.append(hours)
+    hourlyContainer.append(title, hourlyForecastContainer);
+    return hourlyContainer;
+}
+
+// 4-of-4 main Component (5-Days Forecast)
+const renderDailyForecast = function(data, cel = true){
+    // Create Element
+    const mainDailyContainer = document.createElement("section");
+    const title = document.createElement("span");
+    const daysOuterContainer = document.createElement("div");
+
+    //Tracker
+    let numberOfDays = 0;
+    //Dynamic Creating days
+    data.days.forEach(day => {
+        //Count Number of Days
+        numberOfDays ++;
+
+        //Create Elements
+        const innerContainer = document.createElement("button");
+        const dayOfMonth = document.createElement("span");
+        const dayOfWeek = document.createElement("span");
+        const icon = createIcon(day.icon, "dailySVG", undefined, 60, 60);
+        const highLowContainer = document.createElement("div");
+        const high = document.createElement("span");
+        const low = document.createElement("span");
+
+        //Styles
+        innerContainer.classList.add("dailyInnerContainer");
+        dayOfMonth.classList.add("dayOfMonth");
+        dayOfWeek.classList.add("dayOfWeek");
+        highLowContainer.classList.add("highLowContainer");
+        high.classList.add("dailyHigh");
+        low.classList.add("dailyLow");
+        //Inject Data and Content
+        dayOfMonth.textContent = getDayMonth(day.date);
+        dayOfWeek.textContent = day.weekday;
+        high.textContent = cel == true? day.tempmax + "°": celsiusToFahr(day.tempmax) + "°";
+        low.textContent = cel == true? day.tempmin + "°": celsiusToFahr(day.tempmin) + "°";
+        innerContainer.setAttribute("data-date", day.date);
+
+        //Interactivity and EventListeners
+        innerContainer.addEventListener("click", handleRenderDay, { once: true });
+        //Apend
+        highLowContainer.append(high, low);
+        innerContainer.append(dayOfMonth, dayOfWeek, icon, highLowContainer);
+        daysOuterContainer.append(innerContainer);
+    })
+
+    //Styles
+    mainDailyContainer.setAttribute("id", "mainDailyContainer");
+    daysOuterContainer.setAttribute("id", "daysOuterContainer");
+    title.setAttribute("id", "dailyTitle");
+    //Content and Data
+    title.textContent = numberOfDays + "-Days Forecast";
+
+    //Append
+    mainDailyContainer.append(title, daysOuterContainer);
+
+    return mainDailyContainer;
+}
 
 //Main Renderer
 const renderMain = function (data = null, cel = true){
@@ -330,14 +466,35 @@ const renderMain = function (data = null, cel = true){
     let header = renderHeader();
     let quick = renderQuickData(data, cel);
     let secondary = renderSecondaryData(data, cel)
-    let main = document.createElement("main");
+    let hourlyForecast = renderHourlyForecast(data, cel)
+    let dailyForecast = renderDailyForecast(data, cel);
     //Re-Draw Screen
-    main.append(header, quick, secondary);
-    document.body.replaceChildren(main);
+    mainContainer.replaceChildren(header, quick, secondary, hourlyForecast, dailyForecast);
     //Tiny Fixes
     document.body.style.alignItems = "flex-start";
 }
 
+//handle Re-Render
+const handleRenderDay = function (e){
+    //Maintain Units
+    let cel;
+    if (document.querySelector(".toggled").id == "celsius"){
+        cel = true
+    } else {cel = false};
+    //Mutate Days Array so that it only includes the day in question
+    let data = polishedServerResponse;
+    console.log("data: " + data);
+    data.days = data.days.filter(day => {
+        day.date == e.currentTarget.attributes['data-date'].value
+    })
+    let header = renderHeader()
+    let quick = renderQuickData(data, cel)
+    let secondary = renderSecondaryData(data, cel)
+    let hourlyForecast = renderHourlyForecast(data, cel)
+    let dailyForecast = renderDailyForecast(data, cel);
+
+    mainContainer.replaceChildren(header, quick, secondary, hourlyForecast, dailyForecast)
+}
 //Query Search handler
 const handleClick = async function(e){
     e.preventDefault();
@@ -349,8 +506,8 @@ const handleClick = async function(e){
         let text = await response.text();
         if(!response.ok) throw new Error(text);
         data = JSON.parse(text);
-        serverResponse = extractData(data);
-        renderMain(serverResponse);
+        polishedServerResponse = extractData(data);
+        renderMain(polishedServerResponse);
     } catch(err){ 
         console.error(err);
 
@@ -358,4 +515,4 @@ const handleClick = async function(e){
 }
 
 //Search Button (Main Trigger for the Fetch)
-mainSearchBtn.addEventListener("click", handleClick)
+mainSearchBtn.addEventListener("click", handleClick, { once: true })
