@@ -146,6 +146,22 @@ const extractData = function(data){
 }
 
 //UI Component functions
+
+//Loading Screen
+const renderLoading = function(){
+    //Create
+    const loadingBackground = document.createElement("div");
+    const loadingSpinner = document.createElement("div");
+    //Styles
+    loadingBackground.setAttribute("id", "loading");
+    loadingSpinner.setAttribute("id", "spinner");
+    //Append
+    loadingBackground.append(loadingSpinner);
+    document.body.append(loadingBackground);
+    //Return
+    return loadingBackground;
+}
+
 //Header
 const renderHeader = function(){
     const header = document.createElement('header');
@@ -160,7 +176,7 @@ const renderHeader = function(){
     searchBar.setAttribute("name", "search")
     logoFirst.textContent = "Ava";
     logoSecond.textContent = "Dash";
-    searchBtn.addEventListener("click", handleClick, { once: true });
+    searchBtn.addEventListener("click", handleClick);
 
     //Style
     mainContainer.classList.add('dashboard-mode');
@@ -244,27 +260,28 @@ const renderQuickData = function(data, cel = true){
     //inject data
     //1-of-3
     if (cel == true){
-        temp.textContent = data.temp;
+        temp.textContent = data.days[0].temp;
     } else {
-        temp.textContent = celsiusToFahr(data.temp)
+        temp.textContent = celsiusToFahr(data.days[0].temp)
     }
+    console.table(data);
     celsius.textContent = '°C';
     fahrenheit.textContent = '°F';
     divider.textContent = "|";
     //2-of-3
     humidityTitle.textContent = "Humidity:  ";
-    humidity.textContent = data.humidity + "%";
+    humidity.textContent = data.days[0].humidity + "%";
     windTitle.textContent = "Wind (km/h): ";
-    wind.textContent = data.windspeed + " "+ winDirTranslate(data.winddir);
+    wind.textContent = data.days[0].windspeed + " "+ winDirTranslate(data.days[0].winddir);
     uvIndexTitle.textContent = "UV Index: ";
-    uvIndex.textContent = data.uvindex;
+    uvIndex.textContent = data.days[0].uvindex;
     //3-of-3
     location.textContent = data.location.split(',')[0];
-    condition.textContent =  "~ " + data.description;
+    condition.textContent =  "~ " + data.days[0].description;
 
     //Interactivity
     const toggleUnit = function(e){
-        if(e.target.classList.contains("toggled")) {console.log("element is toggled! Returning ..."); return;}
+        if(e.target.classList.contains("toggled")) return;
         if(e.target.classList.contains("unToggledUnit")){
             if(e.target.id == "fahrenheit"){
                 renderMain(polishedServerResponse, false);
@@ -318,7 +335,7 @@ const renderSecondaryData = function(data, cel = true){
     const sunSetValue = document.createElement("p");
     //style
     //Containers
-    container.classList.add("secondaryDataContainer")
+    container.classList.add("secondaryDataContainer");
     [feelsLikeCon, highCon, lowCon, pressureCon, sunRiseCon, sunSetCon].forEach(el=>{
         el.classList.add('secondaryDataElementContainer');
     });
@@ -340,12 +357,12 @@ const renderSecondaryData = function(data, cel = true){
     sunRise.textContent = "Sun Rise";
     sunSet.textContent = "Sun Set";
     //Data
-    feelsLikeValue.textContent = cel == true? data.feelslike + "°C": celsiusToFahr(data.feelslike) + "°F";
-    highValue.textContent = cel == true? data.tempmax + "°C": celsiusToFahr(data.tempmax) + "°F";
-    lowValue.textContent = cel == true? data.tempmin + "°C": celsiusToFahr(data.tempmin) + "°F";
-    pressureValue.textContent = data.pressure + " hPa";
-    sunRiseValue.textContent = data.sunrise;
-    sunSetValue.textContent = data.sunset;
+    feelsLikeValue.textContent = cel == true? data.days[0].feelslike + "°C": celsiusToFahr(data.days[0].feelslike) + "°F";
+    highValue.textContent = cel == true? data.days[0].tempmax + "°C": celsiusToFahr(data.days[0].tempmax) + "°F";
+    lowValue.textContent = cel == true? data.days[0].tempmin + "°C": celsiusToFahr(data.days[0].tempmin) + "°F";
+    pressureValue.textContent = data.days[0].pressure + " hPa";
+    sunRiseValue.textContent = convertHours(data.days[0].sunrise);
+    sunSetValue.textContent = convertHours(data.days[0].sunset);
     //Append
     feelsLikeCon.append(feelsLike, feelsLikeValue);
     highCon.append(high, highValue);
@@ -376,7 +393,6 @@ const renderHourlyForecast = function(data, cel = true){
         //inject data
         hourTemp.textContent = cel == true? hr.temp + "°": celsiusToFahr(hr.temp) + "°";
         let x = convertHours(hr.hour);
-        // console.log(x);
         hourTime.textContent = convertHours(hr.hour);
 
         //styling
@@ -482,21 +498,22 @@ const handleRenderDay = function (e){
         cel = true
     } else {cel = false};
     //Mutate Days Array so that it only includes the day in question
-    let data = polishedServerResponse;
-    console.log("data: " + data);
-    data.days = data.days.filter(day => {
-        day.date == e.currentTarget.attributes['data-date'].value
+    let data = structuredClone(polishedServerResponse);
+    data.days = data.days.filter((day) => {
+        return day.date == e.currentTarget.attributes['data-date'].value;
     })
+    console.log(data.days[0]);
     let header = renderHeader()
     let quick = renderQuickData(data, cel)
     let secondary = renderSecondaryData(data, cel)
     let hourlyForecast = renderHourlyForecast(data, cel)
-    let dailyForecast = renderDailyForecast(data, cel);
+    let dailyForecast = renderDailyForecast(polishedServerResponse, cel);
 
     mainContainer.replaceChildren(header, quick, secondary, hourlyForecast, dailyForecast)
 }
 //Query Search handler
 const handleClick = async function(e){
+    let loading = renderLoading();
     e.preventDefault();
     let data;
     const form = document.querySelector(".searchBarContainer");
@@ -512,7 +529,8 @@ const handleClick = async function(e){
         console.error(err);
 
     }
+    if (loading) loading.remove();
 }
 
 //Search Button (Main Trigger for the Fetch)
-mainSearchBtn.addEventListener("click", handleClick, { once: true })
+mainSearchBtn.addEventListener("click", handleClick)
