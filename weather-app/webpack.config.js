@@ -11,7 +11,7 @@ export default {
   output: {
   filename: "main.js",
   path: path.resolve(import.meta.dirname, "dist"),
-  publicPath: "/odin-projects/restaurant-page/",
+  publicPath: "auto",
   clean: true,
 },
   devServer: {
@@ -35,6 +35,10 @@ export default {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
+      {
+      test: /\.svg$/i,
+      type: "asset/resource",
+      }
     ],
   },
 };

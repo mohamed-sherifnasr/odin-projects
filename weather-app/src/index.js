@@ -1,3 +1,7 @@
+// GUESS WHAT 2 HOURS JUST BECAUSE OF THOSE TWO LINES NOT BEING THERE. THANKS WEBPACK!
+import iconsUrl from './assets/icons.svg';
+import './styles.css';
+
 //SVG Icons Map
 const icons = {
   // All from icons1
@@ -39,6 +43,7 @@ const getDayOfWeek = function(date){
 const celsiusToFahr = function(deg){
     return (deg * (9/5) + 32).toFixed();
 }
+
 const createIcon = function(iconId, cls = null, id = null, width = 50, height = 50){
     //Define SVG Namespace
     const svgNS = "http://www.w3.org/2000/svg";
@@ -55,8 +60,8 @@ const createIcon = function(iconId, cls = null, id = null, width = 50, height = 
     const use = document.createElementNS(svgNS, "use");
     //Sets the source of the use element to the exact SVG ID
     iconId == "searchSVG"?
-        use.setAttribute("href", `./assets/icons.svg#${iconId}`):
-        use.setAttribute("href", `./assets/icons.svg#${icons[iconId]}`);
+        use.setAttribute("href", `${iconsUrl}#${iconId}`):
+        use.setAttribute("href", `${iconsUrl}#${icons[iconId]}`);
     //Assemble the elements
     svg.append(use);
     //returns the newly created element
@@ -264,7 +269,6 @@ const renderQuickData = function(data, cel = true){
     } else {
         temp.textContent = celsiusToFahr(data.days[0].temp)
     }
-    console.table(data);
     celsius.textContent = '°C';
     fahrenheit.textContent = '°F';
     divider.textContent = "|";
@@ -502,7 +506,6 @@ const handleRenderDay = function (e){
     data.days = data.days.filter((day) => {
         return day.date == e.currentTarget.attributes['data-date'].value;
     })
-    console.log(data.days[0]);
     let header = renderHeader()
     let quick = renderQuickData(data, cel)
     let secondary = renderSecondaryData(data, cel)
