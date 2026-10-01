@@ -97,6 +97,17 @@ class linkedList {
         }
         return false
     }
+    findIndex(val){
+        let current = this.head;
+        let index = 0;
+
+        while(current !== null){
+            if (current.value == val) return index;
+            index++;
+            current = current.nextNode;
+        }
+        return -1;
+    }
     toString(){
         let current = this.head;
         let list = "";
@@ -141,3 +152,6 @@ console.log("Values being removed are: ", lL.pop(), " ", lL.pop(), " Linked List
 
 // Testing contains(val) method
 console.log("Linked List is now: ", lL.toString(), " of Size: ", lL.size(), "Does the Linked List contain 1: ", lL.contains(1), "Does it contain 6 (non-existent): ", lL.contains(6));
+
+// Testing indexAt(val) method
+console.log("Linked List is now: ", lL.toString(), " of Size: ", lL.size(), "Looking for value of 2: ", lL.findIndex(2), " Looking for value of 6 (non-existent): ", lL.findIndex(6));
