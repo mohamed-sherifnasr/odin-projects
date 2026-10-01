@@ -74,6 +74,29 @@ class linkedList {
             current = current.nextNode;
         }
     }
+    pop(){
+        if (this.head == null) 
+            return undefined;
+        else {
+            // Capture the to-be-removed node
+            let removedNode = this.head;
+            // Have the head point to the node next to the node being removed
+            this.head = removedNode.nextNode;
+            // Have the node removed point at nothing (Garbage Collection)
+            removedNode.newNode = null;
+
+            return removedNode.value;
+        }
+    }
+    contains(val){
+        // Counter
+        let current = this.head;
+        while (current !== null){
+            if (current.value == val) return true;
+            current = current.nextNode;
+        }
+        return false
+    }
     toString(){
         let current = this.head;
         let list = "";
@@ -90,19 +113,31 @@ class linkedList {
     }
 }
 
-let linkedlist = new linkedList();
+let lL = new linkedList();
 
 // Test If List is Empty
-console.log("Linked List After Instantiating is empty? : ", linkedlist.toString()==="");
+console.log("Linked List After Instantiating is empty? : ", lL.toString()==="");
 
-linkedlist.append(1);
-linkedlist.append(2);
-linkedlist.append(3);
-linkedlist.prepend(0);
-linkedlist.prepend(-1);
-linkedlist.prepend(-2);
+lL.append(1);
+lL.append(2);
+lL.append(3);
+lL.prepend(0);
+lL.prepend(-1);
+lL.prepend(-2);
 
 // Test Append, Prepend, Size, and toString
-console.log("Linked List: ", linkedlist.toString(), " of Size: ", linkedlist.size());
+console.log("Linked List: ", lL.toString(), " of Size: ", lL.size());
 
-console.log("Element at provided index is: ", linkedlist.at(8));
+// Test at() method when over range
+console.log("Element at provided index is: ", lL.at(8));
+
+lL.append(4);
+
+// Testing size() when changes occur to the linked list
+console.log("Linked List: ", lL.toString(), " of Size: ", lL.size());
+
+// Testing pop() method
+console.log("Values being removed are: ", lL.pop(), " ", lL.pop(), " Linked List is now: ", lL.toString(), " of Size: ", lL.size());
+
+// Testing contains(val) method
+console.log("Linked List is now: ", lL.toString(), " of Size: ", lL.size(), "Does the Linked List contain 1: ", lL.contains(1), "Does it contain 6 (non-existent): ", lL.contains(6));
