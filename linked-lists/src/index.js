@@ -158,7 +158,6 @@ class linkedList {
         // Handle Special Cases: 
         // #1 When Index is 0 Head is meant to be adjust + There is no prior node
         if (index == 0){
-            console.log("Case #1");
             // Head now points to the first element in the inputted elements
             this.head = nodes[0];
             // Last Element in the inputted elements now points to Index Node
@@ -166,7 +165,6 @@ class linkedList {
         }
         // #2 When Index is -1 (Elements are meant to be appended to the linked list)
         else if (index == -1){
-            console.log("Case #2");
             // Last Node in the Linked List now points to the first element of the inputted values
             this.tail.nextNode = nodes[0];
             // Tail is now set at the final element of the inputted values
@@ -174,7 +172,6 @@ class linkedList {
         }
         // #3 Anywhere else within the linked list 
         else {
-            console.log("Case #3");
             // Index Node that comes before the target Index Node is now pointing to the first node of the inputted values;
             indexBeforeNode.nextNode = nodes[0];
             // Target Node is being pointed at by the last Node of the inputted values
@@ -214,12 +211,10 @@ class linkedList {
             while (current !== null){
                 // When you reach the second to last node
                 if (current.nextNode.nextNode == null){
-                    console.log("current is set at: ", current.value);
                     // Have the tail refer to it
                     this.tail = current;
                     // Have it refer to null rather than the item removed
                     current.nextNode = null;
-                    console.log(this.toString());
                     break;
                 }
                 // Continue the way up the list
