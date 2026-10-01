@@ -181,60 +181,85 @@ class linkedList {
             nodes.at(-1).nextNode = indexAtNode;
         }
     }
+    removeAt(index){
+        // In Case empty
+        if (this.head == null) return undefined;
+        // Remove the First Element and Adjust
+        else if (index == 0){
+            // In Case of 1 Node
+            if (this.size() == 1){
+                this.head.nextNode = null;
+                this.head = null;
+                this.tail = null;
+                return;
+            }
+            // Reference to the first node
+            let firstNode = this.head;
+            // Record the reference to the nex node on head first
+            this.head = firstNode.nextNode;
+            // Have that element no longer referencing another node
+            firstNode.nextNode = null;
+        }
+        // Remove the Last Element and Adjust
+        else if (index == -1){
+            // In case of just one element
+            if (this.size() == 1){
+                this.head.nextNode = null;
+                this.head = null;
+                this.tail = null;
+                return;
+            }
+            // Traverse to the node before it (Second to last)
+            let current = this.head;
+            while (current !== null){
+                // When you reach the second to last node
+                if (current.nextNode.nextNode == null){
+                    console.log("current is set at: ", current.value);
+                    // Have the tail refer to it
+                    this.tail = current;
+                    // Have it refer to null rather than the item removed
+                    current.nextNode = null;
+                    console.log(this.toString());
+                    break;
+                }
+                // Continue the way up the list
+                current = current.nextNode;
+            }
+        }
+        // Out of Range
+        else if (index > this.size() - 1 || index < -1){
+            throw new Error("Range Error!");
+        }
+        // Otherwise
+        else {
+            // In case of just one element
+            if (this.size() == 1){
+                this.head.nextNode = null;
+                this.head = null;
+                this.tail = null;
+                return;
+            }
+            // Reference Needed
+            let targetNode = null;
+            // Traverse to the node before the one to be removed
+            let current = this.head;
+            let counter = 0;
+            while (current !== null){
+                // When you reach the node prior to the one being removed
+                if (counter == index - 1){
+                    // Store a reference
+                    targetNode = current.nextNode;
+                    // Assign the prior to target node to the Node that comes after the target node
+                    current.nextNode = targetNode.nextNode;
+                    // Remove the Reference from the target node
+                    targetNode.nextNode = null;
+                    if (current.nextNode == null) this.tail = current;
+                    break;
+                }
+                // Move up the list
+                counter ++;
+                current = current.nextNode;
+            }
+        }
+    }
 }
-
-let lL = new linkedList();
-
-
-lL.append(1);
-lL.append(2);
-lL.append(3);
-
-// Test Insertion within the array
-console.log("Linked List: ", lL.toString(), " of Size: ", lL.size());
-lL.insertAt(1, 4, 5, 6);
-console.log(" And Now After Adding [4, 5, 6] in at index 1: ", lL.toString(), "Head is: ", lL.Head().value, " Tail is: ", lL.Tail().value);
-// Test Insertion in the beginning of the array
-lL.insertAt(0, 8, 9, 0);
-console.log(" And Now After Adding [8, 9, 0] in at index 0: ", lL.toString(), "Head is: ", lL.Head().value, " Tail is: ", lL.Tail().value);
-// Test Insertion in the end of the array
-lL.insertAt(-1, 4, 5, 6);
-console.log(" And Now After Adding [4, 5, 6] in at index -1: ", lL.toString(), "Head is: ", lL.Head().value, " Tail is: ", lL.Tail().value);
-// Test Out of Range Insertion
-lL.insertAt(99, 1, 1, 1)
-console.log(lL.toString());
-
-
-// // Test If List is Empty
-// console.log("Linked List After Instantiating is empty? : ", lL.toString()==="");
-
-// lL.prepend(0);
-// lL.prepend(-1);
-// lL.prepend(-2);
-
-// // Test Append, Prepend, Size, and toString
-// console.log("Linked List: ", lL.toString(), " of Size: ", lL.size());
-
-// // Test at() method when over range
-// console.log("Element at provided index is: ", lL.at(8));
-
-// lL.append(4);
-
-// // Testing size() when changes occur to the linked list
-// console.log("Linked List: ", lL.toString(), " of Size: ", lL.size());
-
-// // Testing pop() method
-// console.log("Values being removed are: ", lL.pop(), " ", lL.pop(), " Linked List is now: ", lL.toString(), " of Size: ", lL.size());
-
-// // Testing contains(val) method
-// console.log("Linked List is now: ", lL.toString(), " of Size: ", lL.size(), "Does the Linked List contain 1: ", lL.contains(1), "Does it contain 6 (non-existent): ", lL.contains(6));
-
-// // Testing findIndex(val) method
-// console.log("Linked List is now: ", lL.toString(), " of Size: ", lL.size(), "Looking for value of 2: ", lL.findIndex(2), " Looking for value of 6 (non-existent): ", lL.findIndex(6));
-
-// lL.append(4);
-// lL.append(4);
-// lL.append(4);
-
-// // Testing findIndex(val) method
-// console.log("Linked list is: ", lL.toString(), " of Size: ", lL.size(), " and the index of value 4 is: ", lL.findIndex(4));
