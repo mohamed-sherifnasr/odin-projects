@@ -58,6 +58,22 @@ class linkedList {
         else
             return this.tail;
     }
+    at(index){
+        // If Empty
+        if (this.head == null) return undefined;
+        
+        let current = this.head;
+        let counter = 0;
+
+        while (counter <= index){
+            // Return Value of Node if it matches the provided index
+            if (counter == index) return current.value;
+            // If You were to look for an inexistent index
+            if (current == null) return undefined;
+            counter ++;
+            current = current.nextNode;
+        }
+    }
     toString(){
         let current = this.head;
         let list = "";
@@ -75,6 +91,8 @@ class linkedList {
 }
 
 let linkedlist = new linkedList();
+
+// Test If List is Empty
 console.log("Linked List After Instantiating is empty? : ", linkedlist.toString()==="");
 
 linkedlist.append(1);
@@ -84,4 +102,7 @@ linkedlist.prepend(0);
 linkedlist.prepend(-1);
 linkedlist.prepend(-2);
 
+// Test Append, Prepend, Size, and toString
 console.log("Linked List: ", linkedlist.toString(), " of Size: ", linkedlist.size());
+
+console.log("Element at provided index is: ", linkedlist.at(8));
