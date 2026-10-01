@@ -33,11 +33,23 @@ class linkedList {
             this.head = newNode;
         }
     }
+    size(){
+        let current = this.head;
+        let size = 0;
 
+        // If Empty
+        if (current == null) return size;
+
+        while (current !== null) {
+            size ++;
+            current = current.nextNode;
+        }
+        return size;
+    }
     toString(){
         let current = this.head;
         let list = "";
-        while(current !== null){
+        while (current !== null){
             list += `(${current.value}) => `
             current = current.nextNode;
         }
@@ -60,4 +72,4 @@ linkedlist.prepend(0);
 linkedlist.prepend(-1);
 linkedlist.prepend(-2);
 
-console.log("Linked List: ", linkedlist.toString());
+console.log("Linked List: ", linkedlist.toString(), " of Size: ", linkedlist.size());
