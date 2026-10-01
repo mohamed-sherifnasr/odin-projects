@@ -11,34 +11,53 @@ class linkedList {
     }
     append(val){
         let newNode = new node(val);
+        // If Empty
         if (this.tail == null){
             this.tail = newNode;
-            if (this.head == null)
-                this.head = newNode;
+            this.head = newNode;
         }
         else {
             this.tail.nextNode = newNode;
             this.tail = newNode;
         }
     }
+    prepend(val){
+        let newNode = new node(val);
+        // If Empty
+        if (this.head == null){
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else {
+            newNode.nextNode = this.head;
+            this.head = newNode;
+        }
+    }
+
     toString(){
         let current = this.head;
         let list = "";
         while(current !== null){
             list += `(${current.value}) => `
             current = current.nextNode;
-            console.log("Here! ", list, " Current is: ", current);
         }
-        //If the linked list is not empty
-        if (this.head !== null) list += `null`;
+        //If the linked list is not empty 
+        if (this.head !== null){
+            list += `null`;
+            list = `[ ${list} ]`;
+        }
         return list;
     }
 }
 
 let linkedlist = new linkedList();
-console.log("Linked List After Instantiating: ", linkedlist.toString()==="");
+console.log("Linked List After Instantiating is empty? : ", linkedlist.toString()==="");
 
 linkedlist.append(1);
 linkedlist.append(2);
 linkedlist.append(3);
-console.log("Linked List After Appending 3 Values: ", linkedlist.toString());
+linkedlist.prepend(0);
+linkedlist.prepend(-1);
+linkedlist.prepend(-2);
+
+console.log("Linked List: ", linkedlist.toString());
