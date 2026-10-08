@@ -13,11 +13,10 @@ class LinkedList{
     size(){
         let current = this.head;
         let counter = 0;
-        while(current.next != null){
+        while(current != null){
             current = current.next;
             counter ++;
         }
-        if (current.next == null) counter++;
         return counter;
     }
     append(key, value){
@@ -65,6 +64,17 @@ class LinkedList{
         }
         return undefined;
     }
+    keys(){
+        // Edge Case
+        if (this.size() == 0) return;
+        let current = this.head;
+        let keys = [];
+        while (current != null){
+            keys.push(current.key);
+            current = current.next
+        }
+        return keys;
+    }
     entries(){
         // Edge Case
         if (this.size() == 0) return undefined;
@@ -75,6 +85,45 @@ class LinkedList{
             current = current.next
         }
         return entries;
+    }
+    remove(key){
+        // Edge Cases
+        if (this.size() == 0) return false;
+        if (this.head.key == key){
+            if (this.size() == 1){
+                this.head = null;
+                return true;
+            } else {
+                let target = this.head;
+                this.head = this.head.next
+                target.next = null;
+            }
+        }
+        // Traverse
+        let current = this.head;
+        while (current.next != null){
+            // Modify the Node that is pointing to the one being removed
+            if (current.next.key == key){
+                // Reference to the node being removed
+                let target = current.next;
+                // In case of the element to be removed is the last one in the list
+                if (current.next.next == null){ 
+                    current.next = null
+                    this.tail = current;
+                    return true;
+                }
+                else {
+                    // Modify the node that used to point to the removed node to now point to the one after it
+                    current.next = current.next.next;
+                    
+                    // Have it point to nothing
+                    target.next = null;
+                    return true;
+                }
+            }
+            current = current.next;
+        }
+        return false;
     }
     toString(){
         if (this.size() == 0 ) console.log("Empty Linked List!")
@@ -111,6 +160,7 @@ class HashMap {
 
         // Hash
         const hash = this.hash(key);
+        console.log(hash, value);
         // If the hash exists
         if (this.has(key)){
             // Check if it is the same key
@@ -133,14 +183,13 @@ class HashMap {
             this.resize();
     }
     get(key){
+        let hash = this.hash(`${key}`);
+        console.log(hash)
         let value;
-        for (const bucket of this.buckets){
-            if (bucket instanceof LinkedList){
-                if (bucket.getNode(key)){
-                    value = bucket.getNode(key).value;
-                    return value;
-                }
-            }
+        // O(1) Retrieval
+        if (this.buckets[hash]){
+            value = this.buckets[hash].getNode(key).value;
+            return value;
         }
         return undefined;
     }
@@ -176,6 +225,35 @@ class HashMap {
             }
         })
     }
+    remove(key){
+        let hash = this.hash(`${key}`);
+        console.log(hash);
+        if (this.buckets[hash]){
+            console.log("HERE!")
+            if (this.buckets[hash].remove(key)){
+                if (this.buckets[hash].size() == 0){
+                        this.buckets[hash] = undefined;
+                        return true;
+                    }
+                return true;
+            }
+        }
+        return false;
+    }
+    clear(){
+        for (let i = 0; i < this.buckets.length; i++){
+            this.buckets[i] = undefined;
+        }
+    }
+    keys(){
+        let keys = [];
+        for (let bucket of this.buckets){
+            if (bucket instanceof LinkedList){
+                bucket.keys().forEach(key => keys.push(key));
+            }
+        }
+        return keys;
+    }
     toString(){
         let str = `Hash Map is of size ${this.length()} and is as follows: \n`;
         for(let i = 0; i < this.buckets.length; i++){
@@ -197,7 +275,13 @@ x.set("Bird3", "Hawk");
 x.set("Insect4", "Spider");
 x.set("23", "Collision#1");
 x.set("1", "Collision#2");
+x.set("45", "Collision#3");
+x.set("3", "Collision#4");
+x.set("4", "Collision#5");
+x.set("5", "Collision#6");
+x.set("6", "Collision#7");
+x.set("7", "Collision#8");
 console.log(x.toString());
-x.resize();
-console.log(x.toString());
-console.log(x.get("23"));
+
+console.log(x.keys());
+// console.log(x.toString())
