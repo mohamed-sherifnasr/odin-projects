@@ -75,6 +75,17 @@ class LinkedList{
         }
         return keys;
     }
+    values(){
+        // Edge Case
+        if (this.size() == 0) return;
+        let current = this.head;
+        let values = [];
+        while (current != null){
+            values.push(current.value);
+            current = current.next
+        }
+        return values;
+    }
     entries(){
         // Edge Case
         if (this.size() == 0) return undefined;
@@ -247,12 +258,34 @@ class HashMap {
     }
     keys(){
         let keys = [];
-        for (let bucket of this.buckets){
+        for (const bucket of this.buckets){
             if (bucket instanceof LinkedList){
                 bucket.keys().forEach(key => keys.push(key));
             }
         }
-        return keys;
+        if (keys)
+            return keys;
+        return 0;
+    }
+    values(){
+        let values = [];
+        for (const bucket of this.buckets){
+            if (bucket instanceof LinkedList){
+                bucket.values().forEach(val => values.push(val));
+            }
+        }
+        if (values)
+            return values;
+        return 0;
+    }
+    entries(){
+        let entries = [];
+        for (const bucket of this.buckets){
+            if (bucket instanceof LinkedList){
+                bucket.entries().forEach(entry => entries.push(entry));
+            }
+        }
+        return entries;
     }
     toString(){
         let str = `Hash Map is of size ${this.length()} and is as follows: \n`;
@@ -283,5 +316,5 @@ x.set("6", "Collision#7");
 x.set("7", "Collision#8");
 console.log(x.toString());
 
-console.log(x.keys());
+console.log(x.entries());
 // console.log(x.toString())
