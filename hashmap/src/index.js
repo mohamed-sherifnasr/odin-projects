@@ -22,13 +22,9 @@ class LinkedList{
     }
     append(key, value){
         let newNode = new Node(key, value);
-        // Edge Cases
+        // Edge Case
         if (this.size() == 0){
             this.head = newNode;
-            return
-        } else if (this.size() == 1){
-            this.head.next = newNode;
-            this.tail = newNode;
             return
         }
         // Traverse
@@ -41,13 +37,8 @@ class LinkedList{
     }
     hasKey(key){
         // Edge Case
-        if (this.size() == 0) 
-            return false
-        else if (this.size() == 1){
-            if (this.head.key == key)
-                return true
-            return false
-        }
+        if (this.size() == 0) return false
+
         let current = this.head;
         while(current != null){
             if (current.key == key){
@@ -74,6 +65,17 @@ class LinkedList{
         }
         return undefined;
     }
+    entries(){
+        // Edge Case
+        if (this.size() == 0) return undefined;
+        let current = this.head;
+        let entries = [];
+        while (current != null){
+            entries.push([current.key, current.value]);
+            current = current.next
+        }
+        return entries;
+    }
     toString(){
         if (this.size() == 0 ) console.log("Empty Linked List!")
         let current = this.head;
@@ -85,7 +87,7 @@ class LinkedList{
             counter ++;
         }
         string += ` Null`;
-        console.log(string);
+        return string;
     }
 }
 
@@ -98,7 +100,6 @@ class HashMap {
 
     hash(key){
         let hashCode = 0;
-
         const primeNumber = 31;
         for (let i = 0; i < key.length; i++){
             hashCode = primeNumber * hashCode + key.charCodeAt(i);
@@ -110,7 +111,6 @@ class HashMap {
 
         // Hash
         const hash = this.hash(key);
-        
         // If the hash exists
         if (this.has(key)){
             // Check if it is the same key
@@ -126,32 +126,78 @@ class HashMap {
         } 
         // If it doesn't exist
         else {
-            let linkedList = new LinkedList(key, value);
-            this.buckets[hash] = linkedList;
+            this.buckets[hash] = new LinkedList(key, value);
         }
-        // Hash the key
-
-        // Check if Key Already Exists
-        this.has()
+        // Check if It requires a resize
+        if ((this.length() / this.buckets.length) > this.loadFactor)
+            this.resize();
+    }
+    get(key){
+        let value;
+        for (const bucket of this.buckets){
+            if (bucket instanceof LinkedList){
+                if (bucket.getNode(key)){
+                    value = bucket.getNode(key).value;
+                    return value;
+                }
+            }
+        }
+        return undefined;
     }
     has(key){
         const hash = this.hash(key);
-        this.buckets[hash] ? true : false;
+        // Check if it respects the bounds of the buckets
+        if (hash < 0 || hash >= this.buckets.length) {
+            throw new Error("Trying to access index out of bounds");
+        }
+        if (this.buckets[hash]) 
+            return true 
+        return false;
+    }
+    length(){
+        let counter = 0;
+        this.buckets.forEach(bucket => {
+            if (bucket instanceof LinkedList) counter += bucket.size();
+        })
+        return counter;
     }
     resize(){
+        // Temporarily Stores Old Values in an array
+        let temp = this.buckets;
         // Doubles the number of Capacity and Buckets
         this.capacity = this.capacity * 2;
         this.buckets = new Array(this.capacity);
+        //Goes through each bucket in the Hash Map
+        temp.forEach(bucket => {
+            if (bucket instanceof LinkedList){
+                bucket.entries().forEach(node => {
+                    this.set(node[0], node[1]);
+                })
+            }
+        })
+    }
+    toString(){
+        let str = `Hash Map is of size ${this.length()} and is as follows: \n`;
+        for(let i = 0; i < this.buckets.length; i++){
+            if (this.buckets[i] instanceof LinkedList){
+                str += `[Index of ${i}:  ${this.buckets[i].toString()} ]\n`;
+            } else {
+                str += `[Index of ${i}: Empty]\n`;
+            }
+        }
+        return str;
     }
 }
 
-let l = new LinkedList(1, "rabbit");
-
-l.append(2, "lion");
-l.append(3, "pigeon");
-l.append(4, "snake");
-l.toString();
-console.log(l.getNode(2));
 let x = new HashMap();
 
-console.log(x.hash("asasdsadd"));
+x.set("Animal1", "Lion");
+x.set("Animal2", "Snake");
+x.set("Bird3", "Hawk");
+x.set("Insect4", "Spider");
+x.set("23", "Collision#1");
+x.set("1", "Collision#2");
+console.log(x.toString());
+x.resize();
+console.log(x.toString());
+console.log(x.get("23"));
