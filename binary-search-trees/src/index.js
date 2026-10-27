@@ -23,7 +23,26 @@ class Tree {
         let rootNode = new Node(uniqueSorted[medianIndex], this.#buildTree(left), this.#buildTree(right));
         return rootNode;
     }
+    depthTraverse(){
 
+    }
+    includes(value, start=this.root, found=false){
+        // Base Case
+        if (!start) return found;
+        // Checker
+        if(start.data == value){
+            found = true;
+            return found;
+        }
+        else if(start.data > value)
+            found = this.includes(value, start.left, found);
+        else
+            found = this.includes(value, start.right, found);
+        return found
+    }
+    inOrderforEach(callBack){
+
+    }
     printTree(rootNode=this.root){
         // In case of empty
         if (rootNode === null || rootNode === undefined) return
@@ -50,3 +69,4 @@ class Tree {
 
 let arr = new Tree([9, 8, 5, 3, 2, 1, 0, 0]);
 arr.printTree();
+console.log(arr.includes(0));
