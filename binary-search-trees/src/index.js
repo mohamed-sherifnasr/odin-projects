@@ -23,8 +23,22 @@ class Tree {
         let rootNode = new Node(uniqueSorted[medianIndex], this.#buildTree(left), this.#buildTree(right));
         return rootNode;
     }
-    depthTraverse(){
-
+    #traverseTree(rootNode, value, rNode){
+        // Base Case
+        if (rootNode.data < value){
+            if (rootNode.right == null)
+                return rootNode;
+        } else if (rootNode.data > value){
+            if (rootNode.left == null)
+                return rootNode;
+        }
+        if (rootNode.data < value){
+            rNode = this.#traverseTree(rootNode.right, value)
+        }
+        else if (rootNode.data > value){
+            rNode = this.#traverseTree(rootNode.left, value)
+        }
+        return rNode;
     }
     includes(value, start=this.root, found=false){
         // Base Case
@@ -42,6 +56,20 @@ class Tree {
     }
     inOrderforEach(callBack){
 
+    }
+    insert(value){
+        // Do nothing in case value exists already 
+        if (this.includes(value)) return
+        // Traversal
+        let node = this.#traverseTree(this.root, value)
+        console.log("Node: ", node);
+        // Create Node
+        let newNode = new Node(value);
+        // Place the node
+        if (newNode.data > node.data)
+            node.right = newNode;
+        else
+            node.left = newNode;
     }
     printTree(rootNode=this.root){
         // In case of empty
@@ -66,7 +94,10 @@ class Tree {
         }
     }
 }
-
-let arr = new Tree([9, 8, 5, 3, 2, 1, 0, 0]);
-arr.printTree();
-console.log(arr.includes(0));
+// Tests
+// let arr = new Tree([9, 8, 5, 3, 2, 1, 0, 0]);
+// arr.printTree();
+// console.log(arr.includes(4));
+// console.log(arr.insert(4));
+// console.log(arr.includes(4));
+// console.log(arr.root);
