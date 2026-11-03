@@ -23,7 +23,7 @@ class Tree {
         let rootNode = new Node(uniqueSorted[medianIndex], this.#buildTree(left), this.#buildTree(right));
         return rootNode;
     }
-    #traverseTree(rootNode, value, rNode){
+    #traverseTree(rootNode, value){
         // Base Case
         if (rootNode.data < value){
             if (rootNode.right == null)
@@ -33,12 +33,32 @@ class Tree {
                 return rootNode;
         }
         if (rootNode.data < value){
-            rNode = this.#traverseTree(rootNode.right, value)
+            return this.#traverseTree(rootNode.right, value)
         }
         else if (rootNode.data > value){
-            rNode = this.#traverseTree(rootNode.left, value)
+            return this.#traverseTree(rootNode.left, value)
         }
-        return rNode;
+    }
+    #inOrderTraversal(node, callback){
+        if (node.left == null) return callback(node.data);
+        let left = this.#inOrderTraversal(node.left, callback);
+        callback(node.data);
+        let right = this.#inOrderTraversal(node.right, callback);
+        
+    }
+    #preOrderTraversal(node, callback){
+        if (node.left == null) return callback(node.data);
+        callback(node.data);
+        let left = this.#preOrderTraversal(node.left, callback);
+        let right = this.#preOrderTraversal(node.right, callback);
+        
+    }
+    #postOrderTraversal(node, callback){
+        if (node.left == null) return callback(node.data);
+        let left = this.#postOrderTraversal(node.left, callback);
+        let right = this.#postOrderTraversal(node.right, callback);
+        callback(node.data);
+        
     }
     includes(value, start=this.root, found=false){
         // Base Case
@@ -54,15 +74,11 @@ class Tree {
             found = this.includes(value, start.right, found);
         return found
     }
-    inOrderforEach(callBack){
-
-    }
     insert(value){
         // Do nothing in case value exists already 
         if (this.includes(value)) return
         // Traversal
         let node = this.#traverseTree(this.root, value)
-        console.log("Node: ", node);
         // Create Node
         let newNode = new Node(value);
         // Place the node
@@ -70,6 +86,27 @@ class Tree {
             node.right = newNode;
         else
             node.left = newNode;
+    }
+    inOrderforEach(callBack){
+        // Throw Error in case no Callback
+        if (typeof callBack !== "function"){
+            throw new Error("A Callback is required")
+        }
+        return this.#inOrderTraversal(this.root, callBack);
+    }
+    preOrderforEach(callBack){
+        // Throw Error in case no Callback
+        if (typeof callBack !== "function"){
+            throw new Error("A Callback is required")
+        }
+        return this.#preOrderTraversal(this.root, callBack);
+    }
+    postOrderforEach(callBack){
+        // Throw Error in case no Callback
+        if (typeof callBack !== "function"){
+            throw new Error("A Callback is required")
+        }
+        return this.#postOrderTraversal(this.root, callBack);
     }
     printTree(rootNode=this.root){
         // In case of empty
@@ -93,11 +130,23 @@ class Tree {
             console.log(levelStr);
         }
     }
+    prettyPrint(node, prefix = '', isLeft = true){
+        if (node === null || node === undefined) {
+            return;
+        }
+
+        this.prettyPrint(node.right, `${prefix}${isLeft ? '│   ' : '    '}`, false);
+        console.log(`${prefix}${isLeft ? '└── ' : '┌── '}${node.data}`);
+        this.prettyPrint(node.left, `${prefix}${isLeft ? '    ' : '│   '}`, true);
+    }
 }
-// Tests
-// let arr = new Tree([9, 8, 5, 3, 2, 1, 0, 0]);
-// arr.printTree();
-// console.log(arr.includes(4));
-// console.log(arr.insert(4));
-// console.log(arr.includes(4));
-// console.log(arr.root);
+
+let arr = new Tree([9, 8, 5, 3, 2, 1, 0, 0]);
+
+arr.prettyPrint(arr.root);
+
+arr.inOrderforEach((e)=>{console.log(e)});
+console.log("=====");
+arr.preOrderforEach((e)=>{console.log(e)});
+console.log("=====");
+arr.postOrderforEach((e)=>{console.log(e)});
