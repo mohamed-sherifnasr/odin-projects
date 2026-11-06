@@ -16,7 +16,8 @@ class Tree {
         // Base Case
         if (array.length == 0) return null;
         if (array.length == 1) return new Node(array[0]);
-        let uniqueSorted = Array.from(new Set(array)).sort();
+        let uniqueSorted = Array.from(new Set(array)).sort((a, b)=> a - b);
+        console.log(uniqueSorted);
         // [0, 1, 2, 3, 4, 5, 8, 9]
         // Get Median
         let medianIndex = Math.floor(uniqueSorted.length / 2);
@@ -158,7 +159,7 @@ class Tree {
     }
 }
 
-let arr = new Tree([9, 8, 5, 3, 2, 1, 0, 4]);
+let arr = new Tree([9, 8, 5, 3, 2, 1, 0, 4, 0, 10]);
 
 arr.prettyPrint(arr.root);
 
