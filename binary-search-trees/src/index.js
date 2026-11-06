@@ -10,17 +10,34 @@ class Tree {
         this.root = this.#buildTree(array);
     }
     #buildTree(array){
+        // [9, 8, 5, 3, 2, 1, 0, 4]
+        // [0, 1, 2, 3]
+        // [0, 1]
         // Base Case
+        if (array.length == 0) return null;
         if (array.length == 1) return new Node(array[0]);
         let uniqueSorted = Array.from(new Set(array)).sort();
+        // [0, 1, 2, 3, 4, 5, 8, 9]
         // Get Median
         let medianIndex = Math.floor(uniqueSorted.length / 2);
+        // 4
+        // 2
+        // 1
         // Cut out Left
         let left = uniqueSorted.slice(0, medianIndex);
+        // [0, 1, 2, 3] L1
+        // [0, 1] L2
+        // [0] l3
         // Cut out Right
         let right = uniqueSorted.slice(medianIndex + 1);
+        // [5, 8, 9] R1
+        // [3] R2
+        // [] =>>>>>> Stack Overflow
         // Create Root
         let rootNode = new Node(uniqueSorted[medianIndex], this.#buildTree(left), this.#buildTree(right));
+        // [4 => Left([0, 1, 2, 3]) => Right([5, 8, 9])] #1
+        // [2 => Left([0, 1]) => Right([3])] #2
+        console.log(rootNode);
         return rootNode;
     }
     #traverseTree(rootNode, value){
@@ -141,12 +158,8 @@ class Tree {
     }
 }
 
-let arr = new Tree([9, 8, 5, 3, 2, 1, 0, 0]);
+let arr = new Tree([9, 8, 5, 3, 2, 1, 0, 4]);
 
 arr.prettyPrint(arr.root);
 
-arr.inOrderforEach((e)=>{console.log(e)});
-console.log("=====");
-arr.preOrderforEach((e)=>{console.log(e)});
-console.log("=====");
-arr.postOrderforEach((e)=>{console.log(e)});
+
