@@ -17,7 +17,6 @@ class Tree {
         if (array.length == 0) return null;
         if (array.length == 1) return new Node(array[0]);
         let uniqueSorted = Array.from(new Set(array)).sort((a, b)=> a - b);
-        console.log(uniqueSorted);
         // [0, 1, 2, 3, 4, 5, 8, 9]
         // Get Median
         let medianIndex = Math.floor(uniqueSorted.length / 2);
@@ -38,7 +37,6 @@ class Tree {
         let rootNode = new Node(uniqueSorted[medianIndex], this.#buildTree(left), this.#buildTree(right));
         // [4 => Left([0, 1, 2, 3]) => Right([5, 8, 9])] #1
         // [2 => Left([0, 1]) => Right([3])] #2
-        console.log(rootNode);
         return rootNode;
     }
     #traverseTree(rootNode, value){
@@ -105,6 +103,32 @@ class Tree {
         else
             node.left = newNode;
     }
+    levelOrderForEach(root=this.root, callBack){
+        // In case of empty
+        if (root === null || root === undefined) return;
+        // Define Depth Counter
+        // Define Queue
+        let q = [root];
+        // Outer Loop [Keeps track of levels]
+        while (q.length !== 0){
+            // Capture the length of the queue before dequeue-ing
+            let levelWidth = q.length;
+            // Inner Loop [Loops over left and right]
+            for (let i = 0; i < levelWidth; i++){
+                // Dequeue the node in turn for processing
+                let node = q.shift();
+                // Process current node
+                callBack(node.data);
+                // Make sure children nodes are not null or undefined (Left => Right)
+                if (node.left !== undefined && node.left !== null)
+                    // Enqueue next level left
+                q.push(node.left);
+                if (node.right !== undefined && node.right !== null)
+                    // Enqueue next level right
+                    q.push(node.right);
+            }
+        }
+    }
     inOrderforEach(callBack){
         // Throw Error in case no Callback
         if (typeof callBack !== "function"){
@@ -162,5 +186,5 @@ class Tree {
 let arr = new Tree([9, 8, 5, 3, 2, 1, 0, 4, 0, 10]);
 
 arr.prettyPrint(arr.root);
-
+arr.depth(arr.root);
 
