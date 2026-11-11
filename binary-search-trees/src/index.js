@@ -150,6 +150,18 @@ class Tree {
         }
         return this.#postOrderTraversal(this.root, callBack);
     }
+    depth(value, counter = 0, start = this.root){
+        // If Value is not present in tree
+        if (!this.includes(value)) return undefined
+        // Base case if value is found
+        if (start.data == value) return counter
+        counter ++;
+        if (start.data > value)
+            return this.depth(value, counter, start.left);
+        else if (start.data < value)
+            return this.depth(value, counter, start.right);
+        return counter
+    }
     printTree(rootNode=this.root){
         // In case of empty
         if (rootNode === null || rootNode === undefined) return
@@ -186,5 +198,5 @@ class Tree {
 let arr = new Tree([9, 8, 5, 3, 2, 1, 0, 4, 0, 10]);
 
 arr.prettyPrint(arr.root);
-arr.depth(arr.root);
+console.log(arr.depth(5));
 
