@@ -76,6 +76,24 @@ class Tree {
         callback(node.data);
         
     }
+    #get(value, start = this.root){
+        // If not found
+        if (!this.includes(value)) return undefined;
+        // Base case
+        if (start.data == value) return start
+        // Traverse
+        if (start.data > value)
+            return this.#get(value, start.left)
+        else if (start.data < value)
+            return this.#get(value, start.right)
+    }
+    #heightHelper(node){
+        // Base Case
+        if (node == null) return -1;
+        let left = this.#heightHelper(node.left);
+        let right = this.#heightHelper(node.right);
+        return Math.max(left, right) + 1;
+    }
     includes(value, start=this.root, found=false){
         // Base Case
         if (!start) return found;
@@ -152,15 +170,19 @@ class Tree {
     }
     depth(value, counter = 0, start = this.root){
         // If Value is not present in tree
-        if (!this.includes(value)) return undefined
+        if (!this.includes(value)) return undefined;
         // Base case if value is found
-        if (start.data == value) return counter
+        if (start.data == value) return counter;
         counter ++;
         if (start.data > value)
             return this.depth(value, counter, start.left);
         else if (start.data < value)
             return this.depth(value, counter, start.right);
         return counter
+    }
+    height(value){
+        let node = this.#get(value);
+        return this.#heightHelper(node);
     }
     printTree(rootNode=this.root){
         // In case of empty
@@ -198,5 +220,5 @@ class Tree {
 let arr = new Tree([9, 8, 5, 3, 2, 1, 0, 4, 0, 10]);
 
 arr.prettyPrint(arr.root);
-console.log(arr.depth(5));
+console.log(arr.height(0));
 
