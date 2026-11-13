@@ -94,6 +94,17 @@ class Tree {
         let right = this.#heightHelper(node.right);
         return Math.max(left, right) + 1;
     }
+    #getParent(value, start = this.root){
+        if (start.left.data === value) return start
+        if (start.right.data === value) return start
+        if (start.data > value) return this.#getParent(value, start.left);
+        if (start.data < value) return this.#getParent(value, start.right);
+    }
+    #getSuccessor(node){
+        // Base Case
+        if (node.left === null) return node;
+        this.#getSuccessor(node.left);
+    }
     includes(value, start=this.root, found=false){
         // Base Case
         if (!start) return found;
@@ -184,6 +195,55 @@ class Tree {
         let node = this.#get(value);
         return this.#heightHelper(node);
     }
+    deleteItem(value){
+        let node = this.#get(value);
+        console.log(node);
+        if (node === undefined) return;
+        // In case of 0 Children
+        else if (node.left === null && node.right === null){
+            let parent = this.#getParent(node.data);
+            if (parent.data > node.data)
+                parent.left = null;
+            else
+                parent.right = null;
+        }
+        // In case of 1 Children
+        else if (node.left && !node.right){
+            let parent = this.#getParent(node.data);
+            if (parent.left.data === node.data)
+                parent.left = node.left;
+            else
+                parent.right = node.left;
+            node = null;
+        } else if (node.right && !node.left){
+            let parent = this.#getParent(node.data);
+            if (parent.left.data === node.data)
+                parent.left = node.right;
+            else
+                parent.right = node.right;
+            node = null;
+        }
+        // In case of 2 Children
+        else if (node.left && node.right){
+            // find Successor;
+            let successor = this.#getSuccessor(node.right);
+            // Adjustments
+            successor.right = node.right;
+            successor.left = node.left;
+            // Adjust parents
+            let successorParent = this.#getParent(successor.data);
+            if (successorParent.data > successor.data)
+                successorParent.left = null;
+            else
+                successorParent.right = null;
+            // Parent of the Node to be deleted points to new successor
+            let nodeParent = this.#getParent(node.data);
+            if (nodeParent.data > successor.data)
+                nodeParent.left = successor;
+            else
+                nodeParent.right = successor;
+        }
+    }
     printTree(rootNode=this.root){
         // In case of empty
         if (rootNode === null || rootNode === undefined) return
@@ -220,5 +280,6 @@ class Tree {
 let arr = new Tree([9, 8, 5, 3, 2, 1, 0, 4, 0, 10]);
 
 arr.prettyPrint(arr.root);
-console.log(arr.height(0));
+console.log(arr.deleteItem(1));
+arr.prettyPrint(arr.root);
 
