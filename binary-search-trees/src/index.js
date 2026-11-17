@@ -341,6 +341,14 @@ class Tree {
         let notBalanced = heights.some((val) => val === false);
         return !notBalanced;
     }
+    rebalance(){
+        let values = [];
+        // Record each individual node data
+        this.inOrderforEach((e)=> values.push(e.data));
+        console.log(values);
+        // Re-Build the tree using the values array
+        this.root = this.#buildTree(values);
+    }
     printTree(rootNode=this.root){
         // In case of empty
         if (rootNode === null || rootNode === undefined) return
@@ -384,4 +392,6 @@ arr.deleteItem(8);
 arr.deleteItem(5);
 arr.prettyPrint(arr.root);
 console.log(arr.isBalanced());
+arr.rebalance();
+arr.prettyPrint(arr.root);
 // console.log(arr.height(null));
