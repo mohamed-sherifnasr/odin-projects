@@ -58,9 +58,9 @@ class Tree {
     #inOrderTraversal(node, callback){
         // Handles Null Cases
         if (node === null) return;
-        if (node.left === null) return callback(node.data);
+        if (node.left === null) return callback(node);
         let left = this.#inOrderTraversal(node.left, callback);
-        callback(node.data);
+        callback(node);
         let right = this.#inOrderTraversal(node.right, callback);
         
     }
@@ -119,10 +119,6 @@ class Tree {
         if (node.right === null) return node;
         return this.#getSuccessor(node.right);
     }
-    #deleteOneChild(){
-
-    }
-    #deleteTwoChildren(){}
     includes(value, start=this.root, found=false){
         // Base Case
         if (!start) return found;
@@ -286,7 +282,6 @@ class Tree {
         }
         // In case of 1 Children
         else if (node.left && !node.right){
-            console.log("YES!");
             let parent = this.#getParent(node.data);
             if (parent.left.data === node.data)
                 parent.left = node.left;
@@ -315,6 +310,36 @@ class Tree {
             else
                 p.left = null;
         }
+    }
+    isBalanced(){
+        // Keep track of height being over 1 or not (Bi-Value)
+        let heights = [];
+        this.inOrderforEach((e)=> {
+            let left;
+            let right;
+            // Handle Null nodes
+            if (!e.left)
+                left = -1;
+            else
+                // Left Height
+                left = this.height(e.left.data);
+            if (!e.right)
+                right = -1;
+            else
+                // right Height
+                right = this.height(e.left.data);
+            // Check difference between height of left vs height of right
+            let result = Math.abs(left - right);
+            // If height is more than less than or equal 1 log true
+            if (result <= 1)
+                heights.push(true);
+            // Else false
+            else
+                heights.push(false);
+        });
+        // Check if There is any individual false value
+        let notBalanced = heights.some((val) => val === false);
+        return !notBalanced;
     }
     printTree(rootNode=this.root){
         // In case of empty
@@ -351,30 +376,12 @@ class Tree {
 
 let arr = new Tree([9, 8, 5, 3, 2, 1, 0, 4, 0, 10]);
 
+// arr.prettyPrint(arr.root);
+console.log(arr.isBalanced());
+arr.deleteItem(9);
+arr.deleteItem(10);
+arr.deleteItem(8);
+arr.deleteItem(5);
 arr.prettyPrint(arr.root);
-// console.log(arr.deleteItem(0));
-// console.log(arr.deleteItem(5));
-// console.log(arr.deleteItem(9));
-// console.log(arr.deleteItem(2));
-// console.log(arr.deleteItem(10));
-// console.log(arr.deleteItem(3));
-// console.log(arr.deleteItem(1));
-// console.log(arr.deleteItem(8));
-console.log(arr.deleteItem(4));
-arr.prettyPrint(arr.root);
-console.log(arr.deleteItem(5));
-arr.prettyPrint(arr.root);
-console.log(arr.deleteItem(8));
-arr.prettyPrint(arr.root);
-console.log(arr.deleteItem(9));
-arr.prettyPrint(arr.root);
-console.log(arr.deleteItem(10));
-arr.prettyPrint(arr.root);
-console.log(arr.deleteItem(3));
-arr.prettyPrint(arr.root);
-console.log(arr.deleteItem(2));
-arr.prettyPrint(arr.root);
-console.log(arr.deleteItem(1));
-arr.prettyPrint(arr.root);
-console.log(arr.deleteItem(0));
-arr.prettyPrint(arr.root);
+console.log(arr.isBalanced());
+// console.log(arr.height(null));
