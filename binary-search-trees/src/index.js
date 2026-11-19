@@ -58,7 +58,6 @@ class Tree {
     #inOrderTraversal(node, callback){
         // Handles Null Cases
         if (node === null) return;
-        if (node.left === null) return callback(node);
         let left = this.#inOrderTraversal(node.left, callback);
         callback(node);
         let right = this.#inOrderTraversal(node.right, callback);
@@ -67,7 +66,6 @@ class Tree {
     #preOrderTraversal(node, callback){
         // Handles Null Cases
         if (node === null) return;
-        if (node.left == null) return callback(node.data);
         callback(node.data);
         let left = this.#preOrderTraversal(node.left, callback);
         let right = this.#preOrderTraversal(node.right, callback);
@@ -76,7 +74,6 @@ class Tree {
     #postOrderTraversal(node, callback){
         // Handles Null Cases
         if (node === null) return;
-        if (node.left == null) return callback(node.data);
         let left = this.#postOrderTraversal(node.left, callback);
         let right = this.#postOrderTraversal(node.right, callback);
         callback(node.data);
@@ -146,7 +143,7 @@ class Tree {
         else
             node.left = newNode;
     }
-    levelOrderForEach(root=this.root, callBack){
+    levelOrderForEach(callBack, root=this.root){
         // In case of empty
         if (root === null || root === undefined) return;
         // Define Depth Counter
@@ -327,7 +324,7 @@ class Tree {
                 right = -1;
             else
                 // right Height
-                right = this.height(e.left.data);
+                right = this.height(e.right.data);
             // Check difference between height of left vs height of right
             let result = Math.abs(left - right);
             // If height is more than less than or equal 1 log true
@@ -384,14 +381,48 @@ class Tree {
 
 let arr = new Tree([9, 8, 5, 3, 2, 1, 0, 4, 0, 10]);
 
-// arr.prettyPrint(arr.root);
-console.log(arr.isBalanced());
-arr.deleteItem(9);
-arr.deleteItem(10);
-arr.deleteItem(8);
-arr.deleteItem(5);
-arr.prettyPrint(arr.root);
-console.log(arr.isBalanced());
-arr.rebalance();
-arr.prettyPrint(arr.root);
-// console.log(arr.height(null));
+let randomArray = function(count = 10){
+    let arr = [];
+    for (let i = 0; i < count; i++){
+        arr.push(Math.floor(Math.random() * 100));
+    }
+    return arr
+}
+
+let tree = new Tree(randomArray());
+// Tree Built
+tree.prettyPrint(tree.root);
+
+// IsBalanced
+// console.log(tree.isBalanced());
+
+// Print Elements
+// tree.levelOrderForEach((e)=>{console.log(e)});
+// tree.preOrderforEach((e)=>{console.log(e)});
+// tree.inOrderforEach((e)=>{console.log(e.data)});
+// tree.postOrderforEach((e)=>{console.log(e)});
+
+
+// Unbalance the tree intentionally by adding numbers > 100
+tree.insert(102);
+tree.insert(105);
+tree.insert(110);
+tree.insert(120);
+
+// Confirm it is unbalanced
+// console.log(tree.isBalanced());
+
+// Rebalance the tree
+tree.rebalance();
+
+// Confirm it is now balanced
+// console.log(tree.isBalanced());
+
+// Print Elements after insertion and rebalancing
+// tree.levelOrderForEach((e)=>{console.log(e)});
+// tree.preOrderforEach((e)=>{console.log(e)});
+// tree.inOrderforEach((e)=>{console.log(e.data)});
+tree.postOrderforEach((e)=>{console.log(e)});
+
+
+tree.prettyPrint(tree.root);
